@@ -1,0 +1,110 @@
+# Enhanced Investment Tracker
+
+A comprehensive application for tracking investments across multiple currencies, visualizing performance, and analyzing your financial portfolio.
+
+## Features
+
+- **Multi-Currency Support**: Track investments in USD, EUR, CAD, CLP, and more
+- **Historical Performance Tracking**: Visualize how your investments have performed over time
+- **Currency Conversion**: Automatically convert all investments to USD for comparison
+- **Flexible Data Entry**: Add single entries, bulk updates, or update all investments at once
+- **Data Management**: Export, import, and backup your investment data
+- **Comprehensive Dashboard**: Get a quick overview of your portfolio with key metrics
+- **Interactive Visualizations**: Explore your data with dynamic charts and graphs
+- **Investment Categories**: Group investments by category for better organization
+
+## Installation
+
+1. Clone this repository or download the files
+2. Install required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Create a `.env` file in the project directory with your ExchangeRate API key:
+
+```
+API_KEY=your_exchangerate_api_key
+```
+
+## Usage
+
+1. Run the application:
+
+```bash
+streamlit run app.py
+```
+
+2. Use the sidebar to add new investment entries
+3. Explore your data through the various tabs:
+   - **Dashboard**: Overview of your portfolio with key metrics
+   - **Performance**: Track the performance of your investments over time
+   - **Data**: View and filter your investment data
+   - **Settings**: Manage application settings and data
+
+## Project Structure
+
+- `app.py`: Main Streamlit application with user interface
+- `data_handler.py`: Functions for loading, saving, and manipulating investment data
+- `currency_service.py`: Services for currency conversion and exchange rate management
+- `config.py`: Application configuration settings
+
+## Configuration
+
+You can customize the application by modifying the `config.py` file:
+
+- `INVESTMENT_ACCOUNTS`: Add or modify the investment accounts and their currencies
+- `INVESTMENT_CATEGORIES`: Define categories for grouping investments
+- `CACHE_DURATION`: Set how long to cache exchange rates (in seconds)
+
+## Data Format
+
+The application uses a CSV file (`investment_data.csv`) with the following columns:
+
+- `Date`: Date of the investment entry
+- `Investment`: Name of the investment account
+- `Currency`: Currency of the investment
+- `Value`: Value of the investment
+
+## Troubleshooting
+
+- **Exchange Rate Issues**: If exchange rates aren't updating, try clicking the "Refresh Exchange Rates" button in the sidebar
+- **Data Import Problems**: Ensure your CSV has the correct column names and format
+- **API Key**: For accurate currency conversion, use your API key from [ExchangeRate API](https://www.exchangerate-api.com/)
+
+## Enhancements Over Original
+
+1. **Improved User Interface**:
+   - Tabbed interface for better organization
+   - More intuitive data entry forms
+   - Enhanced visualizations
+   - Responsive layout
+
+2. **Enhanced Data Management**:
+   - Backup and restore functionality
+   - Data filtering and export
+   - Bulk update options
+
+3. **Better Performance Analysis**:
+   - Historical performance tracking
+   - Performance comparison between investments
+   - Metrics calculation (absolute and percentage changes)
+
+4. **More Robust Currency Handling**:
+   - Local caching of exchange rates
+   - Fallback mechanisms for API issues
+   - Manual refresh option
+
+5. **Investment Categories**:
+   - Group investments by category
+   - Visualize allocation by category
+   - Filter by category
+
+## Contributing
+
+Contributions are welcome! Feel free to submit issues or pull requests.
+
+## License
+
+This project is open source and available under the MIT License.
