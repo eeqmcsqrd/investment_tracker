@@ -116,8 +116,8 @@ with st.sidebar:
                 try:
                     from data_handler_db import add_entry_db
 
-                    # Add entry
-                    add_entry_db(entry_date, investment, currency, value)
+                    # Add entry (function looks up currency automatically)
+                    add_entry_db(entry_date, investment, value)
 
                     st.success(f"✅ Added {investment}: {currency} {value:,.2f}")
                     st.balloons()
@@ -276,8 +276,7 @@ with tab3:
                 added_count = 0
                 for investment, value in values_dict.items():
                     if value > 0:  # Only add non-zero values
-                        currency = INVESTMENT_ACCOUNTS[investment]
-                        add_entry_db(bulk_date, investment, currency, value)
+                        add_entry_db(bulk_date, investment, value)
                         added_count += 1
 
                 st.success(f"✅ Updated {added_count} investments for {bulk_date}")
