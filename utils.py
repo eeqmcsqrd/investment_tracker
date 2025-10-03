@@ -173,13 +173,10 @@ def create_date_picker(use_today_key, date_picker_key):
     
     return entry_date
 
-from functools import lru_cache
-
-@lru_cache(maxsize=128)
 def calculate_smart_date_format(num_days):
     """
     Calculate smart date formatting parameters based on date range.
-    Cached for performance with repeated calls.
+    Uses Streamlit's cache_data for performance.
 
     Parameters:
         num_days (int): Number of days in the date range
