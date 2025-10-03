@@ -4,6 +4,7 @@
 import os
 import json
 import sqlite3
+import sys
 
 DB_FILE = 'investment_data.db'
 SNAPSHOT_FILE = 'db_snapshot.json'
@@ -15,16 +16,21 @@ def init_database_from_snapshot():
     """
     # Skip if database already exists
     if os.path.exists(DB_FILE):
-        print(f"✅ Database exists at {DB_FILE}")
+        sys.stderr.write(f"✅ Database exists at {DB_FILE}\n")
+        sys.stderr.flush()
         return True
-    
+
     # Check if snapshot exists
     if not os.path.exists(SNAPSHOT_FILE):
-        print(f"⚠️  No snapshot file found at {SNAPSHOT_FILE}")
+        sys.stderr.write(f"⚠️  No snapshot file found at {SNAPSHOT_FILE}\n")
+        sys.stderr.write(f"   Current directory: {os.getcwd()}\n")
+        sys.stderr.write(f"   Files: {os.listdir('.')}\n")
+        sys.stderr.flush()
         return False
-    
+
     try:
-        print(f"📦 Initializing database from {SNAPSHOT_FILE}...")
+        sys.stderr.write(f"📦 Initializing database from {SNAPSHOT_FILE}...\n")
+        sys.stderr.flush()
         
         # Load snapshot
         with open(SNAPSHOT_FILE, 'r') as f:
@@ -42,32 +48,35 @@ def init_database_from_snapshot():
             
             # Get columns from first row
             columns = list(rows[0].keys())
-            
+
             # Create table (simple approach - you may need to adjust types)
             col_defs = ', '.join([f'"{col}" TEXT' for col in columns])
             cursor.execute(f'CREATE TABLE IF NOT EXISTS "{table_name}" ({col_defs})')
-            
+
             # Insert data
             placeholders = ','.join(['?' for _ in columns])
             for row in rows:
                 values = [row[col] for col in columns]
                 cursor.execute(
-                    f'INSERT INTO "{table_name}" ({",".join([f"{col}" for col in columns])}) VALUES ({placeholders})',
+                    f'INSERT INTO "{table_name}" ({",".join([f'"{col}"' for col in columns])}) VALUES ({placeholders})',
                     values
                 )
-            
-            print(f"  ✅ Imported {len(rows)} rows into {table_name}")
-        
+
+            sys.stderr.write(f"  ✅ Imported {len(rows)} rows into {table_name}\n")
+            sys.stderr.flush()
+
         conn.commit()
         conn.close()
-        
-        print(f"✅ Database successfully created at {DB_FILE}")
+
+        sys.stderr.write(f"✅ Database successfully created at {DB_FILE}\n")
+        sys.stderr.flush()
         return True
-        
+
     except Exception as e:
-        print(f"❌ Error initializing database: {e}")
+        sys.stderr.write(f"❌ Error initializing database: {e}\n")
         import traceback
-        traceback.print_exc()
+        traceback.print_exc(file=sys.stderr)
+        sys.stderr.flush()
         return False
 
 # Run automatically when imported
