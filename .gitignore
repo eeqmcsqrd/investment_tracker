@@ -4,7 +4,7 @@
 .streamlit/secrets.toml
 
 # Data files (sync separately for security)
-investment_data.db
+# investment_data.db  # Commented out to allow initial deployment
 investment_data.csv
 backups/
 benchmarks_cache.json
