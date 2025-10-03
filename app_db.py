@@ -813,23 +813,33 @@ with tab1:
     
     # Use the enhanced dashboard component
     if not latest_df.empty:
-        create_enhanced_dashboard(
-            df, 
-            latest_df, 
-            latest_date, 
-            INVESTMENT_CATEGORIES, 
-            INVESTMENT_ACCOUNTS,
-            st.session_state.start_date,
-            st.session_state.end_date
-        )
-        # Also show the Sustainability chart on the default Dashboard view
         try:
-            dash_start_dt = pd.Timestamp(st.session_state.start_date)
-            dash_end_dt = pd.Timestamp(st.session_state.end_date)
-        except Exception:
-            dash_start_dt = pd.to_datetime(df["Date"].min()) if not df.empty else pd.Timestamp.today() - pd.Timedelta(days=30)
-            dash_end_dt = pd.to_datetime(df["Date"].max()) if not df.empty else pd.Timestamp.today()
-        render_sustainability_section(dash_start_dt, dash_end_dt, key_prefix="sust_dashboard")
+            create_enhanced_dashboard(
+                df,
+                latest_df,
+                latest_date,
+                INVESTMENT_CATEGORIES,
+                INVESTMENT_ACCOUNTS,
+                st.session_state.start_date,
+                st.session_state.end_date
+            )
+            # Also show the Sustainability chart on the default Dashboard view
+            try:
+                dash_start_dt = pd.Timestamp(st.session_state.start_date)
+                dash_end_dt = pd.Timestamp(st.session_state.end_date)
+            except Exception:
+                dash_start_dt = pd.to_datetime(df["Date"].min()) if not df.empty else pd.Timestamp.today() - pd.Timedelta(days=30)
+                dash_end_dt = pd.to_datetime(df["Date"].max()) if not df.empty else pd.Timestamp.today()
+            render_sustainability_section(dash_start_dt, dash_end_dt, key_prefix="sust_dashboard")
+        except Exception as e:
+            st.error("⚠️ Dashboard temporarily unavailable")
+            st.warning(f"Error: {e}")
+            with st.expander("Show error details"):
+                import traceback
+                st.code(traceback.format_exc())
+                import sys
+                sys.stderr.write(f"DASHBOARD TAB ERROR: {e}\n")
+                traceback.print_exc(file=sys.stderr)
     else:
         st.info(f"{ICONS['info']} No data available. Please add investment entries.")
 
