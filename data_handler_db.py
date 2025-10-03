@@ -4,7 +4,8 @@ import sqlite3
 import os
 from datetime import datetime
 from currency_service import get_conversion_rate
-from config import INVESTMENT_ACCOUNTS
+from config import INVESTMENT_ACCOUNTS, REVOLUT_EUR_ACCOUNT, INCLUDE_REVOLUT_IN_INCOME
+
 
 # Database file path
 DB_FILE = 'investment_data.db'
@@ -34,9 +35,23 @@ def create_tables():
     
     # Index for investment queries (for specific investment lookups)
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_investments_investment ON investments(investment)')
+
+    # Sustainability daily aggregates (income/expenses/delta)
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS sustainability_daily (
+        date TEXT PRIMARY KEY,
+        total_income_usd REAL NOT NULL DEFAULT 0,
+        total_expenses_usd REAL NOT NULL DEFAULT 0,
+        delta_usd REAL NOT NULL DEFAULT 0,
+        created_at TEXT DEFAULT (datetime('now')),
+        updated_at TEXT DEFAULT (datetime('now'))
+    )
+    ''')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_sustainability_date ON sustainability_daily(date)')
     
     conn.commit()
     conn.close()
+
 # data_handler_db.py (Part 2: Basic Data Loading & Saving)
 def load_data(filepath=None):
     """
@@ -280,49 +295,49 @@ def add_bulk_entries(df, date, investment_values):
 # data_handler_db.py (Part 4: DB-Native Entry Methods)
 def add_entry_db(date, investment, value):
     """
-    Add a single investment entry directly to the database.
-    
-    Parameters:
-    date (datetime.date): Date of the entry
-    investment (str): Name of the investment
-    value (float): Value of the investment
-    
-    Returns:
-    bool: True if successful, False otherwise
+    Add a single investment entry directly to the database and update sustainability stats.
     """
     try:
-        # Ensure tables exist
-        create_tables()
-        
-        # Convert date to string format for SQLite
+        # Normalize date
         if isinstance(date, datetime):
             date_str = date.strftime('%Y-%m-%d')
         else:
             date_str = pd.Timestamp(date).strftime('%Y-%m-%d')
-        
-        # Get the currency for this investment
-        from config import INVESTMENT_ACCOUNTS
+        investment = str(investment)
+        value = float(value)
         currency = INVESTMENT_ACCOUNTS.get(investment, 'USD')
-        
-        # Connect to database
+
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
-        
+
+        # Ensure sustainability row for this date exists
+        # (also ensures the table exists)
+        def _ensure_sustainability_row(conn, date_str):
+            c = conn.cursor()
+            c.execute("""
+            CREATE TABLE IF NOT EXISTS sustainability_daily (
+                date TEXT PRIMARY KEY,
+                total_income_usd REAL NOT NULL DEFAULT 0,
+                total_expenses_usd REAL NOT NULL DEFAULT 0,
+                delta_usd REAL NOT NULL DEFAULT 0,
+                created_at TEXT DEFAULT (datetime('now')),
+                updated_at TEXT DEFAULT (datetime('now'))
+            )
+            """)
+            c.execute("INSERT OR IGNORE INTO sustainability_daily(date) VALUES (?)", (date_str,))
+            conn.commit()
+
+        _ensure_sustainability_row(conn, date_str)
+
         # Check if we already have entries for this date
-        cursor.execute(
-            "SELECT COUNT(*) FROM investments WHERE date = ?", 
-            (date_str,)
-        )
+        cursor.execute("SELECT COUNT(*) FROM investments WHERE date = ?", (date_str,))
         entries_count = cursor.fetchone()[0]
-        
+
         if entries_count == 0:
             # No entries for this date, get most recent entries
-            cursor.execute(
-                "SELECT MAX(date) FROM investments WHERE date < ?", 
-                (date_str,)
-            )
+            cursor.execute("SELECT MAX(date) FROM investments WHERE date < ?", (date_str,))
             most_recent_date = cursor.fetchone()[0]
-            
+
             if most_recent_date:
                 # Get all investments from most recent date
                 cursor.execute(
@@ -330,175 +345,226 @@ def add_entry_db(date, investment, value):
                     (most_recent_date,)
                 )
                 recent_entries = cursor.fetchall()
-                
-                # Insert all recent entries with new date
+
+                # Insert all recent entries with new date, overriding the one being set
                 for inv, curr, val in recent_entries:
                     if inv == investment:
-                        # Update this specific investment with new value
+                        # If this is Revolut - EUR, register expense vs previous day's value
+                        if inv == REVOLUT_EUR_ACCOUNT:
+                            try:
+                                register_revolut_expense_delta(date_str, previous_value=val, new_value=value, currency=curr)
+                            except Exception as _e:
+                                print(f'Warning register_revolut_expense_delta: {_e}')
                         cursor.execute('''
-                        INSERT OR REPLACE INTO investments (date, investment, currency, value)
-                        VALUES (?, ?, ?, ?)
+                            INSERT OR REPLACE INTO investments (date, investment, currency, value)
+                            VALUES (?, ?, ?, ?)
                         ''', (date_str, inv, curr, value))
                     else:
-                        # Copy over other investments with previous values
                         cursor.execute('''
-                        INSERT OR REPLACE INTO investments (date, investment, currency, value)
-                        VALUES (?, ?, ?, ?)
+                            INSERT OR REPLACE INTO investments (date, investment, currency, value)
+                            VALUES (?, ?, ?, ?)
                         ''', (date_str, inv, curr, val))
-                
-                # Check if our investment was in the previous entries
+
+                # If the investment wasn't in previous entries, add it now
                 cursor.execute(
                     "SELECT COUNT(*) FROM investments WHERE date = ? AND investment = ?",
                     (date_str, investment)
                 )
                 if cursor.fetchone()[0] == 0:
-                    # Investment wasn't in previous entries, add it
                     cursor.execute('''
-                    INSERT INTO investments (date, investment, currency, value)
-                    VALUES (?, ?, ?, ?)
+                        INSERT INTO investments (date, investment, currency, value)
+                        VALUES (?, ?, ?, ?)
                     ''', (date_str, investment, currency, value))
             else:
-                # No previous entries, just add this one
+                # No previous entries at all, just add this one
                 cursor.execute('''
-                INSERT INTO investments (date, investment, currency, value)
-                VALUES (?, ?, ?, ?)
+                    INSERT INTO investments (date, investment, currency, value)
+                    VALUES (?, ?, ?, ?)
                 ''', (date_str, investment, currency, value))
         else:
-            # Entries exist for this date, check if this investment exists
+            # There are entries for this date already
+            # If Revolut is being updated, load current value for same-day diff BEFORE updating
+            prev_today_value = None
+            if investment == REVOLUT_EUR_ACCOUNT:
+                cursor.execute(
+                    "SELECT value FROM investments WHERE date = ? AND investment = ?",
+                    (date_str, investment)
+                )
+                row = cursor.fetchone()
+                prev_today_value = row[0] if row else None
+
+            # Upsert the value
             cursor.execute(
                 "SELECT COUNT(*) FROM investments WHERE date = ? AND investment = ?",
                 (date_str, investment)
             )
             if cursor.fetchone()[0] == 0:
-                # Investment doesn't exist for this date, add it
                 cursor.execute('''
-                INSERT INTO investments (date, investment, currency, value)
-                VALUES (?, ?, ?, ?)
+                    INSERT INTO investments (date, investment, currency, value)
+                    VALUES (?, ?, ?, ?)
                 ''', (date_str, investment, currency, value))
             else:
-                # Investment exists, update it
                 cursor.execute('''
-                UPDATE investments 
-                SET value = ?
-                WHERE date = ? AND investment = ?
+                    UPDATE investments
+                    SET value = ?
+                    WHERE date = ? AND investment = ?
                 ''', (value, date_str, investment))
-        
+
+            # Register expense delta if Revolut decreased
+            if investment == REVOLUT_EUR_ACCOUNT:
+                try:
+                    register_revolut_expense_delta(date_str, previous_value=prev_today_value, new_value=value, currency=currency)
+                except Exception as _e:
+                    print(f'Warning register_revolut_expense_delta: {_e}')
+
         conn.commit()
+
+        # Recompute total income (ex-Revolut) for the date and update delta
+        try:
+            recalc_total_income_for_date(date_str)
+        except Exception as _e:
+            print(f'Warning recalc_total_income_for_date: {_e}')
+
         conn.close()
         return True
     except Exception as e:
         print(f"Error adding entry to database: {e}")
         return False
+
 # data_handler_db.py (Part 5: Bulk DB Entry Method)
 def add_bulk_entries_db(date, investment_values):
     """
-    Add multiple investment entries directly to the database.
-    
-    Parameters:
-    date (datetime.date): Date of the entries
-    investment_values (dict): Dictionary mapping investment names to values
-    
-    Returns:
-    bool: True if successful, False otherwise
+    Add multiple investment entries directly to the database and update sustainability stats.
     """
     try:
-        # Convert date to string format for SQLite
         if isinstance(date, datetime):
             date_str = date.strftime('%Y-%m-%d')
         else:
             date_str = pd.Timestamp(date).strftime('%Y-%m-%d')
-        
-        # Connect to database
+
+        # Normalize keys to str and values to float
+        investment_values = {str(k): float(v) for k, v in investment_values.items()}
+
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
-        
-        # Check if we already have entries for this date
-        cursor.execute(
-            "SELECT COUNT(*) FROM investments WHERE date = ?", 
-            (date_str,)
-        )
+
+        # Ensure sustainability row for this date exists
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS sustainability_daily (
+            date TEXT PRIMARY KEY,
+            total_income_usd REAL NOT NULL DEFAULT 0,
+            total_expenses_usd REAL NOT NULL DEFAULT 0,
+            delta_usd REAL NOT NULL DEFAULT 0,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )""")
+        cursor.execute("INSERT OR IGNORE INTO sustainability_daily(date) VALUES (?)", (date_str,))
+
+        # Detect if entries exist for the date
+        cursor.execute("SELECT COUNT(*) FROM investments WHERE date = ?", (date_str,))
         entries_count = cursor.fetchone()[0]
-        
+
         if entries_count == 0:
-            # No entries for this date, get most recent entries
-            cursor.execute(
-                "SELECT MAX(date) FROM investments WHERE date < ?", 
-                (date_str,)
-            )
+            # Get previous date snapshot if any
+            cursor.execute("SELECT MAX(date) FROM investments WHERE date < ?", (date_str,))
             most_recent_date = cursor.fetchone()[0]
-            
+
             if most_recent_date:
-                # Get all investments from most recent date
                 cursor.execute(
                     "SELECT investment, currency, value FROM investments WHERE date = ?",
                     (most_recent_date,)
                 )
                 recent_entries = cursor.fetchall()
-                
-                # Insert all recent entries with new date
+
+                # Insert previous snapshot for all, override with provided values
                 for inv, curr, val in recent_entries:
                     if inv in investment_values:
-                        # Update this investment with new value
+                        # Revolut expense delta against previous day's value if relevant
+                        if inv == REVOLUT_EUR_ACCOUNT:
+                            try:
+                                register_revolut_expense_delta(date_str, previous_value=val, new_value=investment_values[inv], currency=curr)
+                            except Exception as _e:
+                                print(f'Warning register_revolut_expense_delta: {_e}')
                         cursor.execute('''
-                        INSERT OR REPLACE INTO investments (date, investment, currency, value)
-                        VALUES (?, ?, ?, ?)
+                            INSERT OR REPLACE INTO investments (date, investment, currency, value)
+                            VALUES (?, ?, ?, ?)
                         ''', (date_str, inv, curr, investment_values[inv]))
                     else:
-                        # Copy over other investments with previous values
                         cursor.execute('''
-                        INSERT OR REPLACE INTO investments (date, investment, currency, value)
-                        VALUES (?, ?, ?, ?)
+                            INSERT OR REPLACE INTO investments (date, investment, currency, value)
+                            VALUES (?, ?, ?, ?)
                         ''', (date_str, inv, curr, val))
-                
-                # Add any investments in our values that weren't in previous entries
+
+                # Insert any brand new investments present in this bulk set
                 for inv, val in investment_values.items():
                     cursor.execute(
                         "SELECT COUNT(*) FROM investments WHERE date = ? AND investment = ?",
                         (date_str, inv)
                     )
                     if cursor.fetchone()[0] == 0:
-                        # This investment wasn't in previous entries
-                        currency = INVESTMENT_ACCOUNTS.get(inv, 'USD')
+                        curr = INVESTMENT_ACCOUNTS.get(inv, 'USD')
                         cursor.execute('''
+                            INSERT INTO investments (date, investment, currency, value)
+                            VALUES (?, ?, ?, ?)
+                        ''', (date_str, inv, curr, val))
+            else:
+                # No previous data at all: just insert the provided set
+                for inv, val in investment_values.items():
+                    curr = INVESTMENT_ACCOUNTS.get(inv, 'USD')
+                    cursor.execute('''
                         INSERT INTO investments (date, investment, currency, value)
                         VALUES (?, ?, ?, ?)
-                        ''', (date_str, inv, currency, val))
-            else:
-                # No previous entries, add all investments
-                for inv, val in investment_values.items():
-                    currency = INVESTMENT_ACCOUNTS.get(inv, 'USD')
-                    cursor.execute('''
-                    INSERT INTO investments (date, investment, currency, value)
-                    VALUES (?, ?, ?, ?)
-                    ''', (date_str, inv, currency, val))
+                    ''', (date_str, inv, curr, val))
         else:
-            # Entries exist for this date, update each investment
+            # Entries exist today: update/insert each of the provided values
             for inv, val in investment_values.items():
+                prev_today_value = None
+                if inv == REVOLUT_EUR_ACCOUNT:
+                    cursor.execute(
+                        "SELECT value FROM investments WHERE date = ? AND investment = ?",
+                        (date_str, inv)
+                    )
+                    row = cursor.fetchone()
+                    prev_today_value = row[0] if row else None
+
                 cursor.execute(
                     "SELECT COUNT(*) FROM investments WHERE date = ? AND investment = ?",
                     (date_str, inv)
                 )
                 if cursor.fetchone()[0] == 0:
-                    # Investment doesn't exist for this date, add it
-                    currency = INVESTMENT_ACCOUNTS.get(inv, 'USD')
+                    curr = INVESTMENT_ACCOUNTS.get(inv, 'USD')
                     cursor.execute('''
-                    INSERT INTO investments (date, investment, currency, value)
-                    VALUES (?, ?, ?, ?)
-                    ''', (date_str, inv, currency, val))
+                        INSERT INTO investments (date, investment, currency, value)
+                        VALUES (?, ?, ?, ?)
+                    ''', (date_str, inv, curr, val))
                 else:
-                    # Investment exists, update it
                     cursor.execute('''
-                    UPDATE investments 
-                    SET value = ?
-                    WHERE date = ? AND investment = ?
+                        UPDATE investments
+                        SET value = ?
+                        WHERE date = ? AND investment = ?
                     ''', (val, date_str, inv))
-        
+
+                if inv == REVOLUT_EUR_ACCOUNT:
+                    try:
+                        curr = INVESTMENT_ACCOUNTS.get(inv, 'EUR')
+                        register_revolut_expense_delta(date_str, previous_value=prev_today_value, new_value=val, currency=curr)
+                    except Exception as _e:
+                        print(f'Warning register_revolut_expense_delta: {_e}')
+
         conn.commit()
+
+        # Recompute income for the date and delta
+        try:
+            recalc_total_income_for_date(date_str)
+        except Exception as _e:
+            print(f'Warning recalc_total_income_for_date: {_e}')
+
         conn.close()
         return True
     except Exception as e:
         print(f"Error adding bulk entries to database: {e}")
         return False
+
 # data_handler_db.py (Part 6: Historical Performance Methods)
 def get_historical_performance(df, start_date, end_date):
     """
@@ -533,11 +599,12 @@ def get_historical_performance(df, start_date, end_date):
 def get_historical_performance_db(start_date, end_date):
     """
     Get historical performance data directly from the database.
-    
+    Optimized with vectorized currency conversion.
+
     Args:
         start_date (datetime): Start date for performance analysis
         end_date (datetime): End date for performance analysis
-        
+
     Returns:
         pandas.DataFrame: Performance data for the specified date range
     """
@@ -547,41 +614,37 @@ def get_historical_performance_db(start_date, end_date):
             start_date_str = start_date.strftime('%Y-%m-%d')
         else:
             start_date_str = pd.Timestamp(start_date).strftime('%Y-%m-%d')
-            
+
         if isinstance(end_date, datetime):
             end_date_str = end_date.strftime('%Y-%m-%d')
         else:
             end_date_str = pd.Timestamp(end_date).strftime('%Y-%m-%d')
-        
+
         # Connect to database
         conn = sqlite3.connect(DB_FILE)
-        
+
         # Query data for the date range
         query = """
-        SELECT date, investment, currency, value 
-        FROM investments 
+        SELECT date, investment, currency, value
+        FROM investments
         WHERE date >= ? AND date <= ?
         """
-        
-        df = pd.read_sql_query(query, conn, params=(start_date_str, end_date_str))
+
+        df = pd.read_sql_query(query, conn, params=(start_date_str, end_date_str), parse_dates=['date'])
         conn.close()
-        
+
         if df.empty:
             return pd.DataFrame()
-        
+
         # Rename columns to match expected format
-        df.rename(columns={'date': 'Date', 'investment': 'Investment', 
+        df.rename(columns={'date': 'Date', 'investment': 'Investment',
                            'currency': 'Currency', 'value': 'Value'}, inplace=True)
-        
-        # Convert date column to datetime
-        df['Date'] = pd.to_datetime(df['Date'])
-        
-        # Add USD values
-        df['ValueUSD'] = df.apply(
-            lambda row: row['Value'] * get_conversion_rate(row['Currency']), 
-            axis=1
-        )
-        
+
+        # Optimized: vectorized USD conversion using unique currencies
+        unique_currencies = df['Currency'].unique()
+        conversion_rates = {curr: get_conversion_rate(curr) for curr in unique_currencies}
+        df['ValueUSD'] = df['Value'] * df['Currency'].map(conversion_rates)
+
         return df
     except Exception as e:
         print(f"Error getting historical performance from database: {e}")
@@ -712,23 +775,107 @@ def get_relative_performance(df, start_date, end_date, reference_investment, com
 
 def get_relative_performance_db(start_date, end_date, reference_investment, comparison_investments):
     """
-    Calculate relative performance directly from the database.
-    
-    Args:
-        start_date (datetime): Start date for performance comparison
-        end_date (datetime): End date for performance comparison
-        reference_investment (str): Name of the reference investment
-        comparison_investments (list): List of investments to compare
-        
-    Returns:
-        pandas.DataFrame: Relative performance data for plotting
+    Calculate cumulative relative performance anchored to the first visible day of the chart.
+
+    For each investment:
+      1) Find the last known value on or before start_date (anchor).
+      2) Forward-fill across business days so each series has a value for every date.
+      3) Compute PctChange = (Value / Anchor - 1) * 100  (cumulative from chart start).
+      4) Compute RelativePct = PctChange - Reference.PctChange.
+
+    Returns a DataFrame with columns: Date, Investment, Value (USD), PctChange, RelativePct.
     """
-    # Get historical data from database
-    df = get_historical_performance_db(start_date, end_date)
-    
-    # Use existing function with the DataFrame
-    return get_relative_performance(df, start_date, end_date, reference_investment, comparison_investments)
-# data_handler_db.py (Part 8: Previous Values Methods)
+    if not comparison_investments:
+        return pd.DataFrame()
+
+    # Ensure the reference is included
+    all_investments = sorted(set([reference_investment] + list(comparison_investments)))
+
+    # Business-day index for the visible window
+    date_index = pd.date_range(start=start_date, end=end_date, freq="B")
+
+    # Extend window slightly backwards to improve the chance of an anchor
+    lookback_start = (pd.to_datetime(start_date) - pd.Timedelta(days=30)).strftime("%Y-%m-%d")
+    end_str        = pd.to_datetime(end_date).strftime("%Y-%m-%d")
+
+    # Pull raw rows for the comparison set across the lookback..end window
+    conn = sqlite3.connect(DB_FILE)
+    q = f"""
+        SELECT date as Date, investment as Investment, currency as Currency, value as Value
+        FROM investments
+        WHERE investment IN ({",".join(["?"]*len(all_investments))})
+          AND date BETWEEN ? AND ?
+        ORDER BY date
+    """
+    params = all_investments + [lookback_start, end_str]
+    raw = pd.read_sql_query(q, conn, params=params, parse_dates=["Date"])
+    conn.close()
+
+    if raw.empty:
+        return pd.DataFrame()
+
+    # Convert to USD for consistent comparison
+    raw["ValueUSD"] = raw.apply(lambda r: r["Value"] * get_conversion_rate(r["Currency"]), axis=1)
+
+    # Build continuous business-day series per investment with forward-fill
+    series_dict = {}
+    start_anchors = {}
+
+    for inv in all_investments:
+        sub = raw[raw["Investment"] == inv].copy()
+        if sub.empty:
+            continue
+
+        # Reindex to business days covering the pulled window
+        full_idx_start = raw["Date"].min()
+        full_idx = pd.date_range(start=full_idx_start, end=end_date, freq="B")
+        s = sub.set_index("Date")["ValueUSD"].reindex(full_idx).ffill()
+
+        # Determine anchor at/before start_date
+        try:
+            anchor = s.loc[:pd.to_datetime(start_date)].iloc[-1]
+        except Exception:
+            # No value at or before start_date; skip this investment
+            continue
+
+        start_anchors[inv] = anchor
+
+        # Restrict to visible window and forward-fill within it
+        s = s.reindex(date_index).ffill()
+
+        series_dict[inv] = s
+
+    # Must have the reference and at least one series
+    if reference_investment not in series_dict or len(series_dict) == 0:
+        return pd.DataFrame()
+
+    ref_anchor = start_anchors.get(reference_investment)
+    ref_series = series_dict.get(reference_investment)
+    if ref_anchor is None or ref_series is None:
+        return pd.DataFrame()
+
+    ref_pct = (ref_series / ref_anchor - 1.0) * 100.0
+
+    # Build output
+    rows = []
+    for inv, s in series_dict.items():
+        anchor = start_anchors.get(inv)
+        if anchor is None:
+            continue
+        pct = (s / anchor - 1.0) * 100.0
+        rel = pct - ref_pct
+        for d in date_index:
+            rows.append({
+                "Date": d,
+                "Investment": inv,
+                "Value": float(s.loc[d]) if pd.notna(s.loc[d]) else None,   # USD
+                "PctChange": float(pct.loc[d]) if pd.notna(pct.loc[d]) else None,
+                "RelativePct": float(rel.loc[d]) if pd.notna(rel.loc[d]) else None,
+            })
+
+    out = pd.DataFrame(rows).sort_values(["Date", "Investment"])
+    return out
+
 def get_previous_values(df):
     """
     For each investment in the most recent date, find the previous value
@@ -877,9 +1024,10 @@ def get_previous_values_db():
         # Process the results using vectorized operations instead of row-by-row processing
         # Create a copy to avoid pandas SettingWithCopyWarning
         result_df = df.copy()
-        
-        # Add USD conversion for all values at once
-        conversion_rates = {row['Currency']: get_conversion_rate(row['Currency']) for _, row in result_df.iterrows()}
+
+        # Add USD conversion for all values at once - optimized to get unique currencies only
+        unique_currencies = result_df['Currency'].unique()
+        conversion_rates = {curr: get_conversion_rate(curr) for curr in unique_currencies}
         result_df['rate'] = result_df['Currency'].map(conversion_rates)
         
         # Calculate USD values
@@ -996,12 +1144,11 @@ def get_investment_history_db(investment):
         
         # Add Investment column
         df['Investment'] = investment
-        
-        # Add USD values
-        df['ValueUSD'] = df.apply(
-            lambda row: row['value'] * get_conversion_rate(row['currency']), 
-            axis=1
-        )
+
+        # Add USD values - optimized vectorized conversion
+        unique_currencies = df['currency'].unique()
+        conversion_rates = {curr: get_conversion_rate(curr) for curr in unique_currencies}
+        df['ValueUSD'] = df['value'] * df['currency'].map(conversion_rates)
         
         # Rename remaining columns to match expected format
         df.rename(columns={'currency': 'Currency', 'value': 'Value'}, inplace=True)
@@ -1084,12 +1231,11 @@ def get_portfolio_snapshot_db(date=None):
             
         # Add Date column
         df['Date'] = pd.to_datetime(date_str)
-        
-        # Add USD values
-        df['ValueUSD'] = df.apply(
-            lambda row: row['value'] * get_conversion_rate(row['currency']), 
-            axis=1
-        )
+
+        # Add USD values - optimized vectorized conversion
+        unique_currencies = df['currency'].unique()
+        conversion_rates = {curr: get_conversion_rate(curr) for curr in unique_currencies}
+        df['ValueUSD'] = df['value'] * df['currency'].map(conversion_rates)
         
         # Rename columns to match expected format
         df.rename(columns={'investment': 'Investment', 'currency': 'Currency', 'value': 'Value'}, inplace=True)
@@ -1341,3 +1487,280 @@ def get_benchmark_comparison_db(benchmark_name, start_date, end_date):
     
     # Use the regular function with the retrieved data
     return get_benchmark_comparison(df, benchmark_name, start_date, end_date)
+# ===================== Sustainability Tracking (New) =====================
+
+def _ensure_sustainability_table(conn):
+    """Ensure the sustainability_daily table exists."""
+    c = conn.cursor()
+    c.execute("""
+    CREATE TABLE IF NOT EXISTS sustainability_daily (
+        date TEXT PRIMARY KEY,
+        total_income_usd REAL NOT NULL DEFAULT 0,
+        total_expenses_usd REAL NOT NULL DEFAULT 0,
+        delta_usd REAL NOT NULL DEFAULT 0,
+        created_at TEXT DEFAULT (datetime('now')),
+        updated_at TEXT DEFAULT (datetime('now'))
+    )
+    """)
+    c.execute('CREATE INDEX IF NOT EXISTS idx_sust_date ON sustainability_daily(date)')
+    conn.commit()
+
+def _ensure_sustainability_row(conn, date_str):
+    """Insert a row for the date if it doesn't exist."""
+    _ensure_sustainability_table(conn)
+    cur = conn.cursor()
+    cur.execute("SELECT COUNT(*) FROM sustainability_daily WHERE date = ?", (date_str,))
+    if cur.fetchone()[0] == 0:
+        cur.execute("""
+            INSERT INTO sustainability_daily (date, total_income_usd, total_expenses_usd, delta_usd)
+            VALUES (?, 0, 0, 0)
+        """, (date_str,))
+        conn.commit()
+
+def _update_delta(conn, date_str):
+    """Recompute delta = income - expenses for the date."""
+    cur = conn.cursor()
+    cur.execute("""
+        UPDATE sustainability_daily
+        SET delta_usd = ROUND(COALESCE(total_income_usd,0) - COALESCE(total_expenses_usd,0), 10),
+            updated_at = datetime('now')
+        WHERE date = ?
+    """, (date_str,))
+    conn.commit()
+
+def recalc_total_income_for_date(date):
+    """
+    Compute total income for the given date as the sum of per-account changes
+    (current - previous), converted to USD.
+
+    Rules:
+    - All accounts contribute their (curr - prev) delta.
+    - Revolut - EUR:
+        * If INCLUDE_REVOLUT_IN_INCOME == True: include only *positive* delta.
+        * Otherwise: exclude completely from income.
+    - Expenses for Revolut decreases are still handled separately by
+      register_revolut_expense_delta (intra-day) or backfill approximation.
+    """
+    try:
+        # Normalize date
+        if isinstance(date, datetime):
+            date_str = date.strftime('%Y-%m-%d')
+        else:
+            date_str = pd.Timestamp(date).strftime('%Y-%m-%d')
+
+        conn = sqlite3.connect(DB_FILE)
+        _ensure_sustainability_row(conn, date_str)
+        cur = conn.cursor()
+
+        # For each investment on this date (including Revolut), find its previous value
+        query = """
+        WITH Current AS (
+            SELECT investment, currency, value
+            FROM investments
+            WHERE date = ?
+        ),
+        Prev AS (
+            SELECT c.investment,
+                   (
+                       SELECT value
+                       FROM investments p
+                       WHERE p.investment = c.investment
+                         AND p.date < ?
+                       ORDER BY p.date DESC
+                       LIMIT 1
+                   ) AS prev_value
+            FROM Current c
+        )
+        SELECT c.investment, c.currency, c.value AS curr_value, p.prev_value
+        FROM Current c
+        LEFT JOIN Prev p ON p.investment = c.investment
+        """
+        rows = cur.execute(query, (date_str, date_str)).fetchall()
+
+        total_income_usd = 0.0
+        for inv, curr, curr_val, prev_val in rows:
+            if prev_val is None:
+                delta = 0.0
+            else:
+                delta = float(curr_val) - float(prev_val)
+
+            # Revolut handling
+            if inv == REVOLUT_EUR_ACCOUNT:
+                if INCLUDE_REVOLUT_IN_INCOME:
+                    # Only add positive delta; ignore negative (those go to expenses elsewhere)
+                    if delta <= 0:
+                        delta = 0.0
+                else:
+                    # Do not include Revolut in Income at all
+                    delta = 0.0
+
+            rate = float(get_conversion_rate(curr))
+            total_income_usd += delta * rate
+
+        cur.execute("""
+            UPDATE sustainability_daily
+            SET total_income_usd = ?, updated_at = datetime('now')
+            WHERE date = ?
+        """, (total_income_usd, date_str))
+        conn.commit()
+        _update_delta(conn, date_str)
+        conn.close()
+        return True
+    except Exception as e:
+        print(f"Error in recalc_total_income_for_date: {e}")
+        return False
+
+
+def register_revolut_expense_delta(date, previous_value, new_value, currency='EUR'):
+    """
+    For Revolut - EUR intra-day updates: if value decreased, accumulate the difference
+    into total_expenses_usd for the given date. Increases are ignored.
+    """
+    try:
+        if isinstance(date, datetime):
+            date_str = date.strftime('%Y-%m-%d')
+        else:
+            date_str = pd.Timestamp(date).strftime('%Y-%m-%d')
+        conn = sqlite3.connect(DB_FILE)
+        _ensure_sustainability_row(conn, date_str)
+        diff = 0.0
+        if previous_value is not None and new_value is not None:
+            if float(new_value) < float(previous_value):
+                diff = float(previous_value) - float(new_value)
+        if diff > 0:
+            usd = diff * float(get_conversion_rate(currency))
+            cur = conn.cursor()
+            cur.execute("""
+                UPDATE sustainability_daily
+                SET total_expenses_usd = COALESCE(total_expenses_usd,0) + ?,
+                    updated_at = datetime('now')
+                WHERE date = ?
+            """, (usd, date_str))
+            conn.commit()
+            _update_delta(conn, date_str)
+        conn.close()
+        return True
+    except Exception as e:
+        print(f"Error in register_revolut_expense_delta: {e}")
+        return False
+
+def get_sustainability_history_db(start_date, end_date):
+    """
+    Return a DataFrame with sustainability_daily rows between the dates inclusive.
+    """
+    try:
+        if isinstance(start_date, datetime):
+            start_str = start_date.strftime('%Y-%m-%d')
+        else:
+            start_str = pd.Timestamp(start_date).strftime('%Y-%m-%d')
+        if isinstance(end_date, datetime):
+            end_str = end_date.strftime('%Y-%m-%d')
+        else:
+            end_str = pd.Timestamp(end_date).strftime('%Y-%m-%d')
+        conn = sqlite3.connect(DB_FILE)
+        _ensure_sustainability_table(conn)
+        df = pd.read_sql_query(
+            """
+            SELECT date AS Date,
+                   total_income_usd AS TotalIncomeUSD,
+                   total_expenses_usd AS TotalExpensesUSD,
+                   delta_usd AS DeltaUSD
+            FROM sustainability_daily
+            WHERE date >= ? AND date <= ?
+            ORDER BY date
+            """,
+            conn,
+            params=(start_str, end_str)
+        )
+        conn.close()
+        if not df.empty:
+            df['Date'] = pd.to_datetime(df['Date'])
+        return df
+    except Exception as e:
+        print(f"Error in get_sustainability_history_db: {e}")
+        return pd.DataFrame()
+# ===================== Sustainability Backfill (New) =====================
+
+def backfill_sustainability():
+    """
+    Populate sustainability_daily for all existing investment history.
+
+    Expenses (approx): max(prev_revolut - curr_revolut, 0).
+    Income: sum of daily account deltas; Revolut contribution depends on
+            INCLUDE_REVOLUT_IN_INCOME (only positive delta if True, else excluded).
+    Delta = Income - Expenses.
+    """
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        _ensure_sustainability_table(conn)
+        cur = conn.cursor()
+
+        # Get all distinct dates ordered
+        dates = [row[0] for row in cur.execute("SELECT DISTINCT date FROM investments ORDER BY date").fetchall()]
+        if not dates:
+            print("No investment history to backfill.")
+            conn.close()
+            return False
+
+        for i, d in enumerate(dates):
+            _ensure_sustainability_row(conn, d)
+
+            # Revolut current and previous
+            cur.execute("SELECT value, currency FROM investments WHERE date = ? AND investment = ?", (d, REVOLUT_EUR_ACCOUNT))
+            row = cur.fetchone()
+            curr_revolut = float(row[0]) if row else None
+            revolut_curr = row[1] if row else "EUR"
+
+            prev_revolut = None
+            if i > 0:
+                cur.execute("SELECT value FROM investments WHERE date = ? AND investment = ?", (dates[i-1], REVOLUT_EUR_ACCOUNT))
+                row = cur.fetchone()
+                prev_revolut = float(row[0]) if row else None
+
+            # Expenses approximation (daily outflow)
+            expenses_usd = 0.0
+            if prev_revolut is not None and curr_revolut is not None and curr_revolut < prev_revolut:
+                expenses_usd = (prev_revolut - curr_revolut) * float(get_conversion_rate(revolut_curr))
+
+            # Income: sum of all account deltas; handle Revolut by flag
+            income_usd = 0.0
+            cur.execute("SELECT investment, currency, value FROM investments WHERE date = ?", (d,))
+            curr_invs = {inv: (curr, float(val)) for inv, curr, val in cur.fetchall()}
+            if i > 0:
+                cur.execute("SELECT investment, value FROM investments WHERE date = ?", (dates[i-1],))
+                prev_invs = {inv: float(val) for inv, val in cur.fetchall()}
+            else:
+                prev_invs = {}
+
+            for inv, (curr, val) in curr_invs.items():
+                prev_val = prev_invs.get(inv)
+                if prev_val is None:
+                    continue
+                delta = val - prev_val
+
+                if inv == REVOLUT_EUR_ACCOUNT:
+                    if INCLUDE_REVOLUT_IN_INCOME:
+                        if delta <= 0:
+                            delta = 0.0  # only increases
+                    else:
+                        delta = 0.0  # exclude Revolut entirely from income
+
+                rate = float(get_conversion_rate(curr))
+                income_usd += delta * rate
+
+            delta_usd = income_usd - expenses_usd
+
+            cur.execute("""
+                INSERT OR REPLACE INTO sustainability_daily
+                (date, total_income_usd, total_expenses_usd, delta_usd, updated_at)
+                VALUES (?, ?, ?, ?, datetime('now'))
+            """, (d, income_usd, expenses_usd, delta_usd))
+
+        conn.commit()
+        conn.close()
+        print("Backfill complete.")
+        return True
+    except Exception as e:
+        print(f"Error in backfill_sustainability: {e}")
+        return False
+

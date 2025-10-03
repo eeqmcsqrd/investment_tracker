@@ -1,15 +1,25 @@
 # config.py
 import os
-from dotenv import load_dotenv
+try:
+    # Optional dependency; avoid hard-failing if not installed
+    from dotenv import load_dotenv  # type: ignore
+except Exception:
+    load_dotenv = None
 
-# Load environment variables from .env file
-load_dotenv()
+# Load environment variables from .env file if python-dotenv is available
+if load_dotenv:
+    try:
+        load_dotenv()
+    except Exception:
+        # Swallow any dotenv loading issues; environment vars may still be set by the OS
+        pass
 
 # API key for ExchangeRate API (v6)
 API_KEY = os.getenv('API_KEY', '')  # Fallback to empty string if not found
 
 # Cache duration for exchange rates (24 hours in seconds)
 CACHE_DURATION = int(os.getenv('CACHE_DURATION', 86400))
+
 
 # Ensure all keys are strings
 INVESTMENT_ACCOUNTS = {str(k): v for k, v in {
@@ -38,6 +48,14 @@ INVESTMENT_ACCOUNTS = {str(k): v for k, v in {
     "Talisman Wallet": "USD",
     # Add any additional accounts here
 }.items()}
+
+# Sustainability / Revolut constants
+REVOLUT_EUR_ACCOUNT = "Revolut - EUR"
+ENABLE_SUSTAINABILITY = True
+SUSTAINABILITY_BASE_CURRENCY = "USD"
+
+# Include Revolut *increases* as Income (decreases still counted as Expenses)
+INCLUDE_REVOLUT_IN_INCOME = True
 
 # Investment categories for grouping and visualization
 INVESTMENT_CATEGORIES = {str(k): v for k, v in {

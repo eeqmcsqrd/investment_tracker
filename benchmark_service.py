@@ -16,7 +16,8 @@ DEFAULT_CACHE_DURATION = 86400
 
 # Define standard benchmarks and their symbols
 STANDARD_BENCHMARKS = {
-    'S&P 500': '^GSPC',
+    'S&P 500': '^GSPC',                 # price index (no dividends)
+    'S&P 500 (Total Return)': '^SP500TR',  # includes dividends
     'NASDAQ Composite': '^IXIC',
     'Dow Jones': '^DJI',
     'Russell 2000': '^RUT',
@@ -25,30 +26,43 @@ STANDARD_BENCHMARKS = {
     'Nikkei 225': '^N225',
     'Bitcoin': 'BTC-USD',
     'Gold': 'GC=F',
-    '10-Yr Treasury Yield': '^TNX'
+    '10-Yr Treasury Yield': '^TNX'      # note: yield level, not a return series
 }
+
 
 from json import JSONDecodeError
 
+_cache_memory = None  # In-memory cache to avoid repeated disk reads
+
 def load_cache() -> dict:
     """
-    Safely load the benchmark-data cache from disk.
+    Safely load the benchmark-data cache from disk with in-memory caching.
     If the file is missing *or* corrupt we return a fresh, empty structure
     instead of propagating the JSONDecodeError.
     """
+    global _cache_memory
+
+    # Return from memory if already loaded
+    if _cache_memory is not None:
+        return _cache_memory
+
     if not os.path.exists(BENCHMARKS_CACHE_FILE):
-        return {"benchmarks": {}, "timestamp": 0}
+        _cache_memory = {"benchmarks": {}, "timestamp": 0}
+        return _cache_memory
 
     try:
         with open(BENCHMARKS_CACHE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            _cache_memory = json.load(f)
+            return _cache_memory
     except JSONDecodeError:
         # Corrupted file – start over and avoid repeating the same console error
         print("⚠️  benchmarks_cache.json was corrupt – recreating from scratch")
-        return {"benchmarks": {}, "timestamp": 0}
+        _cache_memory = {"benchmarks": {}, "timestamp": 0}
+        return _cache_memory
     except Exception as exc:
         print(f"Error loading benchmark cache: {exc}")
-        return {"benchmarks": {}, "timestamp": 0}
+        _cache_memory = {"benchmarks": {}, "timestamp": 0}
+        return _cache_memory
 
 
 def save_cache(cache: dict) -> None:
@@ -59,99 +73,158 @@ def save_cache(cache: dict) -> None:
       `default=str` hook.
     * We also pretty-print (`indent=2`) so a half-written file is easier to spot.
     """
+    global _cache_memory
     try:
         with open(BENCHMARKS_CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump(cache, f, default=str, indent=2, ensure_ascii=False)
+        _cache_memory = cache  # Update in-memory cache
     except Exception as exc:
         print(f"Error saving benchmark cache: {exc}")
 
 
 def fetch_benchmark_data(symbol, start_date, end_date, api_key=None):
     """
-    Fetch historical benchmark data from a financial API.
-    In a production app, you would use a service like Alpha Vantage, Yahoo Finance, etc.
-    
-    For demo purposes without requiring an actual API key, this function returns simulated data.
-    
-    Args:
-        symbol (str): Benchmark symbol (e.g., '^GSPC' for S&P 500)
-        start_date (datetime): Start date for data
-        end_date (datetime): End date for data
-        api_key (str, optional): API key for the data service
-        
-    Returns:
-        pandas.DataFrame: Historical data for the benchmark
+    Fetch daily closes from Yahoo Finance's 'chart' endpoint and cache them.
+    Robust to rate-limiting (429) via throttling + exponential backoff.
+    No third-party dependencies (urllib + json).
+
+    Behavior:
+    - Anchors to the first available trading day *inside* [start_date, end_date].
+    - Uses 'adjclose' when present; falls back to 'close'.
+    - Caches per symbol+window so subsequent app runs don't refetch.
     """
-    try:
-        # Convert dates to string format
-        start_str = start_date.strftime('%Y-%m-%d')
-        end_str = end_date.strftime('%Y-%m-%d')
-        
-        # For demo purposes, generate synthetic data
-        # In a real application, you would call an API here
-        
-        # Check if we have the data in cache
-        cache = load_cache()
-        cache_key = f"{symbol}_{start_str}_{end_str}"
+    import json, time, random
+    from urllib.parse import urlencode
+    from urllib.request import Request, urlopen
+    from urllib.error import HTTPError, URLError
 
-        if cache_key in cache.get('benchmarks', {}) and time.time() - cache['timestamp'] < DEFAULT_CACHE_DURATION:
-            # Return cached copy
-            cached_df = pd.DataFrame(cache['benchmarks'][cache_key])
-            cached_df['Date'] = pd.to_datetime(cached_df['Date'])
-            return cached_df
+    # Return from cache if present
+    cache = load_cache()
+    cache_key = f"{symbol}|{pd.to_datetime(start_date).date()}|{pd.to_datetime(end_date).date()}"
+    if cache and isinstance(cache, dict):
+        cached = cache.get("benchmarks", {}).get(cache_key)
+        if cached:
+            df_cached = pd.DataFrame(cached)
+            df_cached["Date"] = pd.to_datetime(df_cached["Date"])
+            return df_cached
 
-        # ------------------------------------------------------------------
-        # Generate a simple random-walk price series to fill the requested
-        # date range when we have no cached data.
-        # ------------------------------------------------------------------
-        # Business-day date index
-        date_range = pd.date_range(start=start_date, end=end_date, freq="B")
+    # Small buffer around the window to capture first/last trading day
+    p1_dt = pd.to_datetime(start_date) - pd.Timedelta(days=5)
+    p2_dt = pd.to_datetime(end_date)   + pd.Timedelta(days=2)
 
-        # Pick a plausible starting level per asset class
-        seed_levels = {
-            "BTC-USD": 30_000,
-            "GC=F": 1_800,
-            "^TNX": 2.0,
-        }
-        base_value = seed_levels.get(symbol, 3_000)   # fallback for equities
+    # Convert to unix seconds (UTC)
+    p1 = int(p1_dt.tz_localize("UTC").timestamp())
+    p2 = int(p2_dt.tz_localize("UTC").timestamp())
 
-        # Pseudo-random daily %-moves ~N(0, 1%)
-        rng = np.random.default_rng(abs(hash(symbol)) % 2**32)
-        daily_changes = rng.normal(loc=0, scale=0.01, size=len(date_range))
-        prices = base_value * (1 + daily_changes).cumprod()
+    base_url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+    params = {
+        "period1": p1,
+        "period2": p2,
+        "interval": "1d",
+        "events": "history",
+        "includeAdjustedClose": "true",
+    }
+    full_url = base_url + "?" + urlencode(params)
 
-        # Create DataFrame
-        df = pd.DataFrame(
-            {
-                "Date": date_range,
-                "Close": prices,
-            }
+    # Simple cross-run throttle to avoid 429s if multiple benchmarks are requested
+    if not hasattr(fetch_benchmark_data, "_last_req_ts"):
+        fetch_benchmark_data._last_req_ts = 0.0
+
+    def sleep_until_allowed(min_interval=2.5):
+        now = time.time()
+        wait = min_interval - (now - fetch_benchmark_data._last_req_ts)
+        if wait > 0:
+            time.sleep(wait)
+
+    attempts, max_attempts = 0, 6
+    backoff_base = 1.5  # grows 1.5^n with jitter
+
+    while attempts < max_attempts:
+        attempts += 1
+        sleep_until_allowed()
+
+        req = Request(
+            full_url,
+            headers={
+                # Some endpoints are pickier without a UA
+                "User-Agent": "Mozilla/5.0",
+                "Accept": "application/json, text/plain, */*",
+                "Connection": "close",
+            },
         )
 
+        try:
+            with urlopen(req, timeout=20) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+            fetch_benchmark_data._last_req_ts = time.time()
 
-        # ... (code to add market events) ...
+            results = payload.get("chart", {}).get("result", [])
+            if not results:
+                raise ValueError("No 'result' in Yahoo response")
 
-        # --- FIX APPLIED HERE on save: Convert Date column to string BEFORE saving ---
-        # Copy df to avoid modifying the original DataFrame returned by the function
-        df_to_cache = df.copy()
-        if 'Date' in df_to_cache.columns:
-            df_to_cache['Date'] = df_to_cache['Date'].dt.strftime('%Y-%m-%d')
+            res = results[0]
+            ts = res.get("timestamp", [])
+            inds = res.get("indicators", {})
+            adj = (inds.get("adjclose") or [{}])[0].get("adjclose")
+            close = (inds.get("quote") or [{}])[0].get("close")
 
-        # Cache the data
-        if 'benchmarks' not in cache:
-            cache['benchmarks'] = {}
+            values = adj if (isinstance(adj, list) and any(v is not None for v in adj)) else close
+            if not values or not ts:
+                raise ValueError("Missing close series or timestamps in Yahoo response")
 
-        cache['benchmarks'][cache_key] = df_to_cache.to_dict(orient='records')
-        cache['timestamp'] = time.time()
-        save_cache(cache)
+            df = pd.DataFrame({
+                "Date": pd.to_datetime(ts, unit="s", utc=True).tz_convert("America/New_York").tz_localize(None),
+                "Close": values,
+            }).dropna(subset=["Close"])
 
-        # Return the original DataFrame with Timestamp objects
-        return df
-    
-    except Exception as e:
-        print(f"Error fetching benchmark data: {e}")
-        # Return empty DataFrame in case of error
-        return pd.DataFrame(columns=['Date', 'Close'])
+            # Keep only requested window
+            df = df[(df["Date"] >= pd.to_datetime(start_date)) & (df["Date"] <= pd.to_datetime(end_date))]
+            df = df.sort_values("Date").reset_index(drop=True)
+
+            # Cache (store Date as ISO strings)
+            cache = load_cache()
+            cache.setdefault("benchmarks", {})
+            cache["benchmarks"][cache_key] = df.assign(Date=df["Date"].dt.strftime("%Y-%m-%d")).to_dict(orient="records")
+            cache["timestamp"] = time.time()
+            save_cache(cache)
+
+            return df
+
+        except HTTPError as e:
+            fetch_benchmark_data._last_req_ts = time.time()
+            # Respect Retry-After if present, otherwise backoff
+            retry_after = 0.0
+            try:
+                retry_after = float(e.headers.get("Retry-After", "0"))
+            except Exception:
+                retry_after = 0.0
+
+            if e.code == 429 and attempts < max_attempts:
+                delay = max(retry_after, (backoff_base ** attempts)) + random.uniform(0, 0.5)
+                time.sleep(delay)
+                continue  # retry
+            elif attempts < max_attempts:
+                time.sleep((backoff_base ** attempts) + random.uniform(0, 0.25))
+                continue  # retry
+            else:
+                print(f"Error fetching benchmark data for {symbol}: {e}")
+                return pd.DataFrame(columns=["Date", "Close"])
+
+        except URLError as e:
+            fetch_benchmark_data._last_req_ts = time.time()
+            if attempts < max_attempts:
+                time.sleep((backoff_base ** attempts) + random.uniform(0, 0.25))
+                continue
+            else:
+                print(f"Error fetching benchmark data for {symbol}: {e}")
+                return pd.DataFrame(columns=["Date", "Close"])
+
+        except Exception as e:
+            fetch_benchmark_data._last_req_ts = time.time()
+            print(f"Error fetching benchmark data for {symbol}: {e}")
+            return pd.DataFrame(columns=["Date", "Close"])
+
+
 
 def get_benchmark_performance(benchmark_name, start_date, end_date):
     """
@@ -224,28 +297,33 @@ def refresh_benchmark_data(start_date, end_date, benchmarks=None):
 
 def calculate_benchmark_returns(benchmark_data):
     """
-    Calculate percentage returns for benchmark data.
-    
-    Args:
-        benchmark_data (pandas.DataFrame): Benchmark data with Date and Value columns
-        
-    Returns:
-        pandas.DataFrame: Benchmark data with added returns columns
+    Add DailyReturn (%) and CumulativeReturn (%) anchored to the first available
+    trading day *inside the window* (i.e., the first non-NaN 'Value' in the frame).
+    Optimized with vectorized operations.
     """
-    if benchmark_data.empty or 'Value' not in benchmark_data.columns:
+    if benchmark_data.empty or "Value" not in benchmark_data.columns:
         return benchmark_data
-    
-    # Sort by date
-    benchmark_data = benchmark_data.sort_values('Date')
-    
-    # Calculate daily returns
-    benchmark_data['DailyReturn'] = benchmark_data['Value'].pct_change() * 100
-    
-    # Calculate cumulative returns (indexed to 100 at start)
-    first_value = benchmark_data['Value'].iloc[0]
-    benchmark_data['CumulativeReturn'] = (benchmark_data['Value'] / first_value - 1) * 100
-    
-    return benchmark_data
+
+    df = benchmark_data.copy()
+
+    # Optimize: only sort if not already sorted
+    if not df["Date"].is_monotonic_increasing:
+        df = df.sort_values("Date")
+
+    df = df.dropna(subset=["Value"])
+
+    if df.empty:
+        return benchmark_data
+
+    anchor = df["Value"].iat[0]  # iat is faster than iloc for single value
+
+    # Vectorized operations
+    values = df["Value"].values
+    df["DailyReturn"] = df["Value"].pct_change() * 100.0
+    df["CumulativeReturn"] = (values / anchor - 1.0) * 100.0
+
+    return df
+
 
 # Example usage:
 # start_date = datetime(2022, 1, 1)

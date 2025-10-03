@@ -1,0 +1,47 @@
+# Environment and secrets
+.env
+*.env
+.streamlit/secrets.toml
+
+# Data files (sync separately for security)
+investment_data.db
+investment_data.csv
+backups/
+benchmarks_cache.json
+*.backup_*
+
+# Snapshots (optional - exclude if contains sensitive data)
+db_snapshot.json
+temp_local_snapshot.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log

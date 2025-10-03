@@ -103,14 +103,16 @@ def create_benchmark_comparison_chart(portfolio_returns, benchmark_returns, benc
         # Add zero line
         fig.add_hline(y=0, line_dash="dash", line_color="white", opacity=0.5)
         
-        # Apply styling
+        # Apply styling with smart date formatting
+        date_range = (chart_df['Date'].min(), chart_df['Date'].max())
         apply_chart_styling(
-            fig, 
+            fig,
             height=400,
             x_title="Date",
             y_title="Cumulative Return (%)",
-            margin=dict(l=20, r=20, t=50, b=50),
-            hovermode="x unified"
+            margin=dict(l=20, r=20, t=50, b=100),
+            hovermode="x unified",
+            date_range=date_range
         )
         
         # Add custom hover template
@@ -164,14 +166,16 @@ def create_benchmark_comparison_chart(portfolio_returns, benchmark_returns, benc
         # Add initial investment line
         fig.add_hline(y=initial_investment, line_dash="dash", line_color="white", opacity=0.5)
         
-        # Apply styling
+        # Apply styling with smart date formatting
+        date_range = (growth_df['Date'].min(), growth_df['Date'].max())
         apply_chart_styling(
-            fig, 
+            fig,
             height=400,
             x_title="Date",
             y_title="Value ($)",
-            margin=dict(l=20, r=20, t=50, b=50),
-            hovermode="x unified"
+            margin=dict(l=20, r=20, t=50, b=100),
+            hovermode="x unified",
+            date_range=date_range
         )
         
         # Add custom hover template
@@ -192,65 +196,40 @@ def create_benchmark_comparison_chart(portfolio_returns, benchmark_returns, benc
             key="periodic_returns_period"
         )
         
-        # Create periodic returns for portfolio
-        if period == "Monthly":
-            portfolio_periodic = portfolio_returns.copy()
-            portfolio_periodic['Period'] = portfolio_periodic['Date'].dt.to_period('M').dt.to_timestamp()
-        elif period == "Quarterly":
-            portfolio_periodic = portfolio_returns.copy()
-            portfolio_periodic['Period'] = portfolio_periodic['Date'].dt.to_period('Q').dt.to_timestamp()
-        else:  # Yearly
-            portfolio_periodic = portfolio_returns.copy()
-            portfolio_periodic['Period'] = portfolio_periodic['Date'].dt.to_period('Y').dt.to_timestamp()
-        
+        # Optimized: determine period conversion once
+        period_freq = {'Monthly': 'M', 'Quarterly': 'Q', 'Yearly': 'Y'}[period]
+
+        # Create periodic returns for portfolio (avoid redundant copy)
+        portfolio_periodic = portfolio_returns.copy()
+        portfolio_periodic['Period'] = portfolio_periodic['Date'].dt.to_period(period_freq).dt.to_timestamp()
+
         # Group by period
         portfolio_grouped = portfolio_periodic.groupby('Period')['Value'].last().reset_index()
         portfolio_grouped['Return'] = (
             portfolio_grouped['Value'].pct_change()
             .fillna(0) * 100        # ensures at least one bar
         )
-        
-        # Create periodic returns for benchmark
-        if period == "Monthly":
-            benchmark_periodic = benchmark_returns.copy()
-            benchmark_periodic['Period'] = benchmark_periodic['Date'].dt.to_period('M').dt.to_timestamp()
-        elif period == "Quarterly":
-            benchmark_periodic = benchmark_returns.copy()
-            benchmark_periodic['Period'] = benchmark_periodic['Date'].dt.to_period('Q').dt.to_timestamp()
-        else:  # Yearly
-            benchmark_periodic = benchmark_returns.copy()
-            benchmark_periodic['Period'] = benchmark_periodic['Date'].dt.to_period('Y').dt.to_timestamp()
-        
+
+        # Create periodic returns for benchmark (avoid redundant copy)
+        benchmark_periodic = benchmark_returns.copy()
+        benchmark_periodic['Period'] = benchmark_periodic['Date'].dt.to_period(period_freq).dt.to_timestamp()
+
         # Group by period
         benchmark_grouped = benchmark_periodic.groupby('Period')['Value'].last().reset_index()
         benchmark_grouped['Return'] = (
             benchmark_grouped['Value'].pct_change()
             .fillna(0) * 100
         )
-        
-        # Merge data
-        periodic_data = []
-        
-        # Add portfolio data
-        for _, row in portfolio_grouped.iterrows():
-            periodic_data.append({
-                'Period': row['Period'],
-                'Return (%)': row['Return'],
-                'Source': 'Your Portfolio'
-            })
 
-        
-        # Add benchmark data
-        for _, row in benchmark_grouped.iterrows():
-            periodic_data.append({
-                'Period': row['Period'],
-                'Return (%)': row['Return'],
-                'Source': benchmark_name
-            })
+        # Optimized: use concat instead of iterrows for better performance
+        portfolio_grouped['Source'] = 'Your Portfolio'
+        benchmark_grouped['Source'] = benchmark_name
 
-        
-        # Convert to DataFrame
-        periodic_df = pd.DataFrame(periodic_data)
+        # Combine data
+        portfolio_df = portfolio_grouped[['Period', 'Return', 'Source']].rename(columns={'Return': 'Return (%)'})
+        benchmark_df = benchmark_grouped[['Period', 'Return', 'Source']].rename(columns={'Return': 'Return (%)'})
+
+        periodic_df = pd.concat([portfolio_df, benchmark_df], ignore_index=True)
         
         if not periodic_df.empty:
             # Create bar chart
@@ -267,13 +246,13 @@ def create_benchmark_comparison_chart(portfolio_returns, benchmark_returns, benc
             # Add zero line
             fig.add_hline(y=0, line_dash="dash", line_color="white", opacity=0.5)
             
-            # Apply styling
+            # Apply styling (no date_range for Period-based chart)
             apply_chart_styling(
-                fig, 
+                fig,
                 height=400,
                 x_title="Period",
                 y_title="Return (%)",
-                margin=dict(l=20, r=20, t=50, b=50),
+                margin=dict(l=20, r=20, t=50, b=100),
                 hovermode="closest"
             )
             
@@ -455,14 +434,16 @@ def create_relative_strength_chart(portfolio_returns, benchmark_returns, benchma
             line=dict(width=2.5, color='#4361ee')
         )
         
-        # Apply styling
+        # Apply styling with smart date formatting
+        date_range = (rs_df['Date'].min(), rs_df['Date'].max())
         apply_chart_styling(
-            fig, 
+            fig,
             height=400,
             x_title="Date",
             y_title="Relative Strength (Base=100)",
-            margin=dict(l=20, r=20, t=50, b=50),
-            hovermode="x unified"
+            margin=dict(l=20, r=20, t=50, b=100),
+            hovermode="x unified",
+            date_range=date_range
         )
         
         # Add custom hover template
@@ -506,14 +487,16 @@ def create_relative_strength_chart(portfolio_returns, benchmark_returns, benchma
             line=dict(width=2.5)
         )
         
-        # Apply styling
+        # Apply styling with smart date formatting
+        date_range = (rs_df['Date'].min(), rs_df['Date'].max())
         apply_chart_styling(
-            fig, 
+            fig,
             height=400,
             x_title="Date",
             y_title="Normalized Value (Base=100)",
-            margin=dict(l=20, r=20, t=50, b=50),
-            hovermode="x unified"
+            margin=dict(l=20, r=20, t=50, b=100),
+            hovermode="x unified",
+            date_range=date_range
         )
         
         # Add custom hover template
@@ -617,14 +600,16 @@ def create_relative_strength_chart(portfolio_returns, benchmark_returns, benchma
         fig.add_hline(y=100, line_dash="dash", line_color="white", opacity=0.5,
                     annotation_text="Equal Performance", annotation_position="bottom right")
         
-        # Apply styling
+        # Apply styling with smart date formatting
+        date_range = (rs_df['Date'].min(), rs_df['Date'].max())
         apply_chart_styling(
-            fig, 
+            fig,
             height=400,
             x_title="Date",
             y_title="Relative Strength (Base=100)",
-            margin=dict(l=20, r=20, t=50, b=50),
-            hovermode="closest"
+            margin=dict(l=20, r=20, t=50, b=100),
+            hovermode="closest",
+            date_range=date_range
         )
         
         # Display the chart
@@ -726,14 +711,16 @@ def create_multi_benchmark_comparison(df, start_date, end_date, selected_benchma
     # Add zero line
     fig.add_hline(y=0, line_dash="dash", line_color="white", opacity=0.5)
     
-    # Apply styling
+    # Apply styling with smart date formatting
+    date_range = (chart_df['Date'].min(), chart_df['Date'].max())
     apply_chart_styling(
-        fig, 
+        fig,
         height=500,
         x_title="Date",
         y_title="Cumulative Return (%)",
-        margin=dict(l=20, r=20, t=50, b=50),
-        hovermode="x unified"
+        margin=dict(l=20, r=20, t=50, b=100),
+        hovermode="x unified",
+        date_range=date_range
     )
     
     # Add custom hover template

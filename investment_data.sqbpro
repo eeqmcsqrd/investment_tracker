@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/io/Downloads/investment_tracker/investment_data.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1004"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:maininvestments"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="investments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="35"/><column index="2" value="72"/><column index="3" value="130"/><column index="4" value="54"/><column index="5" value="64"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">WITH date_investment_grid AS (
+    -- Step 1: Create a comprehensive grid of every investment for every date.
+    SELECT
+        d.date,
+        i.investment
+    FROM
+        (SELECT DISTINCT date FROM investments) AS d,
+        (SELECT DISTINCT investment FROM investments) AS i
+),
+forward_filled_data AS (
+    -- Step 2: For each entry in the grid, find the last known value and currency by looking backward in time.
+    SELECT
+        grid.date,
+        grid.investment,
+        -- Subquery to find the most recent 'value' on or before the grid date
+        (SELECT value
+         FROM investments i2
+         WHERE i2.investment = grid.investment AND i2.date &lt;= grid.date
+         ORDER BY i2.date DESC
+         LIMIT 1) AS value,
+        -- Subquery to find the most recent 'currency' on or before the grid date
+        (SELECT currency
+         FROM investments i2
+         WHERE i2.investment = grid.investment AND i2.date &lt;= grid.date
+         ORDER BY i2.date DESC
+         LIMIT 1) AS currency
+    FROM
+        date_investment_grid AS grid
+)
+-- Step 3: Insert only the rows that are missing from the original table.
+-- The UNIQUE constraint on (date, investment) ensures that existing rows are ignored.
+INSERT OR IGNORE INTO investments (date, investment, currency, value)
+SELECT
+    date,
+    investment,
+    currency,
+    value
+FROM
+    forward_filled_data
+WHERE
+    value IS NOT NULL AND currency IS NOT NULL;</sql><current_tab id="0"/></tab_sql></sqlb_project>

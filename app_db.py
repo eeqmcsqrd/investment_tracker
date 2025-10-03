@@ -14,8 +14,12 @@ from data_handler_db import (
     get_relative_performance_db,
     get_previous_values_db,
     get_portfolio_snapshot_db,
-    migrate_from_csv
+    migrate_from_csv,
+    get_sustainability_history_db,
+    backfill_sustainability
 )
+
+
 from dashboard_components import (
     create_dashboard_header,
     create_themed_metrics,
@@ -37,6 +41,7 @@ import base64
 import os
 import sqlite3
 from io import BytesIO
+
 from utils import (
     svg_to_base64,
     get_icon,
@@ -232,7 +237,8 @@ This version uses a SQLite database for improved performance and reliability.
 """)
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Initialize session state for holding our application state
+# app_db.py (Part 3: Helper Functions and Page Setup)
+# ... (lines 244-250)
 if 'show_success' not in st.session_state:
     st.session_state.show_success = False
 if 'active_tab' not in st.session_state:
@@ -245,6 +251,10 @@ if 'show_loading' not in st.session_state:
     st.session_state.show_loading = True
 if 'animation_complete' not in st.session_state:
     st.session_state.animation_complete = False
+if 'start_date' not in st.session_state:
+    st.session_state.start_date = None
+if 'end_date' not in st.session_state:
+    st.session_state.end_date = None
 
 # Animated loading of data
 if st.session_state.show_loading:
@@ -285,6 +295,215 @@ investment_accounts = {str(k): v for k, v in INVESTMENT_ACCOUNTS.items()}
 # Function to reset success message
 def reset_success():
     st.session_state.show_success = False
+
+# Reusable renderer for Sustainability: Income vs Expenses vs Delta
+def render_sustainability_section(start_dt, end_dt, key_prefix="sust_dash"):
+    st.subheader("Sustainability: Income vs Expenses vs Delta")
+
+    # Resolve date bounds robustly
+    try:
+        _start_dt = pd.Timestamp(start_dt)
+        _end_dt = pd.Timestamp(end_dt)
+    except Exception:
+        _start_dt = pd.to_datetime(df["Date"].min()) if not df.empty else pd.Timestamp.today() - pd.Timedelta(days=30)
+        _end_dt = pd.to_datetime(df["Date"].max()) if not df.empty else pd.Timestamp.today()
+
+    sust_df = get_sustainability_history_db(_start_dt, _end_dt)
+    if sust_df is None or sust_df.empty:
+        st.info(f"{ICONS['info']} No sustainability data yet for this range. It will populate automatically as you add/update entries.")
+        return
+
+    # View toggles
+    col_view, col_kind = st.columns([1, 2])
+    with col_view:
+        view_mode = st.radio(
+            "View",
+            ["Daily", "Cumulative"],
+            horizontal=True,
+            key=f"{key_prefix}_view_mode"
+        )
+    with col_kind:
+        chart_kind = st.radio(
+            "Chart Type",
+            ["Line", "Area", "Bar"],
+            horizontal=True,
+            key=f"{key_prefix}_chart_type"
+        )
+
+    plot_df = sust_df.copy()
+    if view_mode == "Cumulative":
+        # Running totals over the selected range
+        plot_df["CumIncomeUSD"] = plot_df["TotalIncomeUSD"].cumsum()
+        plot_df["CumExpensesUSD"] = plot_df["TotalExpensesUSD"].cumsum()
+        plot_df["CumDeltaUSD"] = plot_df["CumIncomeUSD"] - plot_df["CumExpensesUSD"]
+
+        # Option: start curve at 0 by inserting a zero-anchor before first date
+        normalize_to_zero = st.checkbox(
+            "Start cumulative at 0 for this range",
+            value=True,
+            key=f"{key_prefix}_cum_normalize"
+        )
+        plot_df_view = plot_df.copy()
+        if normalize_to_zero and not plot_df_view.empty:
+            first_dt = pd.to_datetime(plot_df_view["Date"].iloc[0])
+            anchor_dt = first_dt - pd.Timedelta(milliseconds=1)
+            anchor = pd.DataFrame({
+                "Date": [anchor_dt],
+                "CumIncomeUSD": [0.0],
+                "CumExpensesUSD": [0.0],
+                "CumDeltaUSD": [0.0],
+                "TotalIncomeUSD": [0.0],
+                "TotalExpensesUSD": [0.0],
+                "DeltaUSD": [0.0],
+            })
+            keep_cols = [c for c in anchor.columns if c in plot_df_view.columns or c in ["Date","CumIncomeUSD","CumExpensesUSD","CumDeltaUSD"]]
+            plot_df_view = pd.concat([anchor[keep_cols], plot_df_view], ignore_index=True)
+
+        # Visual: show expenses below zero
+        plot_df_view["CumExpensesUSDNeg"] = -plot_df_view["CumExpensesUSD"]
+
+        # Choose series
+        cum_series_labels = {
+            "Income": "CumIncomeUSD",
+            "Expenses": "CumExpensesUSDNeg",
+            "Delta": "CumDeltaUSD",
+        }
+        selected_cum = st.multiselect(
+            "Show series",
+            options=list(cum_series_labels.keys()),
+            default=["Income", "Expenses", "Delta"],
+            help="Toggle any combination of Income, Expenses, and Delta for the cumulative view.",
+            key=f"{key_prefix}_series_cum",
+        )
+        if not selected_cum:
+            selected_cum = ["Income"]
+
+        ycols = [cum_series_labels[k] for k in selected_cum]
+        df_for_plot = plot_df_view
+        color_map = {
+            "CumIncomeUSD": "green",
+            "CumExpensesUSDNeg": "red",
+            "CumDeltaUSD": "yellow",
+            # daily keys also included so a single map works in both views
+            "DailyIncome": "green",
+            "DailyExpensesNeg": "red",
+            "DailyDelta": "yellow",
+        }
+
+        # Totals for the range (positive values)
+        total_income = float(plot_df["TotalIncomeUSD"].sum())
+        total_expenses = float(plot_df["TotalExpensesUSD"].sum())
+        net_total = total_income - total_expenses
+
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Total Income (range)", f"{total_income:,.2f} USD")
+        c2.metric("Total Expenses (range)", f"{total_expenses:,.2f} USD")
+        c3.metric("Net (range)", f"{net_total:,.2f} USD")
+    else:
+        # Raw daily flows
+        plot_df["DailyIncome"] = plot_df["TotalIncomeUSD"]
+        plot_df["DailyExpenses"] = plot_df["TotalExpensesUSD"]
+        plot_df["DailyDelta"] = plot_df["DailyIncome"] - plot_df["DailyExpenses"]
+        plot_df["DailyExpensesNeg"] = -plot_df["DailyExpenses"]
+
+        daily_series_labels = {
+            "Income": "DailyIncome",
+            "Expenses": "DailyExpensesNeg",
+            "Delta": "DailyDelta",
+        }
+        selected_daily = st.multiselect(
+            "Show series",
+            options=list(daily_series_labels.keys()),
+            default=["Income", "Expenses", "Delta"],
+            help="Toggle any combination of Income, Expenses, and Delta for the daily view.",
+            key=f"{key_prefix}_series_daily",
+        )
+        if not selected_daily:
+            selected_daily = ["Income"]
+
+        ycols = [daily_series_labels[k] for k in selected_daily]
+        df_for_plot = plot_df
+        color_map = {
+            "DailyIncome": "green",
+            "DailyExpensesNeg": "red",
+            "DailyDelta": "yellow",
+            # cumulative keys also included so a single map works in both views
+            "CumIncomeUSD": "green",
+            "CumExpensesUSDNeg": "red",
+            "CumDeltaUSD": "yellow",
+        }
+
+    # Build chart
+    df_for_plot = df_for_plot if "df_for_plot" in locals() else plot_df
+    labels = {"value": "USD", "Date": "Date", "variable": "Metric"}
+    if chart_kind == "Line":
+        fig_s = px.line(
+            df_for_plot, x="Date", y=ycols,
+            labels=labels, title="",
+            color_discrete_map=color_map
+        )
+        for tr in fig_s.data:
+            tr.line.width = 3
+    elif chart_kind == "Area":
+        fig_s = px.area(
+            df_for_plot, x="Date", y=ycols,
+            labels=labels, title="",
+            color_discrete_map=color_map
+        )
+    else:
+        fig_s = px.bar(
+            df_for_plot, x="Date", y=ycols, barmode="group",
+            labels=labels, title="",
+            color_discrete_map=color_map
+        )
+
+    # Apply styling with smart date formatting
+    date_range = (df_for_plot['Date'].min(), df_for_plot['Date'].max())
+    apply_chart_styling(
+        fig_s,
+        height=520,
+        x_title="Date",
+        y_title="USD",
+        margin=dict(l=20, r=20, t=50, b=100),
+        hovermode="x unified",
+        date_range=date_range
+    )
+
+    # Heavier zero line + daily separators
+    try:
+        x0 = pd.to_datetime(df_for_plot["Date"].min()).normalize()
+        x1 = pd.to_datetime(df_for_plot["Date"].max()).normalize() + pd.Timedelta(days=1) - pd.Timedelta(milliseconds=1)
+    except Exception:
+        x0, x1 = None, None
+
+    fig_s.update_yaxes(showgrid=True, gridwidth=0.5, zeroline=True, zerolinewidth=3)
+    fig_s.update_xaxes(showgrid=True, gridwidth=0.5, dtick="D1", tick0=x0, range=[x0, x1] if x0 and x1 else None)
+    fig_s.update_layout(legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5))
+
+    st.plotly_chart(fig_s, use_container_width=True, key=f"{key_prefix}_plot")
+
+    # Reconciliation note
+    try:
+        if view_mode == "Cumulative":
+            base = plot_df.iloc[-1]
+            st.caption(
+                f"**Reconciliation (Cumulative, last date {base['Date'].date()}):** "
+                f"Income={base['CumIncomeUSD']:,.2f} USD, "
+                f"Expenses={base['CumExpensesUSD']:,.2f} USD, "
+                f"Delta={base['CumDeltaUSD']:,.2f} USD "
+                f"(should equal the range totals above)"
+            )
+        else:
+            base = plot_df.iloc[-1]
+            st.caption(
+                f"**Reconciliation (Daily, {base['Date'].date()}):** "
+                f"Income={base['DailyIncome']:,.2f} USD, "
+                f"Expenses={base['DailyExpenses']:,.2f} USD, "
+                f"Delta={base['DailyDelta']:,.2f} USD "
+                f"(Delta = Income − Expenses for that day)"
+            )
+    except Exception:
+        pass
     
 # app_db.py (Part 4: Sidebar - Single Entry)
 # Sidebar: Data Entry Section
@@ -300,10 +519,54 @@ with st.sidebar:
         horizontal=True  # Make radio buttons horizontal for better UX
     )
     st.markdown('</div>', unsafe_allow_html=True)
+    
+    st.markdown("---")
+    st.header("Global Time Range")
+
+    # Date range filters with improved UI
+    if not df.empty:
+        # Add preset date ranges for quick selection
+        preset_ranges = st.radio(
+            "Preset Ranges",
+            ["Custom", "1 Month", "3 Months", "6 Months", "1 Year", "YTD", "All Time"],
+            horizontal=True,
+            key="global_preset_date_range"
+        )
+        
+        # Use utility function to get date range based on preset
+        if preset_ranges == "Custom":
+            performance_cols = st.columns(2)
+            with performance_cols[0]:
+                start_date_input = st.date_input(
+                    "From Date",
+                    value=earliest_date,
+                    min_value=earliest_date,
+                    max_value=latest_date,
+                    key="global_start"
+                )
+            with performance_cols[1]:
+                end_date_input = st.date_input(
+                    "To Date",
+                    value=latest_date,
+                    min_value=earliest_date,
+                    max_value=latest_date,
+                    key="global_end"
+                )
+            st.session_state.start_date = start_date_input
+            st.session_state.end_date = end_date_input
+        else:
+            # Use our utility function to get date range based on preset
+            start_date, end_date = get_date_range(preset_ranges, latest_date, earliest_date)
+            st.session_state.start_date = start_date
+            st.session_state.end_date = end_date
+            st.info(f"{ICONS['info']} Range: {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}")
+    else:
+        st.session_state.start_date = datetime.now().date() - timedelta(days=30)
+        st.session_state.end_date = datetime.now().date()
+
         # Add theme mode toggle
     st.markdown("---")
     apply_theme_mode_toggle()
-    st.markdown("---")
     
     if entry_tab == "Single Entry":
         # Single entry form with animations
@@ -341,10 +604,19 @@ with st.sidebar:
         
         # Get currency from the investment name for better UX
         currency = investment_accounts.get(investment_name, "USD")
-        
+
+        # Find the latest value for the selected investment to use as a default
+        default_value = 0.0
+        if not latest_df.empty and investment_name:
+            investment_latest_data = latest_df[latest_df['Investment'] == investment_name]
+            if not investment_latest_data.empty:
+                # Use the value in its original currency, not the USD value
+                default_value = float(investment_latest_data.iloc[0]['Value'])
+
         investment_value = st.number_input(
-            f"Value ({currency})", 
-            min_value=0.0, 
+            f"Value ({currency})",
+            min_value=0.0,
+            value=default_value,  # Pre-populate with the latest value
             format="%.2f",
             key="single_value"
         )
@@ -528,10 +800,11 @@ if st.session_state.show_success:
     st.session_state.show_success = False
 
 # Main content - Tabbed interface with icons and animations
-tab1, tab2, tab3, tab4 = st.tabs([
-    f"# {ICONS['dashboard']} Dashboard", 
-    f"# {ICONS['performance']} Performance", 
-    f"# {ICONS['data']} Data", 
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    f"# {ICONS['dashboard']} Dashboard",
+    f"# {ICONS['performance']} Performance",
+    f"# 📊 Advanced Analytics",
+    f"# {ICONS['data']} Data",
     f"# {ICONS['settings']} Settings"
 ])
 with tab1:
@@ -540,11 +813,31 @@ with tab1:
     
     # Use the enhanced dashboard component
     if not latest_df.empty:
-        create_enhanced_dashboard(df, latest_df, latest_date, INVESTMENT_CATEGORIES, INVESTMENT_ACCOUNTS)
+        create_enhanced_dashboard(
+            df, 
+            latest_df, 
+            latest_date, 
+            INVESTMENT_CATEGORIES, 
+            INVESTMENT_ACCOUNTS,
+            st.session_state.start_date,
+            st.session_state.end_date
+        )
+        # Also show the Sustainability chart on the default Dashboard view
+        try:
+            dash_start_dt = pd.Timestamp(st.session_state.start_date)
+            dash_end_dt = pd.Timestamp(st.session_state.end_date)
+        except Exception:
+            dash_start_dt = pd.to_datetime(df["Date"].min()) if not df.empty else pd.Timestamp.today() - pd.Timedelta(days=30)
+            dash_end_dt = pd.to_datetime(df["Date"].max()) if not df.empty else pd.Timestamp.today()
+        render_sustainability_section(dash_start_dt, dash_end_dt, key_prefix="sust_dashboard")
     else:
         st.info(f"{ICONS['info']} No data available. Please add investment entries.")
-    
+
+
+    # ---------------------------------------------------------------------------------------------
+
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 # app_db.py (Part 8: Performance Tab Setup - FIXED INDENTATION)
 with tab2:
@@ -555,46 +848,24 @@ with tab2:
     if not df.empty:
         # Ensure Investment column contains only strings
         df['Investment'] = df['Investment'].astype(str)
+
+        # Use the global date range from session state
+        perf_start = st.session_state.start_date
+        perf_end = st.session_state.end_date
         
-        # Date range filters with improved UI
-        st.subheader("Select Time Range")
-        
-        # Add preset date ranges for quick selection
-        preset_ranges = st.radio(
-            "Preset Ranges",
-            ["Custom", "1 Month", "3 Months", "6 Months", "1 Year", "YTD", "All Time"],
-            horizontal=True,
-            key="preset_date_range"
-        )
-        
-        # Use utility function to get date range based on preset
-        if preset_ranges == "Custom":
-            performance_cols = st.columns([1, 1, 2])
-            with performance_cols[0]:
-                perf_start = st.date_input(
-                    "From Date",
-                    value=earliest_date,
-                    min_value=earliest_date,
-                    max_value=latest_date,
-                    key="perf_start"
-                )
-            with performance_cols[1]:
-                perf_end = st.date_input(
-                    "To Date",
-                    value=latest_date,
-                    min_value=earliest_date,
-                    max_value=latest_date,
-                    key="perf_end"
-                )
-        else:
-            # Use our utility function to get date range based on preset
-            perf_start, perf_end = get_date_range(preset_ranges, latest_date, earliest_date)
-            st.info(f"{ICONS['info']} Date range: {perf_start.strftime('%Y-%m-%d')} to {perf_end.strftime('%Y-%m-%d')}")
+        st.info(f"{ICONS['info']} Displaying data for range: {perf_start.strftime('%Y-%m-%d')} to {perf_end.strftime('%Y-%m-%d')}")
         
         # Convert to datetime for filtering
         perf_start_dt = pd.Timestamp(perf_start)
         perf_end_dt = pd.Timestamp(perf_end)
-        
+    # -------------------- Sustainability Chart (Income vs Expenses vs Delta) --------------------
+    if not df.empty:
+        render_sustainability_section(perf_start_dt, perf_end_dt, key_prefix="sust_perf")
+
+
+
+    # ---------------------------------------------------------------------------------------------
+       
         # Get performance data with loading animation
         with st.spinner("Calculating performance data..."):
             # Use the db version of the function
@@ -767,13 +1038,15 @@ with tab2:
                 
                 fig.update_layout(annotations=annotations)
                 
-            # Apply standard styling with custom parameters
+            # Apply standard styling with custom parameters and smart date formatting
+            date_range = (total_over_time['Date'].min(), total_over_time['Date'].max())
             apply_chart_styling(
-                fig, 
+                fig,
                 height=400,
                 x_title="Date",
                 y_title="Value (USD)",
-                hovermode="x unified"
+                hovermode="x unified",
+                date_range=date_range
             )
 
             st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': True})
@@ -897,14 +1170,16 @@ with tab2:
                     # Update styling with enhanced interactivity
                     fig.update_traces(line=dict(width=2.5))
                     
-                    # Apply our standard styling function with custom parameters
+                    # Apply our standard styling function with custom parameters and smart date formatting
+                    date_range = (relative_data['Date'].min(), relative_data['Date'].max())
                     apply_chart_styling(
                         fig,
                         height=500,
                         x_title="Date",
                         y_title=y_title,
-                        margin=dict(l=20, r=20, t=50, b=50),
-                        hovermode="x unified"
+                        margin=dict(l=20, r=20, t=50, b=100),
+                        hovermode="x unified",
+                        date_range=date_range
                     )
                     
                     # Add custom legend positioning
@@ -1073,7 +1348,7 @@ with tab2:
                             title=f"{metric_to_plot} by Investment"
                         )
                         
-                        # Apply our standard styling
+                        # Apply our standard styling (no date formatting for horizontal bar chart)
                         apply_chart_styling(
                             bar_fig,
                             height=300,
@@ -1162,28 +1437,36 @@ with benchmark_tabs[1]:
         st.info(f"{ICONS['info']} No data available. Please add investment entries.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# app_db.py (Part 17: Data Tab Setup)
+# app_db.py (Part 16.5: Advanced Analytics Tab)
 
 with tab3:
+    # Advanced Analytics tab with risk metrics, correlation analysis, and cash flow tracking
+    st.markdown('<div class="animate-in">', unsafe_allow_html=True)
+
+    if not df.empty:
+        from advanced_analytics_components import create_advanced_analytics_tab
+
+        # Use global date range from session state
+        start_date = st.session_state.start_date
+        end_date = st.session_state.end_date
+
+        create_advanced_analytics_tab(df, start_date, end_date)
+    else:
+        st.info("📊 Add investment data to see advanced analytics.")
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# app_db.py (Part 17: Data Tab Setup)
+
+with tab4:
     # Data tab with enhanced filtering and visualization
     st.markdown('<div class="animate-in">', unsafe_allow_html=True)
     st.header("Investment Data")
     
     if not df.empty:
-        # Enhanced date filter with preset options
-        st.subheader("Date Filter")
-        
-        # Use our utility function to create a date filter UI component
-        start_date, end_date = create_date_filter_ui(
-            earliest_date, 
-            latest_date, 
-            filter_type_key="data_filter_type",
-            preset_key="data_preset", 
-            start_key="data_start", 
-            end_key="data_end",
-            specific_date_type_key="data_specific_date_type", 
-            specific_date_key="data_specific_date"
-        )
+        # Use the global date filter from session state
+        start_date = st.session_state.start_date
+        end_date = st.session_state.end_date
         
         # Ensure Investment column contains only strings
         df['Investment'] = df['Investment'].astype(str)
@@ -1429,7 +1712,7 @@ with tab3:
 
 # app_db.py (Part 22: Settings Tab - Data Management)
 
-with tab4:
+with tab5:
     # Settings tab with enhanced UI and animations
     
     st.markdown('<div class="animate-in">', unsafe_allow_html=True)
@@ -1872,4 +2155,31 @@ with tab4:
         """)
     
     st.markdown('</div>', unsafe_allow_html=True)
+# ---------------- Admin / Sustainability (Standalone Sidebar Block) ----------------
+try:
+
+    with st.sidebar:
+        st.markdown("---")
+        st.markdown("### Sustainability tools")
+
+        if st.button("Recalculate sustainability from history", key="backfill_sust"):
+            with st.spinner("Backfilling sustainability from history…"):
+                ok = backfill_sustainability()
+                try:
+                    if hasattr(st, "cache_data"):
+                        st.cache_data.clear()
+                    if hasattr(st, "cache_resource"):
+                        st.cache_resource.clear()
+                except Exception:
+                    pass
+
+            if ok:
+                st.success("Backfill complete. If charts don’t update automatically, change the date range or refresh.")
+            else:
+                st.warning("Backfill finished with a warning. Check terminal logs for details.")
+except Exception as _e:
+    # Non-fatal: sidebar might not be available during script import or tests
+    print(f"[sidebar sustainability tools] not initialized: {_e}")
+# -----------------------------------------------------------------------------------
+
     

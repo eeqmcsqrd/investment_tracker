@@ -173,12 +173,51 @@ def create_date_picker(use_today_key, date_picker_key):
     
     return entry_date
 
-# Function to apply common styling to charts
-def apply_chart_styling(fig, height=400, x_title="Date", y_title="Value", 
-                        margin=None, hovermode="x unified"):
+from functools import lru_cache
+
+@lru_cache(maxsize=128)
+def calculate_smart_date_format(num_days):
     """
-    Apply consistent styling to Plotly charts.
-    
+    Calculate smart date formatting parameters based on date range.
+    Cached for performance with repeated calls.
+
+    Parameters:
+        num_days (int): Number of days in the date range
+
+    Returns:
+        dict: Dictionary with tickformat, dtick, and tick0 settings
+    """
+    if num_days <= 7:
+        # Show all days with full date
+        return {'tickformat': '%b %d', 'dtick': 86400000, 'nticks': num_days}
+    elif num_days <= 31:
+        # Show every 2-3 days
+        return {'tickformat': '%b %d', 'dtick': 86400000 * 3, 'nticks': 10}
+    elif num_days <= 90:
+        # Show weekly, month and day
+        return {'tickformat': '%b %d', 'dtick': 86400000 * 7, 'nticks': 13}
+    elif num_days <= 180:
+        # Show bi-weekly, month and day
+        return {'tickformat': '%b %d', 'dtick': 86400000 * 14, 'nticks': 13}
+    elif num_days <= 365:
+        # Show monthly with month name only
+        return {'tickformat': '%b', 'dtick': 'M1', 'nticks': 12}
+    elif num_days <= 730:
+        # Show every 2 months with month and year
+        return {'tickformat': '%b %y', 'dtick': 'M2', 'nticks': 12}
+    else:
+        # Show quarterly or yearly
+        if num_days <= 1460:  # 4 years
+            return {'tickformat': '%b %Y', 'dtick': 'M3', 'nticks': 16}
+        else:
+            return {'tickformat': '%Y', 'dtick': 'M12', 'nticks': 10}
+
+# Function to apply common styling to charts
+def apply_chart_styling(fig, height=400, x_title="Date", y_title="Value",
+                        margin=None, hovermode="x unified", date_range=None):
+    """
+    Apply consistent styling to Plotly charts with smart date axis formatting.
+
     Parameters:
         fig (plotly.graph_objects.Figure): The figure to style
         height (int): Chart height in pixels
@@ -186,13 +225,38 @@ def apply_chart_styling(fig, height=400, x_title="Date", y_title="Value",
         y_title (str): Y-axis title
         margin (dict): Chart margins
         hovermode (str): Hover mode for the chart
-        
+        date_range (tuple): Optional tuple of (start_date, end_date) for smart date formatting
+
     Returns:
         plotly.graph_objects.Figure: The styled figure
     """
     if margin is None:
-        margin = dict(l=20, r=20, t=30, b=20)
-        
+        margin = dict(l=20, r=20, t=30, b=80)  # Increased bottom margin for labels
+
+    # Configure x-axis with smart date formatting if date_range provided
+    xaxis_config = {
+        'gridcolor': 'rgba(255,255,255,0.1)',
+        'zerolinecolor': 'rgba(255,255,255,0.2)',
+        'tickangle': -45,  # Angle labels to prevent overlap
+        'automargin': True
+    }
+
+    # Apply smart date formatting if date range is provided
+    if date_range is not None and len(date_range) == 2:
+        try:
+            start_date, end_date = date_range
+            # Convert to pandas timestamps for calculation
+            if not isinstance(start_date, pd.Timestamp):
+                start_date = pd.Timestamp(start_date)
+            if not isinstance(end_date, pd.Timestamp):
+                end_date = pd.Timestamp(end_date)
+
+            num_days = (end_date - start_date).days
+            date_settings = calculate_smart_date_format(num_days)
+            xaxis_config.update(date_settings)
+        except Exception as e:
+            print(f"Warning: Could not apply smart date formatting: {e}")
+
     fig.update_layout(
         height=height,
         xaxis_title=x_title,
@@ -201,17 +265,24 @@ def apply_chart_styling(fig, height=400, x_title="Date", y_title="Value",
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         font=dict(color='white'),
-        xaxis=dict(
-            gridcolor='rgba(255,255,255,0.1)',
-            zerolinecolor='rgba(255,255,255,0.2)'
-        ),
+        xaxis=xaxis_config,
         yaxis=dict(
             gridcolor='rgba(255,255,255,0.1)',
             zerolinecolor='rgba(255,255,255,0.2)'
         ),
-        hovermode=hovermode
+        hovermode=hovermode,
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=-0.35,  # Move legend below the chart
+            xanchor="center",
+            x=0.5,
+            bgcolor="rgba(0,0,0,0.5)",
+            bordercolor="rgba(255,255,255,0.2)",
+            borderwidth=1
+        )
     )
-    
+
     return fig
 
 # Function to create export buttons based on format and data
