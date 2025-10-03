@@ -2,6 +2,9 @@
 # Wrapper for app_db.py with authentication enabled
 # Use this as your main file for Streamlit Cloud deployment
 
+# Initialize database from snapshot if needed (for cloud deployment)
+import init_database
+
 import auth_wrapper
 
 # Check authentication before loading the app
