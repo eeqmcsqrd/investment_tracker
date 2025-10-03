@@ -1,0 +1,3 @@
+# This file triggers database recreation
+# Delete investment_data.db if this file exists
+FORCE_RESET=true

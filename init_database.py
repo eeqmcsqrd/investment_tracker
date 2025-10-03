@@ -12,8 +12,21 @@ SNAPSHOT_FILE = 'db_snapshot.json'
 def init_database_from_snapshot():
     """
     Create database from JSON snapshot if database doesn't exist.
-    This runs automatically on Streamlit Cloud startup.
+    Uses proper database schema instead of generic TEXT columns.
     """
+    # Check if force reset is requested
+    if os.path.exists('force_db_reset.txt') and os.path.exists(DB_FILE):
+        sys.stderr.write(f"🔄 Force reset requested - deleting old database...\n")
+        sys.stderr.flush()
+        try:
+            os.remove(DB_FILE)
+            os.remove('force_db_reset.txt')  # Remove trigger file
+            sys.stderr.write(f"✅ Old database deleted\n")
+            sys.stderr.flush()
+        except Exception as e:
+            sys.stderr.write(f"⚠️  Could not delete old database: {e}\n")
+            sys.stderr.flush()
+
     # Skip if database already exists
     if os.path.exists(DB_FILE):
         sys.stderr.write(f"✅ Database exists at {DB_FILE}\n")
@@ -31,36 +44,99 @@ def init_database_from_snapshot():
     try:
         sys.stderr.write(f"📦 Initializing database from {SNAPSHOT_FILE}...\n")
         sys.stderr.flush()
-        
+
         # Load snapshot
         with open(SNAPSHOT_FILE, 'r') as f:
             snapshot = json.load(f)
-        
-        # Create database
+
+        # Create database with proper schema
         conn = sqlite3.connect(DB_FILE)
         cursor = conn.cursor()
-        
-        # Import each table
+
+        # Create investments table with correct schema (lowercase columns)
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS investments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            investment TEXT NOT NULL,
+            currency TEXT NOT NULL,
+            value REAL NOT NULL,
+            UNIQUE(date, investment)
+        )
+        ''')
+
+        # Create indexes
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_investments_date ON investments(date)')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_investments_investment ON investments(investment)')
+
+        # Create sustainability_daily table
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS sustainability_daily (
+            date TEXT PRIMARY KEY,
+            total_income_usd REAL NOT NULL DEFAULT 0,
+            total_expenses_usd REAL NOT NULL DEFAULT 0,
+            delta_usd REAL NOT NULL DEFAULT 0,
+            created_at TEXT DEFAULT (datetime('now')),
+            updated_at TEXT DEFAULT (datetime('now'))
+        )
+        ''')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_sustainability_date ON sustainability_daily(date)')
+
+        # Create expenses table if needed
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS expenses (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            category TEXT NOT NULL,
+            description TEXT,
+            amount REAL NOT NULL,
+            currency TEXT NOT NULL
+        )
+        ''')
+
+        # Import data from snapshot with proper column mapping
         for table_name, rows in snapshot['tables'].items():
             if not rows:
-                print(f"  ⏭️  Skipping empty table: {table_name}")
+                sys.stderr.write(f"  ⏭️  Skipping empty table: {table_name}\n")
                 continue
-            
-            # Get columns from first row
-            columns = list(rows[0].keys())
 
-            # Create table (simple approach - you may need to adjust types)
-            col_defs = ', '.join([f'"{col}" TEXT' for col in columns])
-            cursor.execute(f'CREATE TABLE IF NOT EXISTS "{table_name}" ({col_defs})')
+            # Handle table-specific imports with column name mapping
+            if table_name == 'investments':
+                for row in rows:
+                    # Map capitalized JSON keys to lowercase DB columns
+                    date_val = row.get('Date') or row.get('date')
+                    investment_val = row.get('Investment') or row.get('investment')
+                    currency_val = row.get('Currency') or row.get('currency')
+                    value_val = row.get('Value') or row.get('value')
 
-            # Insert data
-            placeholders = ','.join(['?' for _ in columns])
-            for row in rows:
-                values = [row[col] for col in columns]
-                cursor.execute(
-                    f'INSERT INTO "{table_name}" ({",".join([f'"{col}"' for col in columns])}) VALUES ({placeholders})',
-                    values
-                )
+                    if date_val and investment_val:  # Only insert if required fields exist
+                        cursor.execute(
+                            'INSERT OR IGNORE INTO investments (date, investment, currency, value) VALUES (?, ?, ?, ?)',
+                            (date_val, investment_val, currency_val, value_val)
+                        )
+
+            elif table_name == 'sustainability_daily':
+                for row in rows:
+                    date_val = row.get('date')
+                    if date_val:
+                        cursor.execute(
+                            '''INSERT OR REPLACE INTO sustainability_daily
+                               (date, total_income_usd, total_expenses_usd, delta_usd)
+                               VALUES (?, ?, ?, ?)''',
+                            (date_val, row.get('total_income_usd', 0),
+                             row.get('total_expenses_usd', 0), row.get('delta_usd', 0))
+                        )
+
+            elif table_name == 'expenses':
+                for row in rows:
+                    date_val = row.get('date')
+                    if date_val:
+                        cursor.execute(
+                            '''INSERT INTO expenses (date, category, description, amount, currency)
+                               VALUES (?, ?, ?, ?, ?)''',
+                            (date_val, row.get('category', ''), row.get('description', ''),
+                             row.get('amount', 0), row.get('currency', 'USD'))
+                        )
 
             sys.stderr.write(f"  ✅ Imported {len(rows)} rows into {table_name}\n")
             sys.stderr.flush()
