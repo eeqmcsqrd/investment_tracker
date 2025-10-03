@@ -71,9 +71,9 @@ try:
     # Prepare data with latest_date
     latest_date = df['Date'].max()
 
-    # Try to create chart (correct signature: df, latest_date, start_date, end_date)
-    fig = create_portfolio_performance_chart(df, latest_date, start_date, end_date)
-    st.plotly_chart(fig, use_container_width=True)
+    # This function displays directly, doesn't return a figure
+    # Correct signature: df, latest_date, start_date, end_date
+    create_portfolio_performance_chart(df, latest_date, start_date, end_date)
     st.success("✅ Dashboard component works!")
 except Exception as e:
     st.error(f"❌ Dashboard component failed: {e}")
