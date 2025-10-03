@@ -90,6 +90,48 @@ with st.sidebar:
     st.success(f"📊 {time_option}")
     st.info(f"From: {start_date.date()}\nTo: {end_date.date()}")
 
+    # Data Entry Section
+    st.divider()
+    st.subheader("💾 Update Investment")
+
+    with st.form("add_entry_form", clear_on_submit=True):
+        # Load config
+        from config import INVESTMENT_ACCOUNTS
+
+        # Get list of investments
+        investments = sorted(INVESTMENT_ACCOUNTS.keys())
+
+        entry_date = st.date_input("Date", value=datetime.now().date())
+        investment = st.selectbox("Investment", investments)
+        value = st.number_input("Value", min_value=0.0, value=0.0, step=100.0)
+
+        # Get currency for selected investment
+        currency = INVESTMENT_ACCOUNTS.get(investment, "USD")
+        st.caption(f"Currency: {currency}")
+
+        submitted = st.form_submit_button("💾 Add Entry", use_container_width=True)
+
+        if submitted:
+            if value > 0:
+                try:
+                    from data_handler_db import add_entry_db
+
+                    # Add entry
+                    add_entry_db(entry_date, investment, currency, value)
+
+                    st.success(f"✅ Added {investment}: {currency} {value:,.2f}")
+                    st.balloons()
+
+                    # Wait a moment then rerun to refresh data
+                    import time
+                    time.sleep(1)
+                    st.rerun()
+
+                except Exception as e:
+                    st.error(f"❌ Error adding entry: {e}")
+            else:
+                st.warning("⚠️ Please enter a value greater than 0")
+
 # Filter data
 filtered_df = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
 
@@ -184,9 +226,97 @@ with tab2:
 
 with tab3:
     st.header("⚙️ Settings")
-    st.info("Settings and data management features coming soon!")
-    
-    if st.button("🔄 Refresh Data"):
-        st.rerun()
+
+    # Bulk Update Section
+    st.subheader("📝 Bulk Update All Investments")
+    st.info("Update all investment values for a specific date")
+
+    with st.form("bulk_update_form"):
+        from config import INVESTMENT_ACCOUNTS
+
+        bulk_date = st.date_input("Update Date", value=datetime.now().date())
+
+        st.write("**Enter new values for each investment:**")
+
+        # Get most recent values as defaults
+        latest_values = {}
+        if not df.empty:
+            latest_data = df[df['Date'] == df['Date'].max()]
+            for inv in INVESTMENT_ACCOUNTS.keys():
+                inv_data = latest_data[latest_data['Investment'] == inv]
+                if not inv_data.empty:
+                    latest_values[inv] = float(inv_data['Value'].iloc[0])
+                else:
+                    latest_values[inv] = 0.0
+
+        # Create input fields for each investment
+        values_dict = {}
+        for investment in sorted(INVESTMENT_ACCOUNTS.keys()):
+            currency = INVESTMENT_ACCOUNTS[investment]
+            default_val = latest_values.get(investment, 0.0)
+
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                values_dict[investment] = st.number_input(
+                    f"{investment}",
+                    min_value=0.0,
+                    value=default_val,
+                    step=100.0,
+                    key=f"bulk_{investment}"
+                )
+            with col2:
+                st.caption(currency)
+
+        bulk_submitted = st.form_submit_button("💾 Update All", use_container_width=True)
+
+        if bulk_submitted:
+            try:
+                from data_handler_db import add_entry_db
+
+                added_count = 0
+                for investment, value in values_dict.items():
+                    if value > 0:  # Only add non-zero values
+                        currency = INVESTMENT_ACCOUNTS[investment]
+                        add_entry_db(bulk_date, investment, currency, value)
+                        added_count += 1
+
+                st.success(f"✅ Updated {added_count} investments for {bulk_date}")
+                st.balloons()
+
+                import time
+                time.sleep(1)
+                st.rerun()
+
+            except Exception as e:
+                st.error(f"❌ Error during bulk update: {e}")
+                st.code(traceback.format_exc())
+
+    st.divider()
+
+    # Data Management
+    st.subheader("🔧 Data Management")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("🔄 Refresh Data", use_container_width=True):
+            st.rerun()
+
+    with col2:
+        from currency_service import refresh_rates
+        if st.button("💱 Refresh Exchange Rates", use_container_width=True):
+            try:
+                refresh_rates()
+                st.success("✅ Exchange rates refreshed!")
+            except Exception as e:
+                st.error(f"Error: {e}")
+
+    st.divider()
+
+    # App Info
+    st.subheader("ℹ️ App Information")
+    st.write(f"**Total Records in Database:** {len(df)}")
+    st.write(f"**Date Range:** {df['Date'].min().date()} to {df['Date'].max().date()}")
+    st.write(f"**Number of Investments:** {df['Investment'].nunique()}")
 
 st.success("✅ App loaded successfully!")
