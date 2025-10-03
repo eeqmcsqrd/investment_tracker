@@ -312,6 +312,102 @@ with tab3:
 
     st.divider()
 
+    # Database Sync
+    st.subheader("🔄 Database Synchronization")
+    st.info("💡 Keep your laptop and cloud databases in sync")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write("**📥 Download Database**")
+        st.caption("Download the current cloud database to your laptop")
+
+        # Export database as downloadable file
+        try:
+            import sqlite3
+            import io
+
+            # Read database file
+            with open('investment_data.db', 'rb') as f:
+                db_bytes = f.read()
+
+            # Create download button
+            st.download_button(
+                label="⬇️ Download Database (.db)",
+                data=db_bytes,
+                file_name=f"investment_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.db",
+                mime="application/octet-stream",
+                use_container_width=True
+            )
+        except Exception as e:
+            st.error(f"Error preparing download: {e}")
+
+    with col2:
+        st.write("**📤 Upload Database**")
+        st.caption("Upload your laptop database to replace cloud database")
+
+        uploaded_file = st.file_uploader(
+            "Choose database file",
+            type=['db'],
+            key="db_upload"
+        )
+
+        if uploaded_file is not None:
+            if st.button("⬆️ Replace Cloud Database", use_container_width=True, type="primary"):
+                try:
+                    # Backup current database
+                    import shutil
+                    import os
+                    backup_name = f"investment_data_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.db"
+                    shutil.copy2('investment_data.db', backup_name)
+                    st.info(f"✅ Backup created: {backup_name}")
+
+                    # Write uploaded file
+                    with open('investment_data.db', 'wb') as f:
+                        f.write(uploaded_file.getvalue())
+
+                    st.success("✅ Database replaced successfully!")
+                    st.balloons()
+
+                    import time
+                    time.sleep(1)
+                    st.rerun()
+
+                except Exception as e:
+                    st.error(f"❌ Error uploading database: {e}")
+                    st.code(traceback.format_exc())
+
+    st.divider()
+
+    # Export to CSV/JSON for backup
+    st.subheader("💾 Export Data (Backup)")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Export to CSV
+        csv = df.to_csv(index=False)
+        st.download_button(
+            label="📄 Download CSV",
+            data=csv,
+            file_name=f"investment_data_{datetime.now().strftime('%Y%m%d')}.csv",
+            mime="text/csv",
+            use_container_width=True
+        )
+
+    with col2:
+        # Export to JSON
+        json_str = df.to_json(orient='records', date_format='iso', indent=2)
+        st.download_button(
+            label="📋 Download JSON",
+            data=json_str,
+            file_name=f"investment_data_{datetime.now().strftime('%Y%m%d')}.json",
+            mime="application/json",
+            use_container_width=True
+        )
+
+    st.divider()
+
     # App Info
     st.subheader("ℹ️ App Information")
     st.write(f"**Total Records in Database:** {len(df)}")
