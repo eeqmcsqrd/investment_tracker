@@ -67,12 +67,12 @@ st.header("Test 4: Dashboard Components")
 try:
     from dashboard_components import create_portfolio_performance_chart
     st.write("Testing portfolio performance chart...")
-    
-    # Prepare data
-    latest_data = df[df['Date'] == df['Date'].max()]
-    
-    # Try to create chart
-    fig = create_portfolio_performance_chart(df, start_date, end_date)
+
+    # Prepare data with latest_date
+    latest_date = df['Date'].max()
+
+    # Try to create chart (correct signature: df, latest_date, start_date, end_date)
+    fig = create_portfolio_performance_chart(df, latest_date, start_date, end_date)
     st.plotly_chart(fig, use_container_width=True)
     st.success("✅ Dashboard component works!")
 except Exception as e:
@@ -85,6 +85,12 @@ except Exception as e:
 st.header("Test 5: Simple Plotly Chart")
 try:
     import plotly.express as px
+
+    # Ensure filtered dataframe has ValueUSD column
+    if 'ValueUSD' not in filtered.columns:
+        from currency_service import get_conversion_rate
+        filtered['ValueUSD'] = filtered.apply(lambda row: row['Value'] * get_conversion_rate(row['Currency']), axis=1)
+
     daily_totals = filtered.groupby('Date')['ValueUSD'].sum().reset_index()
     fig = px.line(daily_totals, x='Date', y='ValueUSD', title='Simple Test Chart')
     st.plotly_chart(fig, use_container_width=True)
