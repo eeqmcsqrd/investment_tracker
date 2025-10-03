@@ -1444,13 +1444,20 @@ with tab3:
     st.markdown('<div class="animate-in">', unsafe_allow_html=True)
 
     if not df.empty:
-        from advanced_analytics_components import create_advanced_analytics_tab
+        try:
+            from advanced_analytics_components import create_advanced_analytics_tab
 
-        # Use global date range from session state
-        start_date = st.session_state.start_date
-        end_date = st.session_state.end_date
+            # Use global date range from session state
+            start_date = st.session_state.start_date
+            end_date = st.session_state.end_date
 
-        create_advanced_analytics_tab(df, start_date, end_date)
+            create_advanced_analytics_tab(df, start_date, end_date)
+        except Exception as e:
+            st.error("⚠️ Advanced Analytics temporarily unavailable")
+            st.warning(f"Error: {e}")
+            with st.expander("Show error details"):
+                import traceback
+                st.code(traceback.format_exc())
     else:
         st.info("📊 Add investment data to see advanced analytics.")
 
