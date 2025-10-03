@@ -11,7 +11,7 @@ benchmarks_cache.json
 *.backup_*
 
 # Snapshots (optional - exclude if contains sensitive data)
-db_snapshot.json
+# db_snapshot.json  # Allow for cloud deployment
 temp_local_snapshot.json
 
 # Python
