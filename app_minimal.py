@@ -27,15 +27,20 @@ st.title("🧪 Minimal Investment Tracker Test")
 
 try:
     import pandas as pd
-    import sqlite3
-    
-    # Load data
-    conn = sqlite3.connect('investment_data.db')
-    df = pd.read_sql_query("SELECT * FROM investments", conn, parse_dates=['Date'])
-    conn.close()
-    
+    from data_handler_db import load_data
+    from datetime import datetime, timedelta
+
+    # Load data using proper data handler (handles column renaming)
+    df = load_data()
+
     st.success(f"✅ Loaded {len(df)} records from database")
-    
+    st.write(f"**Columns:** {list(df.columns)}")
+
+    # Calculate ValueUSD if not present
+    if 'ValueUSD' not in df.columns:
+        from currency_service import get_conversion_rate
+        df['ValueUSD'] = df.apply(lambda row: row['Value'] * get_conversion_rate(row['Currency']), axis=1)
+
     # Time range selector
     st.subheader("Select Time Range")
     time_option = st.radio(
@@ -43,13 +48,12 @@ try:
         ["1 Month", "3 Months", "6 Months", "1 Year", "All Time"],
         horizontal=True
     )
-    
+
     st.write(f"Selected: **{time_option}**")
-    
+
     # Filter data based on selection
-    from datetime import datetime, timedelta
     end_date = df['Date'].max()
-    
+
     if time_option == "1 Month":
         start_date = end_date - timedelta(days=30)
     elif time_option == "3 Months":
@@ -60,14 +64,14 @@ try:
         start_date = end_date - timedelta(days=365)
     else:
         start_date = df['Date'].min()
-    
+
     filtered_df = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
-    
+
     st.info(f"📊 Showing {len(filtered_df)} records from {start_date.date()} to {end_date.date()}")
-    
+
     # Show simple data
     st.dataframe(filtered_df.head(20), use_container_width=True)
-    
+
     # Try simple chart
     st.subheader("Simple Line Chart Test")
     daily_totals = filtered_df.groupby('Date')['ValueUSD'].sum().reset_index()
