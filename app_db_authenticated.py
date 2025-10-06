@@ -48,15 +48,29 @@ try:
     with open(app_db_path, 'r', encoding='utf-8') as f:
         app_code = f.read()
 
-    # Remove the st.set_page_config call completely (including multiline params)
-    # This regex handles multiline set_page_config calls
-    app_code = re.sub(
-        r'st\.set_page_config\s*\([^)]*\)',
-        '# set_page_config already called in wrapper',
-        app_code,
-        flags=re.DOTALL,
-        count=1
-    )
+    # Remove the entire st.set_page_config block (including multiline params)
+    # Using a more robust approach: find the call and count parentheses
+    lines = app_code.split('\n')
+    new_lines = []
+    in_config = False
+    paren_count = 0
+
+    for line in lines:
+        if 'st.set_page_config' in line and not in_config:
+            in_config = True
+            paren_count = line.count('(') - line.count(')')
+            new_lines.append('# set_page_config already called in wrapper')
+            if paren_count <= 0:
+                in_config = False
+        elif in_config:
+            paren_count += line.count('(') - line.count(')')
+            # Skip this line (it's part of set_page_config)
+            if paren_count <= 0:
+                in_config = False
+        else:
+            new_lines.append(line)
+
+    app_code = '\n'.join(new_lines)
 
     # Execute the app code in the current namespace
     exec(app_code, globals())
