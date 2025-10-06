@@ -94,8 +94,22 @@ def init_database_from_snapshot():
         )
         ''')
 
-        # Import data from snapshot with proper column mapping
-        for table_name, rows in snapshot['tables'].items():
+        # Import data from snapshot - support both old and new formats
+        # New format: snapshot['investments'], snapshot['sustainability']
+        # Old format: snapshot['tables']['investments'], etc.
+
+        # Detect format
+        if 'tables' in snapshot:
+            # Old format
+            tables_data = snapshot['tables']
+        else:
+            # New format from auto_sync.py
+            tables_data = {
+                'investments': snapshot.get('investments', []),
+                'sustainability_daily': snapshot.get('sustainability', [])
+            }
+
+        for table_name, rows in tables_data.items():
             if not rows:
                 sys.stderr.write(f"  ⏭️  Skipping empty table: {table_name}\n")
                 continue
