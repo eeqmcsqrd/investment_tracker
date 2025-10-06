@@ -48,11 +48,13 @@ try:
     with open(app_db_path, 'r', encoding='utf-8') as f:
         app_code = f.read()
 
-    # Remove the st.set_page_config line to prevent duplicate call
+    # Remove the st.set_page_config call completely (including multiline params)
+    # This regex handles multiline set_page_config calls
     app_code = re.sub(
         r'st\.set_page_config\s*\([^)]*\)',
         '# set_page_config already called in wrapper',
         app_code,
+        flags=re.DOTALL,
         count=1
     )
 
