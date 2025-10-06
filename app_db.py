@@ -251,10 +251,10 @@ if 'show_loading' not in st.session_state:
     st.session_state.show_loading = True
 if 'animation_complete' not in st.session_state:
     st.session_state.animation_complete = False
-if 'start_date' not in st.session_state:
-    st.session_state.start_date = None
-if 'end_date' not in st.session_state:
-    st.session_state.end_date = None
+if 'start_date' not in st.session_state or st.session_state.start_date is None:
+    st.session_state.start_date = datetime.now().date() - timedelta(days=90)
+if 'end_date' not in st.session_state or st.session_state.end_date is None:
+    st.session_state.end_date = datetime.now().date()
 
 # Animated loading of data
 if st.session_state.show_loading:
@@ -856,8 +856,18 @@ with tab1:
             render_sustainability_section(dash_start_dt, dash_end_dt, key_prefix="sust_dashboard")
         except Exception as e:
             st.error("⚠️ Dashboard temporarily unavailable")
+            st.info("💡 Try selecting a different date range or refreshing the page")
             st.warning(f"Error: {e}")
-            with st.expander("Show error details"):
+
+            # Add helpful debugging info
+            st.info(f"""
+            **Current Settings:**
+            - Date Range: {st.session_state.start_date} to {st.session_state.end_date}
+            - Total Data Points: {len(df)}
+            - Latest Date: {latest_date}
+            """)
+
+            with st.expander("Show technical details"):
                 import traceback
                 st.code(traceback.format_exc())
                 import sys

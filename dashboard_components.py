@@ -1031,7 +1031,23 @@ def create_portfolio_performance_chart(df, latest_date, start_date, end_date):
         ]
 
         if period_df.empty:
-            st.info("No data available for the selected time range and investments.")
+            st.warning("📊 No data available for the selected time range and investments")
+            st.info("💡 **Try:**")
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("""
+                - Select a wider date range
+                - Choose different investments
+                - Use 'All Investments' filter
+                """)
+            with col2:
+                if not df.empty:
+                    st.markdown(f"""
+                    **Available data:**
+                    - From: {df['Date'].min().strftime('%Y-%m-%d')}
+                    - To: {df['Date'].max().strftime('%Y-%m-%d')}
+                    - Total entries: {len(df)}
+                    """)
             return
 
         period_data = period_df.groupby('Date')['ValueUSD'].sum().reset_index()
