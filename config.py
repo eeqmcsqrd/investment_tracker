@@ -86,18 +86,20 @@ INVESTMENT_CATEGORIES = {str(k): v for k, v in {
 }.items()}
 
 # Tracked investments for performance comparison
+# These are TRUE INVESTMENTS (exclude bank balances/cash accounts)
 TRACKED_INVESTMENTS = [
-    'Binance', 
-    'Trade Republic', 
-    '401k', 
-    'RBC'
-,
-    'Sui Wallet',
-    'Phantom Wallet',
-    'Ledger Wallet']
+    'RBC',           # Retirement account
+    'Binance',       # Crypto exchange
+    '401k',          # Retirement account
+    'Ledger Wallet'  # Crypto wallet
+]
 
 # Ensure tracked investments are strings
 TRACKED_INVESTMENTS = [str(inv) for inv in TRACKED_INVESTMENTS]
+
+# Investment accounts only (for pure performance tracking)
+# Excludes: Bank balances, cash accounts, spending money
+INVESTMENT_ACCOUNTS_ONLY = TRACKED_INVESTMENTS  # Same list for now
 
 # Data file settings
 DATA_FILE = 'investment_data.csv'
