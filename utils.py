@@ -176,44 +176,118 @@ def create_date_picker(use_today_key, date_picker_key):
 def calculate_smart_date_format(num_days):
     """
     Calculate smart date formatting parameters based on date range.
-    Uses Streamlit's cache_data for performance.
+    Intelligently adjusts tick frequency and format to prevent label overlap
+    and avoid repeating redundant information (e.g., month name).
 
     Parameters:
         num_days (int): Number of days in the date range
 
     Returns:
-        dict: Dictionary with tickformat, dtick, and tick0 settings
+        dict: Dictionary with tickformat, dtick, nticks, and tickmode settings
     """
     if num_days <= 7:
-        # Show all days with full date
-        return {'tickformat': '%b %d', 'dtick': 86400000, 'nticks': num_days}
+        # Show all days with day of week and date (Mon 15)
+        return {
+            'tickformat': '%a %d',
+            'dtick': 86400000,  # 1 day in milliseconds
+            'tickmode': 'auto',
+            'nticks': 8
+        }
+    elif num_days <= 14:
+        # Show every other day with abbreviated month and day
+        return {
+            'tickformat': '%b %d',
+            'dtick': 86400000 * 2,  # 2 days
+            'tickmode': 'auto',
+            'nticks': 8
+        }
     elif num_days <= 31:
-        # Show every 2-3 days
-        return {'tickformat': '%b %d', 'dtick': 86400000 * 3, 'nticks': 10}
+        # Show every 3-4 days with abbreviated month and day
+        return {
+            'tickformat': '%b %d',
+            'dtick': 86400000 * 4,  # 4 days
+            'tickmode': 'auto',
+            'nticks': 8
+        }
+    elif num_days <= 60:
+        # Show weekly with abbreviated month and day
+        return {
+            'tickformat': '%b %d',
+            'dtick': 86400000 * 7,  # 1 week
+            'tickmode': 'auto',
+            'nticks': 10
+        }
     elif num_days <= 90:
-        # Show weekly, month and day
-        return {'tickformat': '%b %d', 'dtick': 86400000 * 7, 'nticks': 13}
+        # Show every 10 days with abbreviated month and day
+        return {
+            'tickformat': '%b %d',
+            'dtick': 86400000 * 10,  # 10 days
+            'tickmode': 'auto',
+            'nticks': 10
+        }
     elif num_days <= 180:
-        # Show bi-weekly, month and day
-        return {'tickformat': '%b %d', 'dtick': 86400000 * 14, 'nticks': 13}
+        # Show bi-weekly with abbreviated month and day
+        return {
+            'tickformat': '%b %d',
+            'dtick': 86400000 * 14,  # 2 weeks
+            'tickmode': 'auto',
+            'nticks': 13
+        }
     elif num_days <= 365:
-        # Show monthly with month name only
-        return {'tickformat': '%b', 'dtick': 'M1', 'nticks': 12}
+        # Show monthly with month name only (no repetition)
+        return {
+            'tickformat': '%b',
+            'dtick': 'M1',  # 1 month
+            'tickmode': 'auto',
+            'nticks': 12
+        }
     elif num_days <= 730:
-        # Show every 2 months with month and year
-        return {'tickformat': '%b %y', 'dtick': 'M2', 'nticks': 12}
+        # Show every 2 months with month and abbreviated year
+        return {
+            'tickformat': '%b %y',
+            'dtick': 'M2',  # 2 months
+            'tickmode': 'auto',
+            'nticks': 12
+        }
+    elif num_days <= 1095:  # ~3 years
+        # Show quarterly with month and year
+        return {
+            'tickformat': '%b %Y',
+            'dtick': 'M3',  # 3 months
+            'tickmode': 'auto',
+            'nticks': 12
+        }
+    elif num_days <= 1460:  # ~4 years
+        # Show every 4 months with month and year
+        return {
+            'tickformat': '%b %Y',
+            'dtick': 'M4',  # 4 months
+            'tickmode': 'auto',
+            'nticks': 12
+        }
     else:
-        # Show quarterly or yearly
-        if num_days <= 1460:  # 4 years
-            return {'tickformat': '%b %Y', 'dtick': 'M3', 'nticks': 16}
+        # Show semi-annually or yearly for very long periods
+        if num_days <= 2920:  # ~8 years
+            return {
+                'tickformat': '%b %Y',
+                'dtick': 'M6',  # 6 months
+                'tickmode': 'auto',
+                'nticks': 16
+            }
         else:
-            return {'tickformat': '%Y', 'dtick': 'M12', 'nticks': 10}
+            return {
+                'tickformat': '%Y',
+                'dtick': 'M12',  # 1 year
+                'tickmode': 'auto',
+                'nticks': 10
+            }
 
 # Function to apply common styling to charts
 def apply_chart_styling(fig, height=400, x_title="Date", y_title="Value",
                         margin=None, hovermode="x unified", date_range=None):
     """
     Apply consistent styling to Plotly charts with smart date axis formatting.
+    Prevents label overlap and repetition by adjusting tick density and format.
 
     Parameters:
         fig (plotly.graph_objects.Figure): The figure to style
@@ -228,14 +302,16 @@ def apply_chart_styling(fig, height=400, x_title="Date", y_title="Value",
         plotly.graph_objects.Figure: The styled figure
     """
     if margin is None:
-        margin = dict(l=20, r=20, t=30, b=80)  # Increased bottom margin for labels
+        margin = dict(l=20, r=20, t=30, b=100)  # Increased bottom margin for angled labels
 
-    # Configure x-axis with smart date formatting if date_range provided
+    # Configure x-axis with smart date formatting
     xaxis_config = {
         'gridcolor': 'rgba(255,255,255,0.1)',
         'zerolinecolor': 'rgba(255,255,255,0.2)',
         'tickangle': -45,  # Angle labels to prevent overlap
-        'automargin': True
+        'automargin': True,
+        'tickfont': dict(size=10),  # Slightly smaller font for better fit
+        'showgrid': True
     }
 
     # Apply smart date formatting if date range is provided

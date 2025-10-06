@@ -8,6 +8,7 @@
 investment_data.csv
 backups/
 benchmarks_cache.json
+exchange_rates_cache.json
 *.backup_*
 
 # Snapshots (optional - exclude if contains sensitive data)

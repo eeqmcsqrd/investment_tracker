@@ -457,6 +457,29 @@ def render_sustainability_section(start_dt, end_dt, key_prefix="sust_dash"):
             color_discrete_map=color_map
         )
 
+    # Customize hover templates with human-readable labels
+    label_mapping = {
+        "CumIncomeUSD": "Income",
+        "CumExpensesUSDNeg": "Expenses",
+        "CumDeltaUSD": "Net Gain/Loss",
+        "DailyIncome": "Income",
+        "DailyExpensesNeg": "Expenses",
+        "DailyDelta": "Net Gain/Loss"
+    }
+
+    for trace in fig_s.data:
+        # Get the human-readable label
+        metric_name = label_mapping.get(trace.name, trace.name)
+        # Update hover template to show Month + Day and format to 2 decimals
+        trace.hovertemplate = (
+            f"<b>{metric_name}</b><br>"
+            "Date: %{x|%b %d, %Y}<br>"
+            "USD: %{y:,.2f}<br>"
+            "<extra></extra>"
+        )
+        # Also update the legend label to be human-readable
+        trace.name = metric_name
+
     # Apply styling with smart date formatting
     date_range = (df_for_plot['Date'].min(), df_for_plot['Date'].max())
     apply_chart_styling(
