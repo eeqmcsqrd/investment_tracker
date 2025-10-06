@@ -4,7 +4,7 @@
 .streamlit/secrets.toml
 
 # Data files (sync separately for security)
-# investment_data.db  # Commented out to allow initial deployment
+# investment_data.db  # Commented out to allow sync with Streamlit Cloud
 investment_data.csv
 backups/
 benchmarks_cache.json
@@ -12,8 +12,11 @@ exchange_rates_cache.json
 *.backup_*
 
 # Snapshots (optional - exclude if contains sensitive data)
-# db_snapshot.json  # Allow for cloud deployment
+# db_snapshot.json  # Allowed for cloud deployment and auto-sync
 temp_local_snapshot.json
+
+# Auto-sync markers
+.last_sync_hash
 
 # Python
 __pycache__/

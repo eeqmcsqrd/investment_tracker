@@ -1,0 +1,16 @@
+{
+  "auto_sync_enabled": false,
+  "sync_mode": "manual",
+  "sync_on_data_change": false,
+  "daemon_check_interval": 60,
+  "files_to_sync": [
+    "investment_data.db",
+    "db_snapshot.json"
+  ],
+  "git_remote": "origin",
+  "git_branch": "main",
+  "commit_message_template": "Auto-sync: Update investment data - {timestamp}",
+  "verbose_logging": true,
+  "notification_on_sync": true,
+  "description": "Auto-sync configuration for Investment Tracker. Set 'auto_sync_enabled' to true to enable automatic syncing."
+}

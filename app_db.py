@@ -1758,7 +1758,7 @@ with tab5:
     st.markdown('<div class="animate-in">', unsafe_allow_html=True)
     st.header("Settings")
 
-    settings_tab1, settings_tab2 = st.tabs(["Data Management", "Configuration"])
+    settings_tab1, settings_tab2, settings_tab3 = st.tabs(["Data Management", "Configuration", "Auto-Sync"])
     
     with settings_tab1:
         st.subheader("Data Backup and Restore")
@@ -2193,7 +2193,12 @@ with tab5:
 
         **App Version:** 3.0 (DB Edition with Enhanced UI & Animations)
         """)
-    
+
+    with settings_tab3:
+        # Auto-Sync Settings
+        from sync_settings_ui import render_sync_settings
+        render_sync_settings()
+
     st.markdown('</div>', unsafe_allow_html=True)
 # ---------------- Admin / Sustainability (Standalone Sidebar Block) ----------------
 try:
