@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-07T00:08:19.966818",
+  "last_updated": "2025-10-07T09:32:22.978470",
   "version": "1.0",
   "investments": [
     {
@@ -36,7 +36,7 @@
       "date": "2025-10-07",
       "investment": "Trade Republic",
       "currency": "EUR",
-      "value": 24272.31
+      "value": 24325.43
     },
     {
       "date": "2025-10-07",
@@ -96,7 +96,7 @@
       "date": "2025-10-07",
       "investment": "RBC",
       "currency": "CAD",
-      "value": 143166.67
+      "value": 143602.42
     },
     {
       "date": "2025-10-07",
@@ -114,7 +114,7 @@
       "date": "2025-10-07",
       "investment": "Ledger Wallet",
       "currency": "USD",
-      "value": 3025.52
+      "value": 3001.89
     },
     {
       "date": "2025-10-07",
@@ -132,13 +132,13 @@
       "date": "2025-10-07",
       "investment": "Binance",
       "currency": "USD",
-      "value": 9098.44
+      "value": 8951.56
     },
     {
       "date": "2025-10-07",
       "investment": "401k",
       "currency": "USD",
-      "value": 51055.98
+      "value": 51227.3
     },
     {
       "date": "2025-10-06",
@@ -37501,14 +37501,14 @@
     {
       "date": "2025-10-06",
       "total_income_usd": 789.7995652173915,
-      "total_expenses_usd": 0.0,
-      "delta_usd": 789.7995652174
+      "total_expenses_usd": 49.40217391304348,
+      "delta_usd": 740.397391304348
     },
     {
       "date": "2025-10-07",
-      "total_income_usd": 234.56304347826128,
+      "total_income_usd": 615.8899516908191,
       "total_expenses_usd": 0.0,
-      "delta_usd": 234.5630434783
+      "delta_usd": 615.8899516908191
     }
   ]
 }
