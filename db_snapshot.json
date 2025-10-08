@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-08T12:13:01.348724",
+  "last_updated": "2025-10-08T19:34:36.886259",
   "version": "1.0",
   "investments": [
     {
@@ -36,7 +36,7 @@
       "date": "2025-10-08",
       "investment": "Trade Republic",
       "currency": "EUR",
-      "value": 23815.86
+      "value": 23862.79
     },
     {
       "date": "2025-10-08",
@@ -114,7 +114,7 @@
       "date": "2025-10-08",
       "investment": "Ledger Wallet",
       "currency": "USD",
-      "value": 2888.25
+      "value": 2923.37
     },
     {
       "date": "2025-10-08",
@@ -132,7 +132,7 @@
       "date": "2025-10-08",
       "investment": "Binance",
       "currency": "USD",
-      "value": 5308.3
+      "value": 5421.66
     },
     {
       "date": "2025-10-08",
@@ -37650,9 +37650,9 @@
     },
     {
       "date": "2025-10-08",
-      "total_income_usd": -1742.1119965416078,
+      "total_income_usd": -1538.8648125061313,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1742.1119965416078
+      "delta_usd": -1538.8648125061313
     }
   ]
 }
