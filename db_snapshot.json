@@ -1,7 +1,1939 @@
 {
-  "last_updated": "2025-10-08T19:34:36.886259",
+  "last_updated": "2025-10-23T23:30:44.819711",
   "version": "1.0",
   "investments": [
+    {
+      "date": "2025-10-23",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23534.5
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2066.48
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 142423.49
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2356.86
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 4884.12
+    },
+    {
+      "date": "2025-10-23",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 51100.65
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23368.2
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2090.03
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 143035.75
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2362.77
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 4818.07
+    },
+    {
+      "date": "2025-10-22",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 51330.61
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23443.63
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2090.03
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 144054.45
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2522.01
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5260.69
+    },
+    {
+      "date": "2025-10-21",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 51295.48
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23432.96
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2090.03
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 142505.56
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2426.11
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 4164.58
+    },
+    {
+      "date": "2025-10-20",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50608.47
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23267.87
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2160.45
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 142505.56
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2378.07
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 4797.22
+    },
+    {
+      "date": "2025-10-19",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50608.47
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23267.87
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2160.45
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 142505.56
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2400.48
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 4837.52
+    },
+    {
+      "date": "2025-10-18",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50608.47
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 22669.25
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2184.68
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 142891.8
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2323.22
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 4732.57
+    },
+    {
+      "date": "2025-10-17",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50326.4
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23115.71
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2184.68
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 143296.29
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2483.8
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5104.7
+    },
+    {
+      "date": "2025-10-16",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50559.93
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 22948.5
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2572.92
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 142192.26
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2588.14
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5352.92
+    },
+    {
+      "date": "2025-10-15",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50334.67
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23195.09
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2660.11
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 139767.96
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2588.14
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5314.53
+    },
+    {
+      "date": "2025-10-14",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 50707.61
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23375.8
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2670.11
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 139767.96
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2677.77
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5477.68
+    },
+    {
+      "date": "2025-10-13",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 49828.2
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23394.96
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2670.11
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 139767.96
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 125.37
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2584.73
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5292.97
+    },
+    {
+      "date": "2025-10-12",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 49828.2
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23989.02
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2855.99
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 143262.42
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 82.8
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2807.68
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5263.38
+    },
+    {
+      "date": "2025-10-10",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 51574.13
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 44.09
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 23904.5
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 2855.99
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 38.22
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.38
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 143589.39
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 82.8
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 2801.98
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.15
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 174.43
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 5242.26
+    },
+    {
+      "date": "2025-10-09",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 51637.01
+    },
     {
       "date": "2025-10-08",
       "investment": "Talisman Wallet",
@@ -35886,21 +37818,21 @@
     },
     {
       "date": "2024-08-22",
-      "total_income_usd": 123.89931346878973,
+      "total_income_usd": 123.56577823513396,
       "total_expenses_usd": 0.0,
-      "delta_usd": 123.89931346878973
+      "delta_usd": 123.56577823513396
     },
     {
       "date": "2024-08-23",
-      "total_income_usd": 1744.8265438333367,
+      "total_income_usd": 1746.6212717208446,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1744.8265438333367
+      "delta_usd": 1746.6212717208446
     },
     {
       "date": "2024-08-24",
-      "total_income_usd": 2477.46232188612,
+      "total_income_usd": 2473.6079819456877,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2477.46232188612
+      "delta_usd": 2473.6079819456877
     },
     {
       "date": "2024-08-25",
@@ -35910,39 +37842,39 @@
     },
     {
       "date": "2024-08-26",
-      "total_income_usd": -958.0149982495074,
+      "total_income_usd": -957.0487791239548,
       "total_expenses_usd": 0.0,
-      "delta_usd": -958.0149982495074
+      "delta_usd": -957.0487791239548
     },
     {
       "date": "2024-08-27",
-      "total_income_usd": -1510.1658225961853,
+      "total_income_usd": -1508.167522473271,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1510.1658225961853
+      "delta_usd": -1508.167522473271
     },
     {
       "date": "2024-08-28",
-      "total_income_usd": -679.5979577962046,
+      "total_income_usd": -678.6233929422181,
       "total_expenses_usd": 0.0,
-      "delta_usd": -679.5979577962046
+      "delta_usd": -678.6233929422181
     },
     {
       "date": "2024-08-29",
-      "total_income_usd": -2939.7816199040863,
+      "total_income_usd": -2937.6059564542247,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2939.7816199040863
+      "delta_usd": -2937.6059564542247
     },
     {
       "date": "2024-08-30",
-      "total_income_usd": 502.33856097981914,
+      "total_income_usd": 500.41236561438035,
       "total_expenses_usd": 0.0,
-      "delta_usd": 502.33856097981914
+      "delta_usd": 500.41236561438035
     },
     {
       "date": "2024-08-31",
-      "total_income_usd": 815.5546130506771,
+      "total_income_usd": 812.1834934365638,
       "total_expenses_usd": 0.0,
-      "delta_usd": 815.5546130506771
+      "delta_usd": 812.1834934365638
     },
     {
       "date": "2024-09-01",
@@ -35952,39 +37884,39 @@
     },
     {
       "date": "2024-09-02",
-      "total_income_usd": -26.06029758431929,
+      "total_income_usd": -26.05846225536254,
       "total_expenses_usd": 0.0,
-      "delta_usd": -26.06029758431929
+      "delta_usd": -26.05846225536254
     },
     {
       "date": "2024-09-03",
-      "total_income_usd": -567.0948080289393,
+      "total_income_usd": -566.0372506989726,
       "total_expenses_usd": 0.0,
-      "delta_usd": -567.0948080289393
+      "delta_usd": -566.0372506989726
     },
     {
       "date": "2024-09-04",
-      "total_income_usd": -1270.7242149579542,
+      "total_income_usd": -1264.4071711315453,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1270.7242149579542
+      "delta_usd": -1264.4071711315453
     },
     {
       "date": "2024-09-05",
-      "total_income_usd": 194.26364962977573,
+      "total_income_usd": 194.94199281452643,
       "total_expenses_usd": 0.0,
-      "delta_usd": 194.26364962977573
+      "delta_usd": 194.94199281452643
     },
     {
       "date": "2024-09-06",
-      "total_income_usd": -202.23099414646268,
+      "total_income_usd": -201.23442019036617,
       "total_expenses_usd": 0.0,
-      "delta_usd": -202.23099414646268
+      "delta_usd": -201.23442019036617
     },
     {
       "date": "2024-09-07",
-      "total_income_usd": -5473.669685861476,
+      "total_income_usd": -5460.42095804625,
       "total_expenses_usd": 0.0,
-      "delta_usd": -5473.669685861476
+      "delta_usd": -5460.42095804625
     },
     {
       "date": "2024-09-08",
@@ -35994,39 +37926,39 @@
     },
     {
       "date": "2024-09-09",
-      "total_income_usd": 1122.631266192091,
+      "total_income_usd": 1121.38997204101,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1122.631266192091
+      "delta_usd": 1121.38997204101
     },
     {
       "date": "2024-09-10",
-      "total_income_usd": 2422.4341581252643,
+      "total_income_usd": 2415.4437154019556,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2422.4341581252643
+      "delta_usd": 2415.4437154019556
     },
     {
       "date": "2024-09-11",
-      "total_income_usd": 33.81455214988884,
+      "total_income_usd": 33.0113683505316,
       "total_expenses_usd": 0.0,
-      "delta_usd": 33.81455214988884
+      "delta_usd": 33.0113683505316
     },
     {
       "date": "2024-09-12",
-      "total_income_usd": 4002.296444341951,
+      "total_income_usd": 3993.896489624019,
       "total_expenses_usd": 0.0,
-      "delta_usd": 4002.296444341951
+      "delta_usd": 3993.896489624019
     },
     {
       "date": "2024-09-13",
-      "total_income_usd": 968.3182072229611,
+      "total_income_usd": 963.3068216557438,
       "total_expenses_usd": 0.0,
-      "delta_usd": 968.3182072229611
+      "delta_usd": 963.3068216557438
     },
     {
       "date": "2024-09-14",
-      "total_income_usd": 963.2851899484089,
+      "total_income_usd": 960.4750927102547,
       "total_expenses_usd": 0.0,
-      "delta_usd": 963.2851899484089
+      "delta_usd": 960.4750927102547
     },
     {
       "date": "2024-09-15",
@@ -36036,87 +37968,87 @@
     },
     {
       "date": "2024-09-16",
-      "total_income_usd": -351.2374909557683,
+      "total_income_usd": -351.10905871388377,
       "total_expenses_usd": 0.0,
-      "delta_usd": -351.2374909557683
+      "delta_usd": -351.10905871388377
     },
     {
       "date": "2024-09-17",
-      "total_income_usd": 460.6723773656853,
+      "total_income_usd": 458.40731635496195,
       "total_expenses_usd": 0.0,
-      "delta_usd": 460.6723773656853
+      "delta_usd": 458.40731635496195
     },
     {
       "date": "2024-09-18",
-      "total_income_usd": -58.27172654273704,
+      "total_income_usd": -57.27505141752437,
       "total_expenses_usd": 0.0,
-      "delta_usd": -58.27172654273704
+      "delta_usd": -57.27505141752437
     },
     {
       "date": "2024-09-19",
-      "total_income_usd": 3215.1352422764826,
+      "total_income_usd": 3213.8470091878607,
       "total_expenses_usd": 0.0,
-      "delta_usd": 3215.1352422764826
+      "delta_usd": 3213.8470091878607
     },
     {
       "date": "2024-09-20",
-      "total_income_usd": 2016.0612268127845,
+      "total_income_usd": 2009.2302792247115,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2016.0612268127845
+      "delta_usd": 2009.2302792247115
     },
     {
       "date": "2024-09-21",
-      "total_income_usd": 46.72397741342425,
+      "total_income_usd": 48.10269681940588,
       "total_expenses_usd": 0.0,
-      "delta_usd": 46.72397741342425
+      "delta_usd": 48.10269681940588
     },
     {
       "date": "2024-09-22",
-      "total_income_usd": -290.75713968958,
+      "total_income_usd": -290.76450139795094,
       "total_expenses_usd": 0.0,
-      "delta_usd": -290.75713968958
+      "delta_usd": -290.76450139795094
     },
     {
       "date": "2024-09-23",
-      "total_income_usd": 1749.2637203874378,
-      "total_expenses_usd": 4.21286031042117,
-      "delta_usd": 1745.0508600770168
+      "total_income_usd": 1747.6989189189137,
+      "total_expenses_usd": 4.205498602050209,
+      "delta_usd": 1743.4934203168634
     },
     {
       "date": "2024-09-24",
-      "total_income_usd": 1519.5436524284253,
-      "total_expenses_usd": 41.77850390944096,
-      "delta_usd": 1477.7651485189842
+      "total_income_usd": 1518.7205812190296,
+      "total_expenses_usd": 41.70549860205028,
+      "delta_usd": 1477.0150826169793
     },
     {
       "date": "2024-09-25",
-      "total_income_usd": -71.39176883669307,
-      "total_expenses_usd": 6.17341580114388,
-      "delta_usd": -77.56518463783695
+      "total_income_usd": -73.85225421933305,
+      "total_expenses_usd": 6.162628145386988,
+      "delta_usd": -80.01488236472004
     },
     {
       "date": "2024-09-26",
-      "total_income_usd": -225.18888983872637,
-      "total_expenses_usd": 70.01983895437041,
-      "delta_usd": -295.2087287930968
+      "total_income_usd": -224.43157548811263,
+      "total_expenses_usd": 69.89748369058714,
+      "delta_usd": -294.32905917869977
     },
     {
       "date": "2024-09-27",
-      "total_income_usd": 2206.4061964658326,
-      "total_expenses_usd": 24.40191387559792,
-      "delta_usd": 2182.0042825902347
+      "total_income_usd": 2198.8174509173678,
+      "total_expenses_usd": 24.359273066169447,
+      "delta_usd": 2174.4581778511983
     },
     {
       "date": "2024-09-28",
-      "total_income_usd": -1031.3017451276542,
+      "total_income_usd": -1030.8594640943925,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1031.3017451276542
+      "delta_usd": -1030.8594640943925
     },
     {
       "date": "2024-09-29",
       "total_income_usd": 1290.7899999999972,
-      "total_expenses_usd": 347.9519197105848,
-      "delta_usd": 942.8380802894125
+      "total_expenses_usd": 347.3438956197578,
+      "delta_usd": 943.4461043802394
     },
     {
       "date": "2024-09-30",
@@ -36126,159 +38058,159 @@
     },
     {
       "date": "2024-10-01",
-      "total_income_usd": -3022.9628338102734,
-      "total_expenses_usd": 851.966390477302,
-      "delta_usd": -3874.9292242875754
+      "total_income_usd": -3023.1926606895067,
+      "total_expenses_usd": 850.477632805219,
+      "delta_usd": -3873.6702934947257
     },
     {
       "date": "2024-10-02",
-      "total_income_usd": -398.3809312839471,
+      "total_income_usd": -394.7364439719529,
       "total_expenses_usd": 0.0,
-      "delta_usd": -398.3809312839471
+      "delta_usd": -394.7364439719529
     },
     {
       "date": "2024-10-03",
-      "total_income_usd": -2811.3026083568375,
-      "total_expenses_usd": 28.358034776520096,
-      "delta_usd": -2839.6606431333576
+      "total_income_usd": -2810.9732384290223,
+      "total_expenses_usd": 28.30848089468787,
+      "delta_usd": -2839.28171932371
     },
     {
       "date": "2024-10-04",
-      "total_income_usd": 2857.045017329208,
+      "total_income_usd": 2855.82399072217,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2857.045017329208
+      "delta_usd": 2855.82399072217
     },
     {
       "date": "2024-10-05",
-      "total_income_usd": 1101.5108146873222,
-      "total_expenses_usd": 50.91609289298634,
-      "delta_usd": 1050.5947217943358
+      "total_income_usd": 1096.5146597791252,
+      "total_expenses_usd": 50.82712022367194,
+      "delta_usd": 1045.6875395554532
     },
     {
       "date": "2024-10-06",
       "total_income_usd": -125.34999999999854,
-      "total_expenses_usd": 19.768934531450512,
-      "delta_usd": -145.11893453144904
+      "total_expenses_usd": 19.7343895619757,
+      "delta_usd": -145.08438956197423
     },
     {
       "date": "2024-10-07",
-      "total_income_usd": 310.3267324075116,
-      "total_expenses_usd": 13.397129186602893,
-      "delta_usd": 296.9296032209087
+      "total_income_usd": 311.7037185461286,
+      "total_expenses_usd": 13.37371854613236,
+      "delta_usd": 298.32999999999623
     },
     {
       "date": "2024-10-08",
-      "total_income_usd": -857.7537085601326,
+      "total_income_usd": -856.6944129557644,
       "total_expenses_usd": 0.0,
-      "delta_usd": -857.7537085601326
+      "delta_usd": -856.6944129557644
     },
     {
       "date": "2024-10-09",
-      "total_income_usd": -320.28910400249293,
-      "total_expenses_usd": 13.128719803944453,
-      "delta_usd": -333.4178238064374
+      "total_income_usd": -320.9942455670173,
+      "total_expenses_usd": 13.105778191985088,
+      "delta_usd": -334.1000237590024
     },
     {
       "date": "2024-10-10",
-      "total_income_usd": 161.5309737799205,
+      "total_income_usd": 158.1191470398694,
       "total_expenses_usd": 0.0,
-      "delta_usd": 161.5309737799205
+      "delta_usd": 158.1191470398694
     },
     {
       "date": "2024-10-11",
-      "total_income_usd": -536.6588821866379,
-      "total_expenses_usd": 132.24413583848758,
-      "delta_usd": -668.9030180251254
+      "total_income_usd": -532.624771801031,
+      "total_expenses_usd": 132.0130475302889,
+      "delta_usd": -664.6378193313199
     },
     {
       "date": "2024-10-12",
-      "total_income_usd": 2654.4951405622605,
-      "total_expenses_usd": 27.202707433772908,
-      "delta_usd": 2627.2924331284876
+      "total_income_usd": 2650.466857855373,
+      "total_expenses_usd": 27.155172413793107,
+      "delta_usd": 2623.31168544158
     },
     {
       "date": "2024-10-13",
       "total_income_usd": -134.94000000000233,
-      "total_expenses_usd": 3.886101061967539,
-      "delta_usd": -138.82610106196987
+      "total_expenses_usd": 3.8793103448275676,
+      "delta_usd": -138.8193103448299
     },
     {
       "date": "2024-10-14",
-      "total_income_usd": 788.9667872563882,
-      "total_expenses_usd": 16.174582798459582,
-      "delta_usd": 772.7922044579286
+      "total_income_usd": 787.999813606709,
+      "total_expenses_usd": 16.146318732525646,
+      "delta_usd": 771.8534948741834
     },
     {
       "date": "2024-10-15",
-      "total_income_usd": -3695.150648850504,
-      "total_expenses_usd": 147.17003150892756,
-      "delta_usd": -3842.320680359431
+      "total_income_usd": -3693.4403261882535,
+      "total_expenses_usd": 146.91286113699908,
+      "delta_usd": -3840.3531873252527
     },
     {
       "date": "2024-10-16",
-      "total_income_usd": 272.72980231948475,
-      "total_expenses_usd": 2.392344497607669,
-      "delta_usd": 270.3374578218771
+      "total_income_usd": 274.92458150323046,
+      "total_expenses_usd": 2.388164026095074,
+      "delta_usd": 272.5364174771354
     },
     {
       "date": "2024-10-17",
-      "total_income_usd": 262.5130697593221,
+      "total_income_usd": 259.8960505605896,
       "total_expenses_usd": 0.0,
-      "delta_usd": 262.5130697593221
+      "delta_usd": 259.8960505605896
     },
     {
       "date": "2024-10-18",
-      "total_income_usd": 1120.7874192379943,
-      "total_expenses_usd": 4.469599719920626,
-      "delta_usd": 1116.3178195180737
+      "total_income_usd": 1118.860465966624,
+      "total_expenses_usd": 4.461789375582461,
+      "delta_usd": 1114.3986765910415
     },
     {
       "date": "2024-10-19",
-      "total_income_usd": -52.58721798083293,
+      "total_income_usd": -55.77825922478657,
       "total_expenses_usd": 0.0,
-      "delta_usd": -52.58721798083293
+      "delta_usd": -55.77825922478657
     },
     {
       "date": "2024-10-20",
       "total_income_usd": -381.9300000000003,
-      "total_expenses_usd": 1.1319873964289537,
-      "delta_usd": -383.06198739642923
+      "total_expenses_usd": 1.1300093196644576,
+      "delta_usd": -383.06000931966474
     },
     {
       "date": "2024-10-21",
-      "total_income_usd": 991.6530762049257,
-      "total_expenses_usd": 40.98494573462485,
-      "delta_usd": 950.6681304703009
+      "total_income_usd": 989.9483410997212,
+      "total_expenses_usd": 40.91332712022371,
+      "delta_usd": 949.0350139794975
     },
     {
       "date": "2024-10-22",
-      "total_income_usd": -1127.4704625045401,
+      "total_income_usd": -1125.377287891312,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1127.4704625045401
+      "delta_usd": -1125.377287891312
     },
     {
       "date": "2024-10-23",
-      "total_income_usd": -660.9048153141359,
-      "total_expenses_usd": 23.526665888668454,
-      "delta_usd": -684.4314812028044
+      "total_income_usd": -658.9258302884756,
+      "total_expenses_usd": 23.485554520037276,
+      "delta_usd": -682.4113848085128
     },
     {
       "date": "2024-10-24",
-      "total_income_usd": -3486.2943234815325,
+      "total_income_usd": -3486.099946644514,
       "total_expenses_usd": 0.0,
-      "delta_usd": -3486.2943234815325
+      "delta_usd": -3486.099946644514
     },
     {
       "date": "2024-10-25",
-      "total_income_usd": 1516.9760960391295,
-      "total_expenses_usd": 22.639747928579343,
-      "delta_usd": 1494.3363481105503
+      "total_income_usd": 1516.282073351441,
+      "total_expenses_usd": 22.600186393289416,
+      "delta_usd": 1493.6818869581516
     },
     {
       "date": "2024-10-26",
-      "total_income_usd": -883.8873765471855,
-      "total_expenses_usd": 65.87699848290382,
-      "delta_usd": -949.7643750300892
+      "total_income_usd": -884.2202978607288,
+      "total_expenses_usd": 65.76188257222772,
+      "delta_usd": -949.9821804329565
     },
     {
       "date": "2024-10-27",
@@ -36288,99 +38220,99 @@
     },
     {
       "date": "2024-10-29",
-      "total_income_usd": 1603.3847196022894,
-      "total_expenses_usd": 1273.555840821566,
-      "delta_usd": 329.82887878072324
+      "total_income_usd": 1601.109796976081,
+      "total_expenses_usd": 1271.330382106244,
+      "delta_usd": 329.77941486983696
     },
     {
       "date": "2024-10-30",
-      "total_income_usd": -481.5658542617952,
-      "total_expenses_usd": 9.686077722021187,
-      "delta_usd": -491.2519319838164
+      "total_income_usd": -481.204972036035,
+      "total_expenses_usd": 9.669151910531168,
+      "delta_usd": -490.87412394656616
     },
     {
       "date": "2024-10-31",
-      "total_income_usd": -2004.2690556695163,
-      "total_expenses_usd": 66.32045746294803,
-      "delta_usd": -2070.589513132464
+      "total_income_usd": -2000.2479449326308,
+      "total_expenses_usd": 66.2045666356013,
+      "delta_usd": -2066.4525115682322
     },
     {
       "date": "2024-11-01",
-      "total_income_usd": -1664.8889557215289,
-      "total_expenses_usd": 843.8207492122768,
-      "delta_usd": -2508.709704933806
+      "total_income_usd": -1658.684545456361,
+      "total_expenses_usd": 842.3462255358806,
+      "delta_usd": -2501.0307709922417
     },
     {
       "date": "2024-11-02",
-      "total_income_usd": 326.3692602040421,
+      "total_income_usd": 322.75384920403997,
       "total_expenses_usd": 0.0,
-      "delta_usd": 326.3692602040421
+      "delta_usd": 322.75384920403997
     },
     {
       "date": "2024-11-06",
-      "total_income_usd": 5308.289548422256,
-      "total_expenses_usd": 91.80767884233862,
-      "delta_usd": 5216.481869579918
+      "total_income_usd": 5303.609373055846,
+      "total_expenses_usd": 91.64725069897479,
+      "delta_usd": 5211.962122356871
     },
     {
       "date": "2024-11-07",
-      "total_income_usd": 3808.499812355808,
+      "total_income_usd": 3798.8444070458972,
       "total_expenses_usd": 0.0,
-      "delta_usd": 3808.499812355808
+      "delta_usd": 3798.8444070458972
     },
     {
       "date": "2024-11-08",
-      "total_income_usd": 1061.8294085881203,
+      "total_income_usd": 1057.4554194529626,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1061.8294085881203
+      "delta_usd": 1057.4554194529626
     },
     {
       "date": "2024-11-09",
-      "total_income_usd": 1045.6379690189383,
+      "total_income_usd": 1046.5536230851499,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1045.6379690189383
+      "delta_usd": 1046.5536230851499
     },
     {
       "date": "2024-11-10",
       "total_income_usd": 1638.0700000000033,
-      "total_expenses_usd": 33.936281946551574,
-      "delta_usd": 1604.1337180534517
+      "total_expenses_usd": 33.87698042870461,
+      "delta_usd": 1604.1930195712987
     },
     {
       "date": "2024-11-11",
-      "total_income_usd": 3844.9149258956686,
-      "total_expenses_usd": 145.24448593768227,
-      "delta_usd": 3699.670439957986
+      "total_income_usd": 3842.047530288908,
+      "total_expenses_usd": 144.99068033550782,
+      "delta_usd": 3697.0568499534
     },
     {
       "date": "2024-11-12",
-      "total_income_usd": -325.033034703217,
+      "total_income_usd": -325.48784269855014,
       "total_expenses_usd": 0.0,
-      "delta_usd": -325.033034703217
+      "delta_usd": -325.48784269855014
     },
     {
       "date": "2024-11-13",
-      "total_income_usd": 885.9085902230568,
-      "total_expenses_usd": 3.816081223013166,
-      "delta_usd": 882.0925090000436
+      "total_income_usd": 888.0333898345639,
+      "total_expenses_usd": 3.8094128611369777,
+      "delta_usd": 884.2239769734269
     },
     {
       "date": "2024-11-14",
-      "total_income_usd": -137.35494885398253,
+      "total_income_usd": -137.17015460948215,
       "total_expenses_usd": 0.0,
-      "delta_usd": -137.35494885398253
+      "delta_usd": -137.17015460948215
     },
     {
       "date": "2024-11-15",
-      "total_income_usd": -1410.1659813794652,
-      "total_expenses_usd": 18.952036410316268,
-      "delta_usd": -1429.1180177897813
+      "total_income_usd": -1409.331364515753,
+      "total_expenses_usd": 18.91891891891893,
+      "delta_usd": -1428.250283434672
     },
     {
       "date": "2024-11-16",
-      "total_income_usd": 602.4295046166721,
+      "total_income_usd": 606.2640944702575,
       "total_expenses_usd": 0.0,
-      "delta_usd": 602.4295046166721
+      "delta_usd": 606.2640944702575
     },
     {
       "date": "2024-11-17",
@@ -36390,87 +38322,87 @@
     },
     {
       "date": "2024-11-18",
-      "total_income_usd": 1205.8096639047722,
+      "total_income_usd": 1204.4754613233913,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1205.8096639047722
+      "delta_usd": 1204.4754613233913
     },
     {
       "date": "2024-11-19",
-      "total_income_usd": 1633.359596869712,
-      "total_expenses_usd": 283.58034776520014,
-      "delta_usd": 1349.779249104512
+      "total_income_usd": 1630.2028240475863,
+      "total_expenses_usd": 283.0848089468779,
+      "delta_usd": 1347.1180151007084
     },
     {
       "date": "2024-11-20",
-      "total_income_usd": -314.6040688034195,
-      "total_expenses_usd": 11.669973159061735,
-      "delta_usd": -326.27404196248125
+      "total_income_usd": -315.34630960209927,
+      "total_expenses_usd": 11.649580615097857,
+      "delta_usd": -326.99589021719714
     },
     {
       "date": "2024-11-21",
-      "total_income_usd": -195.86031669482804,
-      "total_expenses_usd": 48.231999066402196,
-      "delta_usd": -244.09231576123022
+      "total_income_usd": -194.03537408642978,
+      "total_expenses_usd": 48.14771668219949,
+      "delta_usd": -242.18309076862926
     },
     {
       "date": "2024-11-22",
-      "total_income_usd": -476.47652905768484,
+      "total_income_usd": -483.29408584208886,
       "total_expenses_usd": 0.0,
-      "delta_usd": -476.47652905768484
+      "delta_usd": -483.29408584208886
     },
     {
       "date": "2024-11-23",
-      "total_income_usd": 274.02140562249156,
+      "total_income_usd": 272.15503740648535,
       "total_expenses_usd": 0.0,
-      "delta_usd": 274.02140562249156
+      "delta_usd": 272.15503740648535
     },
     {
       "date": "2024-11-24",
       "total_income_usd": 506.6800000000003,
-      "total_expenses_usd": 33.13105379857612,
-      "delta_usd": 473.5489462014242
+      "total_expenses_usd": 33.073159366262665,
+      "delta_usd": 473.60684063373765
     },
     {
       "date": "2024-11-25",
-      "total_income_usd": 172.32434023891972,
-      "total_expenses_usd": 59.31847356751098,
-      "delta_usd": 113.00586667140874
+      "total_income_usd": 170.48034455267168,
+      "total_expenses_usd": 59.214818266542586,
+      "delta_usd": 111.2655262861291
     },
     {
       "date": "2024-11-26",
-      "total_income_usd": -5529.490656322499,
-      "total_expenses_usd": 998.7163029525033,
-      "delta_usd": -6528.206959275002
+      "total_income_usd": -5526.332299603136,
+      "total_expenses_usd": 996.9711090400745,
+      "delta_usd": -6523.30340864321
     },
     {
       "date": "2024-11-27",
-      "total_income_usd": 2953.80535100004,
-      "total_expenses_usd": 64.65165130120198,
-      "delta_usd": 2889.153699698838
+      "total_income_usd": 2951.5111174832073,
+      "total_expenses_usd": 64.5386766076421,
+      "delta_usd": 2886.972440875565
     },
     {
       "date": "2024-11-28",
-      "total_income_usd": 828.7908706067832,
-      "total_expenses_usd": 397.77103512661927,
-      "delta_usd": 431.0198354801639
+      "total_income_usd": 829.5279397797653,
+      "total_expenses_usd": 397.07595526561045,
+      "delta_usd": 432.4519845141549
     },
     {
       "date": "2024-11-29",
-      "total_income_usd": 1108.695462993629,
-      "total_expenses_usd": 110.42128603104211,
-      "delta_usd": 998.2741769625869
+      "total_income_usd": 1107.5533186704365,
+      "total_expenses_usd": 110.2283317800559,
+      "delta_usd": 997.3249868903806
     },
     {
       "date": "2024-11-30",
       "total_income_usd": 428.1800000000003,
-      "total_expenses_usd": 40.973275761465736,
-      "delta_usd": 387.20672423853455
+      "total_expenses_usd": 40.901677539608556,
+      "delta_usd": 387.27832246039173
     },
     {
       "date": "2024-12-01",
-      "total_income_usd": 358.77290840169707,
+      "total_income_usd": 355.02953154990865,
       "total_expenses_usd": 0.0,
-      "delta_usd": 358.77290840169707
+      "delta_usd": 355.02953154990865
     },
     {
       "date": "2024-12-02",
@@ -36486,27 +38418,27 @@
     },
     {
       "date": "2024-12-04",
-      "total_income_usd": 2416.0940535527966,
-      "total_expenses_usd": 221.83451978060455,
-      "delta_usd": 2194.259533772192
+      "total_income_usd": 2411.8236006475686,
+      "total_expenses_usd": 221.4468779123952,
+      "delta_usd": 2190.376722735173
     },
     {
       "date": "2024-12-05",
-      "total_income_usd": 2475.0021217062376,
+      "total_income_usd": 2472.0802192461865,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2475.0021217062376
+      "delta_usd": 2472.0802192461865
     },
     {
       "date": "2024-12-06",
-      "total_income_usd": 865.7119910453785,
+      "total_income_usd": 866.0074163479505,
       "total_expenses_usd": 0.0,
-      "delta_usd": 865.7119910453785
+      "delta_usd": 866.0074163479505
     },
     {
       "date": "2024-12-07",
-      "total_income_usd": 113.50535355633087,
-      "total_expenses_usd": 42.688761815847876,
-      "delta_usd": 70.816591740483
+      "total_income_usd": 109.29429422383186,
+      "total_expenses_usd": 42.614165890028005,
+      "delta_usd": 66.68012833380385
     },
     {
       "date": "2024-12-08",
@@ -36528,171 +38460,171 @@
     },
     {
       "date": "2024-12-11",
-      "total_income_usd": 950.2713330898891,
-      "total_expenses_usd": 157.95308670790058,
-      "delta_usd": 792.3182463819885
+      "total_income_usd": 953.1696747447036,
+      "total_expenses_usd": 157.6770736253495,
+      "delta_usd": 795.492601119354
     },
     {
       "date": "2024-12-12",
-      "total_income_usd": 2348.233654695473,
+      "total_income_usd": 2344.068944590331,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2348.233654695473
+      "delta_usd": 2344.068944590331
     },
     {
       "date": "2024-12-13",
-      "total_income_usd": -2040.3031144025017,
-      "total_expenses_usd": 2.14727506126733,
-      "delta_usd": -2042.450389463769
+      "total_income_usd": -2037.4598014250826,
+      "total_expenses_usd": 2.1435228331779763,
+      "delta_usd": -2039.6033242582605
     },
     {
       "date": "2024-12-14",
-      "total_income_usd": 177.46779291281916,
+      "total_income_usd": 177.58451971191175,
       "total_expenses_usd": 0.0,
-      "delta_usd": 177.46779291281916
+      "delta_usd": 177.58451971191175
     },
     {
       "date": "2024-12-15",
       "total_income_usd": -177.60000000000582,
-      "total_expenses_usd": 113.44380907923913,
-      "delta_usd": -291.04380907924497
+      "total_expenses_usd": 113.24557315936627,
+      "delta_usd": -290.84557315937207
     },
     {
       "date": "2024-12-16",
-      "total_income_usd": 960.3634426420847,
+      "total_income_usd": 960.0235601118387,
       "total_expenses_usd": 0.0,
-      "delta_usd": 960.3634426420847
+      "delta_usd": 960.0235601118387
     },
     {
       "date": "2024-12-17",
-      "total_income_usd": 497.6899303089026,
-      "total_expenses_usd": 58.6182751779671,
-      "delta_usd": 439.0716551309355
+      "total_income_usd": 495.7321395685335,
+      "total_expenses_usd": 58.51584342963654,
+      "delta_usd": 437.21629613889695
     },
     {
       "date": "2024-12-19",
-      "total_income_usd": -12198.69546285504,
+      "total_income_usd": -12187.97979315458,
       "total_expenses_usd": 0.0,
-      "delta_usd": -12198.69546285504
+      "delta_usd": -12187.97979315458
     },
     {
       "date": "2025-01-05",
-      "total_income_usd": 1783.7464323015488,
-      "total_expenses_usd": 1571.8870346598205,
-      "delta_usd": 211.85939764172826
+      "total_income_usd": 1779.2278957253307,
+      "total_expenses_usd": 1569.1402609506058,
+      "delta_usd": 210.08763477472485
     },
     {
       "date": "2025-01-06",
-      "total_income_usd": -58.06025557241034,
-      "total_expenses_usd": 29.96849107247061,
-      "delta_usd": -88.02874664488095
+      "total_income_usd": -58.45956197576706,
+      "total_expenses_usd": 29.91612301957137,
+      "delta_usd": -88.37568499533843
     },
     {
       "date": "2025-01-07",
-      "total_income_usd": 138.41905916783173,
+      "total_income_usd": 140.07814572541815,
       "total_expenses_usd": 0.0,
-      "delta_usd": 138.41905916783173
+      "delta_usd": 140.07814572541815
     },
     {
       "date": "2025-01-17",
-      "total_income_usd": -2298.716404608471,
+      "total_income_usd": -2297.4152289791996,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2298.716404608471
+      "delta_usd": -2297.4152289791996
     },
     {
       "date": "2025-01-18",
-      "total_income_usd": 2952.3045125168196,
-      "total_expenses_usd": 29.43167230715373,
-      "delta_usd": 2922.872840209666
+      "total_income_usd": 2946.2461261305393,
+      "total_expenses_usd": 29.380242311276827,
+      "delta_usd": 2916.8658838192623
     },
     {
       "date": "2025-01-20",
-      "total_income_usd": 2596.908855175635,
-      "total_expenses_usd": 25.44054148675466,
-      "delta_usd": 2571.4683136888802
+      "total_income_usd": 2596.7000559179887,
+      "total_expenses_usd": 25.396085740913406,
+      "delta_usd": 2571.3039701770754
     },
     {
       "date": "2025-01-21",
-      "total_income_usd": -553.6154285896351,
-      "total_expenses_usd": 10.66635546738241,
-      "delta_usd": -564.2817840570176
+      "total_income_usd": -550.6627639926896,
+      "total_expenses_usd": 10.647716682199425,
+      "delta_usd": -561.310480674889
     },
     {
       "date": "2025-01-22",
-      "total_income_usd": 1400.5986142599827,
-      "total_expenses_usd": 11.669973159061735,
-      "delta_usd": 1388.928641100921
+      "total_income_usd": 1394.877729829997,
+      "total_expenses_usd": 11.649580615097857,
+      "delta_usd": 1383.228149214899
     },
     {
       "date": "2025-01-23",
-      "total_income_usd": -671.9683137076149,
-      "total_expenses_usd": 49.41066635546742,
-      "delta_usd": -721.3789800630824
+      "total_income_usd": -674.7621753630729,
+      "total_expenses_usd": 49.32432432432436,
+      "delta_usd": -724.0864996873972
     },
     {
       "date": "2025-01-24",
-      "total_income_usd": -303.82985974474883,
-      "total_expenses_usd": 42.910491305869975,
-      "delta_usd": -346.7403510506188
+      "total_income_usd": -305.0804942676094,
+      "total_expenses_usd": 42.8355079217148,
+      "delta_usd": -347.9160021893242
     },
     {
       "date": "2025-01-25",
-      "total_income_usd": -368.4993975903577,
+      "total_income_usd": -367.9330423940112,
       "total_expenses_usd": 0.0,
-      "delta_usd": -368.4993975903577
+      "delta_usd": -367.9330423940112
     },
     {
       "date": "2025-01-26",
-      "total_income_usd": 585.7331730657006,
+      "total_income_usd": 574.1188443616011,
       "total_expenses_usd": 0.0,
-      "delta_usd": 585.7331730657006
+      "delta_usd": 574.1188443616011
     },
     {
       "date": "2025-01-30",
-      "total_income_usd": -1978.165814220314,
-      "total_expenses_usd": 1332.4775353016691,
-      "delta_usd": -3310.643349521983
+      "total_income_usd": -1973.5791987146954,
+      "total_expenses_usd": 1330.1491146318735,
+      "delta_usd": -3303.728313346569
     },
     {
       "date": "2025-03-07",
-      "total_income_usd": -25812.499392246813,
-      "total_expenses_usd": 4824.273544170849,
-      "delta_usd": -30636.772936417663
+      "total_income_usd": -25784.275645070527,
+      "total_expenses_usd": 4815.843429636533,
+      "delta_usd": -30600.11907470706
     },
     {
       "date": "2025-03-08",
-      "total_income_usd": 2.188569400624061,
+      "total_income_usd": -8.457634934692068,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2.188569400624061
+      "delta_usd": -8.457634934692068
     },
     {
       "date": "2025-03-11",
-      "total_income_usd": -5863.692595589502,
-      "total_expenses_usd": 56.30762049247287,
-      "delta_usd": -5920.000216081975
+      "total_income_usd": -5849.571317860988,
+      "total_expenses_usd": 56.20922646784716,
+      "delta_usd": -5905.780544328834
     },
     {
       "date": "2025-03-12",
-      "total_income_usd": 188.59330810261918,
-      "total_expenses_usd": 1.6221262691089018,
-      "delta_usd": 186.9711818335103
+      "total_income_usd": 189.7691994019699,
+      "total_expenses_usd": 1.619291705497924,
+      "delta_usd": 188.14990769647198
     },
     {
       "date": "2025-03-13",
-      "total_income_usd": 583.5340400248587,
+      "total_income_usd": 580.9560651161314,
       "total_expenses_usd": 0.0,
-      "delta_usd": 583.5340400248587
+      "delta_usd": 580.9560651161314
     },
     {
       "date": "2025-03-14",
-      "total_income_usd": 2750.615499956588,
-      "total_expenses_usd": 6.79192437857359,
-      "delta_usd": 2743.8235755780142
+      "total_income_usd": 2753.868321314946,
+      "total_expenses_usd": 6.780055917986614,
+      "delta_usd": 2747.0882653969593
     },
     {
       "date": "2025-03-15",
-      "total_income_usd": 2432.1292254733194,
-      "total_expenses_usd": 48.24366903956138,
-      "delta_usd": 2383.885556433758
+      "total_income_usd": 2423.7362878517965,
+      "total_expenses_usd": 48.15936626281471,
+      "delta_usd": 2375.576921588982
     },
     {
       "date": "2025-03-16",
@@ -36702,39 +38634,39 @@
     },
     {
       "date": "2025-03-17",
-      "total_income_usd": -39.8444672657248,
+      "total_income_usd": -38.778732525628584,
       "total_expenses_usd": 0.0,
-      "delta_usd": -39.8444672657248
+      "delta_usd": -38.778732525628584
     },
     {
       "date": "2025-03-18",
-      "total_income_usd": -544.2209619579681,
-      "total_expenses_usd": 69.30797059166802,
-      "delta_usd": -613.5289325496361
+      "total_income_usd": -546.4831293354999,
+      "total_expenses_usd": 69.18685927306655,
+      "delta_usd": -615.6699886085664
     },
     {
       "date": "2025-03-19",
-      "total_income_usd": 424.9666715435545,
+      "total_income_usd": 426.77454098743686,
       "total_expenses_usd": 0.0,
-      "delta_usd": 424.9666715435545
+      "delta_usd": 426.77454098743686
     },
     {
       "date": "2025-03-20",
-      "total_income_usd": 1372.5468924769589,
-      "total_expenses_usd": 184.2105263157894,
-      "delta_usd": 1188.3363661611695
+      "total_income_usd": 1365.9708260403386,
+      "total_expenses_usd": 183.88863000931957,
+      "delta_usd": 1182.082196031019
     },
     {
       "date": "2025-03-21",
-      "total_income_usd": -293.3701209311811,
+      "total_income_usd": -292.0691372254985,
       "total_expenses_usd": 0.0,
-      "delta_usd": -293.3701209311811
+      "delta_usd": -292.0691372254985
     },
     {
       "date": "2025-03-22",
-      "total_income_usd": 153.83496270797482,
+      "total_income_usd": 154.56792304951915,
       "total_expenses_usd": 0.0,
-      "delta_usd": 153.83496270797482
+      "delta_usd": 154.56792304951915
     },
     {
       "date": "2025-03-23",
@@ -36744,51 +38676,51 @@
     },
     {
       "date": "2025-03-24",
-      "total_income_usd": 1700.8320212393514,
+      "total_income_usd": 1698.4245386766079,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1700.8320212393514
+      "delta_usd": 1698.4245386766079
     },
     {
       "date": "2025-03-25",
-      "total_income_usd": 2340.136618204483,
-      "total_expenses_usd": 86.33446143073874,
-      "delta_usd": 2253.802156773744
+      "total_income_usd": 2334.065285000129,
+      "total_expenses_usd": 86.18359739049396,
+      "delta_usd": 2247.881687609635
     },
     {
       "date": "2025-03-26",
-      "total_income_usd": -493.8624372889645,
+      "total_income_usd": -493.25116668454586,
       "total_expenses_usd": 0.0,
-      "delta_usd": -493.8624372889645
+      "delta_usd": -493.25116668454586
     },
     {
       "date": "2025-03-27",
-      "total_income_usd": -2029.4975203181802,
+      "total_income_usd": -2023.2438136950332,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2029.4975203181802
+      "delta_usd": -2023.2438136950332
     },
     {
       "date": "2025-03-28",
-      "total_income_usd": -802.2254733164873,
+      "total_income_usd": -802.4265952280642,
       "total_expenses_usd": 0.0,
-      "delta_usd": -802.2254733164873
+      "delta_usd": -802.4265952280642
     },
     {
       "date": "2025-03-29",
-      "total_income_usd": -3794.0850421970326,
+      "total_income_usd": -3783.5705688249122,
       "total_expenses_usd": 0.0,
-      "delta_usd": -3794.0850421970326
+      "delta_usd": -3783.5705688249122
     },
     {
       "date": "2025-04-25",
-      "total_income_usd": -2210.893687547346,
-      "total_expenses_usd": 2935.1732991014123,
-      "delta_usd": -5146.066986648759
+      "total_income_usd": -2188.729218324789,
+      "total_expenses_usd": 2930.0442684063373,
+      "delta_usd": -5118.7734867311265
     },
     {
       "date": "2025-04-26",
-      "total_income_usd": 2802.378786641489,
-      "total_expenses_usd": 294.6201423736726,
-      "delta_usd": 2507.7586442678166
+      "total_income_usd": 2791.8972765662725,
+      "total_expenses_usd": 294.10531220876055,
+      "delta_usd": 2497.791964357512
     },
     {
       "date": "2025-04-27",
@@ -36798,39 +38730,39 @@
     },
     {
       "date": "2025-04-28",
-      "total_income_usd": 351.1062798481283,
+      "total_income_usd": 350.6525963054878,
       "total_expenses_usd": 0.0,
-      "delta_usd": 351.1062798481283
+      "delta_usd": 350.6525963054878
     },
     {
       "date": "2025-04-29",
-      "total_income_usd": -371.8321973481435,
+      "total_income_usd": -374.01047732485404,
       "total_expenses_usd": 0.0,
-      "delta_usd": -371.8321973481435
+      "delta_usd": -374.01047732485404
     },
     {
       "date": "2025-04-30",
-      "total_income_usd": -40.398562259309045,
+      "total_income_usd": -40.08877912395377,
       "total_expenses_usd": 0.0,
-      "delta_usd": -40.398562259309045
+      "delta_usd": -40.08877912395377
     },
     {
       "date": "2025-05-01",
-      "total_income_usd": 915.9558333187726,
-      "total_expenses_usd": 1357.2178783988797,
-      "delta_usd": -441.2620450801071
+      "total_income_usd": 913.1351815906927,
+      "total_expenses_usd": 1354.8462255358806,
+      "delta_usd": -441.71104394518795
     },
     {
       "date": "2025-05-02",
-      "total_income_usd": 1630.3361879460201,
-      "total_expenses_usd": 0.8752479869296301,
-      "delta_usd": 1629.4609399590904
+      "total_income_usd": 1627.4343617357858,
+      "total_expenses_usd": 0.8737185461323392,
+      "delta_usd": 1626.5606431896535
     },
     {
       "date": "2025-05-03",
-      "total_income_usd": 889.5951425621402,
-      "total_expenses_usd": 154.51044462597736,
-      "delta_usd": 735.0846979361628
+      "total_income_usd": 883.1358876872463,
+      "total_expenses_usd": 154.2404473438956,
+      "delta_usd": 728.8954403433506
     },
     {
       "date": "2025-05-04",
@@ -36840,39 +38772,39 @@
     },
     {
       "date": "2025-05-05",
-      "total_income_usd": -449.9751627961261,
-      "total_expenses_usd": 90.5823316606372,
-      "delta_usd": -540.5574944567633
+      "total_income_usd": -449.3163000931971,
+      "total_expenses_usd": 90.42404473438957,
+      "delta_usd": -539.7403448275867
     },
     {
       "date": "2025-05-06",
-      "total_income_usd": -445.1788670732364,
+      "total_income_usd": -443.90000740060583,
       "total_expenses_usd": 0.0,
-      "delta_usd": -445.1788670732364
+      "delta_usd": -443.90000740060583
     },
     {
       "date": "2025-05-07",
-      "total_income_usd": -964.7920041762902,
-      "total_expenses_usd": 41.11331543937452,
-      "delta_usd": -1005.9053196156648
+      "total_income_usd": -961.7622144943923,
+      "total_expenses_usd": 41.04147250698977,
+      "delta_usd": -1002.8036870013821
     },
     {
       "date": "2025-05-08",
-      "total_income_usd": 2839.9597278854167,
-      "total_expenses_usd": 9.289298634613184,
-      "delta_usd": 2830.6704292508034
+      "total_income_usd": 2835.0137501207696,
+      "total_expenses_usd": 9.273066169617936,
+      "delta_usd": 2825.740683951152
     },
     {
       "date": "2025-05-09",
-      "total_income_usd": 1750.1359538120826,
-      "total_expenses_usd": 3.2325825650600795,
-      "delta_usd": 1746.9033712470225
+      "total_income_usd": 1745.0249700870993,
+      "total_expenses_usd": 3.226933830382085,
+      "delta_usd": 1741.7980362567173
     },
     {
       "date": "2025-05-10",
-      "total_income_usd": 753.4503614457763,
-      "total_expenses_usd": 26.245769634729786,
-      "delta_usd": 727.2045918110465
+      "total_income_usd": 752.1692269326614,
+      "total_expenses_usd": 26.199906803355024,
+      "delta_usd": 725.9693201293064
     },
     {
       "date": "2025-05-11",
@@ -36882,81 +38814,81 @@
     },
     {
       "date": "2025-05-12",
-      "total_income_usd": 1115.5186416151266,
-      "total_expenses_usd": 160.21706150075858,
-      "delta_usd": 955.3015801143681
+      "total_income_usd": 1112.936700838772,
+      "total_expenses_usd": 159.93709226467848,
+      "delta_usd": 952.9996085740934
     },
     {
       "date": "2025-05-13",
-      "total_income_usd": 4617.397866760374,
+      "total_income_usd": 4603.763257310724,
       "total_expenses_usd": 0.0,
-      "delta_usd": 4617.397866760374
+      "delta_usd": 4603.763257310724
     },
     {
       "date": "2025-05-14",
-      "total_income_usd": -2108.8238659681765,
+      "total_income_usd": -2111.0794217093344,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2108.8238659681765
+      "delta_usd": -2111.0794217093344
     },
     {
       "date": "2025-05-15",
-      "total_income_usd": -460.84412481594836,
-      "total_expenses_usd": 31.47391760998953,
-      "delta_usd": -492.3180424259379
+      "total_income_usd": -462.1834759758786,
+      "total_expenses_usd": 31.41891891891895,
+      "delta_usd": -493.60239489479756
     },
     {
       "date": "2025-05-16",
-      "total_income_usd": 705.4980106605743,
+      "total_income_usd": 701.8036360536453,
       "total_expenses_usd": 0.0,
-      "delta_usd": 705.4980106605743
+      "delta_usd": 701.8036360536453
     },
     {
       "date": "2025-05-17",
-      "total_income_usd": -525.0082419590519,
+      "total_income_usd": -528.1949635430808,
       "total_expenses_usd": 0.0,
-      "delta_usd": -525.0082419590519
+      "delta_usd": -528.1949635430808
     },
     {
       "date": "2025-05-18",
       "total_income_usd": -17.119999999999663,
-      "total_expenses_usd": 53.250087524798694,
-      "delta_usd": -70.37008752479835
+      "total_expenses_usd": 53.15703634669151,
+      "delta_usd": -70.27703634669118
     },
     {
       "date": "2025-05-19",
-      "total_income_usd": -103.23281363052672,
+      "total_income_usd": -103.03043802422917,
       "total_expenses_usd": 0.0,
-      "delta_usd": -103.23281363052672
+      "delta_usd": -103.03043802422917
     },
     {
       "date": "2025-05-20",
-      "total_income_usd": 557.0378959038395,
+      "total_income_usd": 557.1639422180803,
       "total_expenses_usd": 0.0,
-      "delta_usd": 557.0378959038395
+      "delta_usd": 557.1639422180803
     },
     {
       "date": "2025-05-21",
-      "total_income_usd": -715.5115765718551,
+      "total_income_usd": -713.4199056147334,
       "total_expenses_usd": 0.0,
-      "delta_usd": -715.5115765718551
+      "delta_usd": -713.4199056147334
     },
     {
       "date": "2025-05-22",
-      "total_income_usd": -693.0655798861966,
+      "total_income_usd": -686.1976773882175,
       "total_expenses_usd": 0.0,
-      "delta_usd": -693.0655798861966
+      "delta_usd": -686.1976773882175
     },
     {
       "date": "2025-05-23",
-      "total_income_usd": 384.6101101456692,
-      "total_expenses_usd": 22.966507177033435,
-      "delta_usd": 361.6436029686357
+      "total_income_usd": 384.4224709295893,
+      "total_expenses_usd": 22.926374650512525,
+      "delta_usd": 361.49609627907677
     },
     {
       "date": "2025-05-24",
-      "total_income_usd": -1770.4064920060696,
+      "total_income_usd": -1769.7394315004672,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1770.4064920060696
+      "delta_usd": -1769.7394315004672
     },
     {
       "date": "2025-05-25",
@@ -36966,147 +38898,147 @@
     },
     {
       "date": "2025-05-26",
-      "total_income_usd": 981.0989987163045,
-      "total_expenses_usd": 180.37110514645823,
-      "delta_usd": 800.7278935698463
+      "total_income_usd": 980.6117800559196,
+      "total_expenses_usd": 180.05591798695255,
+      "delta_usd": 800.555862068967
     },
     {
       "date": "2025-05-27",
-      "total_income_usd": 899.027031741597,
+      "total_income_usd": 892.8108572235619,
       "total_expenses_usd": 0.0,
-      "delta_usd": 899.027031741597
+      "delta_usd": 892.8108572235619
     },
     {
       "date": "2025-05-28",
-      "total_income_usd": 2004.2945791113366,
-      "total_expenses_usd": 31.497257556307634,
-      "delta_usd": 1972.797321555029
+      "total_income_usd": 1997.7922360620873,
+      "total_expenses_usd": 31.442218080149125,
+      "delta_usd": 1966.3500179819382
     },
     {
       "date": "2025-05-29",
-      "total_income_usd": -445.8706275338986,
+      "total_income_usd": -443.850935226844,
       "total_expenses_usd": 0.0,
-      "delta_usd": -445.8706275338986
+      "delta_usd": -443.850935226844
     },
     {
       "date": "2025-05-30",
-      "total_income_usd": -1162.5394582963136,
-      "total_expenses_usd": 518.2401680476135,
-      "delta_usd": -1680.779626343927
+      "total_income_usd": -1161.5205755946945,
+      "total_expenses_usd": 517.3345759552656,
+      "delta_usd": -1678.85515154996
     },
     {
       "date": "2025-06-01",
-      "total_income_usd": -619.8448465398562,
-      "total_expenses_usd": 1389.030225230482,
-      "delta_usd": -2008.8750717703383
+      "total_income_usd": -619.5990959925476,
+      "total_expenses_usd": 1386.6029822926375,
+      "delta_usd": -2006.202078285185
     },
     {
       "date": "2025-06-03",
-      "total_income_usd": -938.3042230298602,
-      "total_expenses_usd": 41.86019372155442,
-      "delta_usd": -980.1644167514146
+      "total_income_usd": -934.3920966024576,
+      "total_expenses_usd": 41.787045666355986,
+      "delta_usd": -976.1791422688136
     },
     {
       "date": "2025-06-04",
-      "total_income_usd": 1248.6620559439684,
+      "total_income_usd": 1244.4974705627142,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1248.6620559439684
+      "delta_usd": 1244.4974705627142
     },
     {
       "date": "2025-06-05",
-      "total_income_usd": 2183.472823028109,
-      "total_expenses_usd": 33.644532617574995,
-      "delta_usd": 2149.828290410534
+      "total_income_usd": 2184.0410110524563,
+      "total_expenses_usd": 33.585740913327136,
+      "delta_usd": 2150.455270139129
     },
     {
       "date": "2025-06-07",
-      "total_income_usd": 266.8185256384851,
+      "total_income_usd": 264.54844142472587,
       "total_expenses_usd": 0.0,
-      "delta_usd": 266.8185256384851
+      "delta_usd": 264.54844142472587
     },
     {
       "date": "2025-06-09",
-      "total_income_usd": 362.8616151242877,
-      "total_expenses_usd": 59.17843388960203,
-      "delta_usd": 303.68318123468566
+      "total_income_usd": 362.93388630009576,
+      "total_expenses_usd": 59.07502329916121,
+      "delta_usd": 303.85886300093455
     },
     {
       "date": "2025-06-10",
-      "total_income_usd": 1748.6071022981314,
-      "total_expenses_usd": 55.6657719687245,
-      "delta_usd": 1692.9413303294068
+      "total_income_usd": 1746.5417200275874,
+      "total_expenses_usd": 55.568499534016794,
+      "delta_usd": 1690.9732204935706
     },
     {
       "date": "2025-06-11",
-      "total_income_usd": -106.2725327122495,
+      "total_income_usd": -107.01419496459468,
       "total_expenses_usd": 0.0,
-      "delta_usd": -106.2725327122495
+      "delta_usd": -107.01419496459468
     },
     {
       "date": "2025-06-12",
-      "total_income_usd": -520.664425303371,
-      "total_expenses_usd": 44.15917843388959,
-      "delta_usd": -564.8236037372606
+      "total_income_usd": -520.4068616768592,
+      "total_expenses_usd": 44.082013047530275,
+      "delta_usd": -564.4888747243895
     },
     {
       "date": "2025-06-13",
-      "total_income_usd": -578.8586648044267,
+      "total_income_usd": -579.2761784295762,
       "total_expenses_usd": 0.0,
-      "delta_usd": -578.8586648044267
+      "delta_usd": -579.2761784295762
     },
     {
       "date": "2025-06-15",
-      "total_income_usd": 1440.1823754253846,
+      "total_income_usd": 1447.5690464890943,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1440.1823754253846
+      "delta_usd": 1447.5690464890943
     },
     {
       "date": "2025-06-16",
-      "total_income_usd": 832.4621706150092,
+      "total_income_usd": 831.8320410065254,
       "total_expenses_usd": 0.0,
-      "delta_usd": 832.4621706150092
+      "delta_usd": 831.8320410065254
     },
     {
       "date": "2025-06-17",
-      "total_income_usd": 54.49738298675362,
+      "total_income_usd": 51.08636184800389,
       "total_expenses_usd": 0.0,
-      "delta_usd": 54.49738298675362
+      "delta_usd": 51.08636184800389
     },
     {
       "date": "2025-06-20",
-      "total_income_usd": -992.3452197573745,
+      "total_income_usd": -992.1713934707859,
       "total_expenses_usd": 0.0,
-      "delta_usd": -992.3452197573745
+      "delta_usd": -992.1713934707859
     },
     {
       "date": "2025-06-24",
-      "total_income_usd": -2294.5273140133972,
+      "total_income_usd": -2300.3797832738046,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2294.5273140133972
+      "delta_usd": -2300.3797832738046
     },
     {
       "date": "2025-06-25",
-      "total_income_usd": 1764.8716306005517,
+      "total_income_usd": 1758.348046632182,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1764.8716306005517
+      "delta_usd": 1758.348046632182
     },
     {
       "date": "2025-06-26",
-      "total_income_usd": -994.0845256216184,
+      "total_income_usd": -991.3545322786777,
       "total_expenses_usd": 0.0,
-      "delta_usd": -994.0845256216184
+      "delta_usd": -991.3545322786777
     },
     {
       "date": "2025-06-27",
-      "total_income_usd": 797.2315363248512,
+      "total_income_usd": 794.3788479473671,
       "total_expenses_usd": 0.0,
-      "delta_usd": 797.2315363248512
+      "delta_usd": 794.3788479473671
     },
     {
       "date": "2025-06-28",
-      "total_income_usd": 603.5051110152426,
+      "total_income_usd": 597.8600407636455,
       "total_expenses_usd": 0.0,
-      "delta_usd": 603.5051110152426
+      "delta_usd": 597.8600407636455
     },
     {
       "date": "2025-06-29",
@@ -37116,69 +39048,69 @@
     },
     {
       "date": "2025-06-30",
-      "total_income_usd": 181.06604271210182,
+      "total_income_usd": 181.29602982292644,
       "total_expenses_usd": 0.0,
-      "delta_usd": 181.06604271210182
+      "delta_usd": 181.29602982292644
     },
     {
       "date": "2025-07-01",
-      "total_income_usd": -1484.919890302252,
+      "total_income_usd": -1482.7928052190118,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1484.919890302252
+      "delta_usd": -1482.7928052190118
     },
     {
       "date": "2025-07-02",
-      "total_income_usd": 531.2329763446335,
-      "total_expenses_usd": 1600.9569377990433,
-      "delta_usd": -1069.7239614544098
+      "total_income_usd": 529.9474882225907,
+      "total_expenses_usd": 1598.1593662628147,
+      "delta_usd": -1068.211878040224
     },
     {
       "date": "2025-07-03",
-      "total_income_usd": 778.9270547270934,
+      "total_income_usd": 778.8009083601817,
       "total_expenses_usd": 0.0,
-      "delta_usd": 778.9270547270934
+      "delta_usd": 778.8009083601817
     },
     {
       "date": "2025-07-05",
-      "total_income_usd": -586.6731354178276,
+      "total_income_usd": -587.4587282227211,
       "total_expenses_usd": 0.0,
-      "delta_usd": -586.6731354178276
+      "delta_usd": -587.4587282227211
     },
     {
       "date": "2025-07-07",
-      "total_income_usd": -152.23321741160294,
+      "total_income_usd": -151.175191053125,
       "total_expenses_usd": 0.0,
-      "delta_usd": -152.23321741160294
+      "delta_usd": -151.175191053125
     },
     {
       "date": "2025-07-08",
-      "total_income_usd": -384.3796604573378,
+      "total_income_usd": -384.60702102086753,
       "total_expenses_usd": 0.0,
-      "delta_usd": -384.3796604573378
+      "delta_usd": -384.60702102086753
     },
     {
       "date": "2025-07-09",
-      "total_income_usd": 441.41851483221467,
+      "total_income_usd": 440.673522610728,
       "total_expenses_usd": 0.0,
-      "delta_usd": 441.41851483221467
+      "delta_usd": 440.673522610728
     },
     {
       "date": "2025-07-10",
-      "total_income_usd": 2541.267435215745,
+      "total_income_usd": 2537.474998202136,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2541.267435215745
+      "delta_usd": 2537.474998202136
     },
     {
       "date": "2025-07-11",
-      "total_income_usd": 620.8033845252183,
+      "total_income_usd": 620.3015995957428,
       "total_expenses_usd": 0.0,
-      "delta_usd": 620.8033845252183
+      "delta_usd": 620.3015995957428
     },
     {
       "date": "2025-07-12",
-      "total_income_usd": -901.4150350182919,
+      "total_income_usd": -898.7905274724284,
       "total_expenses_usd": 0.0,
-      "delta_usd": -901.4150350182919
+      "delta_usd": -898.7905274724284
     },
     {
       "date": "2025-07-13",
@@ -37188,39 +39120,39 @@
     },
     {
       "date": "2025-07-14",
-      "total_income_usd": 701.0053261757494,
+      "total_income_usd": 700.5921528424972,
       "total_expenses_usd": 0.0,
-      "delta_usd": 701.0053261757494
+      "delta_usd": 700.5921528424972
     },
     {
       "date": "2025-07-15",
-      "total_income_usd": 510.99898189225456,
+      "total_income_usd": 508.6915299754828,
       "total_expenses_usd": 0.0,
-      "delta_usd": 510.99898189225456
+      "delta_usd": 508.6915299754828
     },
     {
       "date": "2025-07-16",
-      "total_income_usd": 996.9162143216414,
+      "total_income_usd": 997.8456758151286,
       "total_expenses_usd": 0.0,
-      "delta_usd": 996.9162143216414
+      "delta_usd": 997.8456758151286
     },
     {
       "date": "2025-07-17",
-      "total_income_usd": 127.60091809814777,
+      "total_income_usd": 127.29090222121562,
       "total_expenses_usd": 0.0,
-      "delta_usd": 127.60091809814777
+      "delta_usd": 127.29090222121562
     },
     {
       "date": "2025-07-18",
-      "total_income_usd": 1884.176051001601,
+      "total_income_usd": 1877.877147073737,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1884.176051001601
+      "delta_usd": 1877.877147073737
     },
     {
       "date": "2025-07-19",
-      "total_income_usd": -83.99144913014256,
+      "total_income_usd": -82.66676907120844,
       "total_expenses_usd": 0.0,
-      "delta_usd": -83.99144913014256
+      "delta_usd": -82.66676907120844
     },
     {
       "date": "2025-07-20",
@@ -37230,99 +39162,99 @@
     },
     {
       "date": "2025-07-21",
-      "total_income_usd": 966.1811739993,
+      "total_income_usd": 966.3589561975771,
       "total_expenses_usd": 0.0,
-      "delta_usd": 966.1811739993
+      "delta_usd": 966.3589561975771
     },
     {
       "date": "2025-07-22",
-      "total_income_usd": 287.4772106902958,
+      "total_income_usd": 287.8903516538283,
       "total_expenses_usd": 0.0,
-      "delta_usd": 287.4772106902958
+      "delta_usd": 287.8903516538283
     },
     {
       "date": "2025-07-23",
-      "total_income_usd": -1481.4363061729669,
+      "total_income_usd": -1480.2461353340186,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1481.4363061729669
+      "delta_usd": -1480.2461353340186
     },
     {
       "date": "2025-07-26",
-      "total_income_usd": 838.7644909467127,
+      "total_income_usd": 829.3150945013393,
       "total_expenses_usd": 0.0,
-      "delta_usd": 838.7644909467127
+      "delta_usd": 829.3150945013393
     },
     {
       "date": "2025-07-27",
       "total_income_usd": 49.55999999999972,
-      "total_expenses_usd": 0.8752479869296301,
-      "delta_usd": 48.68475201307009
+      "total_expenses_usd": 0.8737185461323392,
+      "delta_usd": 48.68628145386738
     },
     {
       "date": "2025-07-28",
-      "total_income_usd": 910.5667464114856,
-      "total_expenses_usd": 393.0330260240401,
-      "delta_usd": 517.5337203874456
+      "total_income_usd": 908.4898881640283,
+      "total_expenses_usd": 392.34622553588065,
+      "delta_usd": 516.1436626281477
     },
     {
       "date": "2025-07-29",
-      "total_income_usd": -176.28180833096886,
+      "total_income_usd": -174.13047474178418,
       "total_expenses_usd": 0.0,
-      "delta_usd": -176.28180833096886
+      "delta_usd": -174.13047474178418
     },
     {
       "date": "2025-07-30",
-      "total_income_usd": -858.2088381152328,
+      "total_income_usd": -858.9514604481897,
       "total_expenses_usd": 0.0,
-      "delta_usd": -858.2088381152328
+      "delta_usd": -858.9514604481897
     },
     {
       "date": "2025-07-31",
-      "total_income_usd": -1036.7656327539205,
-      "total_expenses_usd": 96.07888901855517,
-      "delta_usd": -1132.8445217724757
+      "total_income_usd": -1035.5388055490434,
+      "total_expenses_usd": 95.91099720410057,
+      "delta_usd": -1131.449802753144
     },
     {
       "date": "2025-08-01",
-      "total_income_usd": -1490.8240424787027,
-      "total_expenses_usd": 1349.3873264091494,
-      "delta_usd": -2840.211368887852
+      "total_income_usd": -1489.3292078285185,
+      "total_expenses_usd": 1347.02935694315,
+      "delta_usd": -2836.3585647716686
     },
     {
       "date": "2025-08-02",
-      "total_income_usd": -3518.4647638336924,
+      "total_income_usd": -3514.0009324279545,
       "total_expenses_usd": 0.0,
-      "delta_usd": -3518.4647638336924
+      "delta_usd": -3514.0009324279545
     },
     {
       "date": "2025-08-05",
-      "total_income_usd": 1917.5034309721154,
-      "total_expenses_usd": 120.70253238417533,
-      "delta_usd": 1796.80089858794
+      "total_income_usd": 1916.197390493949,
+      "total_expenses_usd": 120.49161230195693,
+      "delta_usd": 1795.705778191992
     },
     {
       "date": "2025-08-06",
-      "total_income_usd": 937.4275380132804,
-      "total_expenses_usd": 25.638931030458398,
-      "delta_usd": 911.788606982822
+      "total_income_usd": 929.8752746844111,
+      "total_expenses_usd": 25.594128611369758,
+      "delta_usd": 904.2811460730413
     },
     {
       "date": "2025-08-07",
-      "total_income_usd": 1612.6516351018302,
-      "total_expenses_usd": 33.00268409382682,
-      "delta_usd": 1579.6489510080032
+      "total_income_usd": 1608.6077970597375,
+      "total_expenses_usd": 32.94501397949697,
+      "delta_usd": 1575.6627830802406
     },
     {
       "date": "2025-08-08",
-      "total_income_usd": 838.7653155053858,
-      "total_expenses_usd": 23.33994631812347,
-      "delta_usd": 815.4253691872624
+      "total_income_usd": 837.3661691231866,
+      "total_expenses_usd": 23.299161230195715,
+      "delta_usd": 814.0670078929909
     },
     {
       "date": "2025-08-09",
-      "total_income_usd": 956.8896406833474,
+      "total_income_usd": 955.474867345031,
       "total_expenses_usd": 0.0,
-      "delta_usd": 956.8896406833474
+      "delta_usd": 955.474867345031
     },
     {
       "date": "2025-08-10",
@@ -37332,39 +39264,39 @@
     },
     {
       "date": "2025-08-11",
-      "total_income_usd": 234.98493523164723,
+      "total_income_usd": 234.7078005591781,
       "total_expenses_usd": 0.0,
-      "delta_usd": 234.98493523164723
+      "delta_usd": 234.7078005591781
     },
     {
       "date": "2025-08-12",
-      "total_income_usd": -332.53858030257305,
-      "total_expenses_usd": 37.99743260590495,
-      "delta_usd": -370.536012908478
+      "total_income_usd": -332.1351243546055,
+      "total_expenses_usd": 37.931034482758555,
+      "delta_usd": -370.06615883736407
     },
     {
       "date": "2025-08-13",
-      "total_income_usd": 2564.9604724256906,
-      "total_expenses_usd": 9.546038044112308,
-      "delta_usd": 2555.4144343815783
+      "total_income_usd": 2558.9466886239366,
+      "total_expenses_usd": 9.529356943149855,
+      "delta_usd": 2549.417331680787
     },
     {
       "date": "2025-08-14",
-      "total_income_usd": 592.4270695137355,
-      "total_expenses_usd": 0.5251487921580965,
-      "delta_usd": 591.9019207215774
+      "total_income_usd": 589.6326980611285,
+      "total_expenses_usd": 0.5242311276797214,
+      "delta_usd": 589.1084669334488
     },
     {
       "date": "2025-08-15",
-      "total_income_usd": -253.26428899702148,
+      "total_income_usd": -253.59632639876656,
       "total_expenses_usd": 0.0,
-      "delta_usd": -253.26428899702148
+      "delta_usd": -253.59632639876656
     },
     {
       "date": "2025-08-16",
-      "total_income_usd": -802.0821815766177,
+      "total_income_usd": -801.6401977150092,
       "total_expenses_usd": 0.0,
-      "delta_usd": -802.0821815766177
+      "delta_usd": -801.6401977150092
     },
     {
       "date": "2025-08-17",
@@ -37374,33 +39306,33 @@
     },
     {
       "date": "2025-08-19",
-      "total_income_usd": -462.62692993000695,
-      "total_expenses_usd": 66.16874781187983,
-      "delta_usd": -528.7956777418867
+      "total_income_usd": -463.5349297771355,
+      "total_expenses_usd": 66.05312208760463,
+      "delta_usd": -529.5880518647401
     },
     {
       "date": "2025-08-20",
-      "total_income_usd": -1369.6402023826304,
-      "total_expenses_usd": 48.885517563309456,
-      "delta_usd": -1418.5257199459397
+      "total_income_usd": -1366.9777217719788,
+      "total_expenses_usd": 48.800093196644774,
+      "delta_usd": -1415.7778149686237
     },
     {
       "date": "2025-08-21",
-      "total_income_usd": -244.34449994165288,
+      "total_income_usd": -244.48121155638674,
       "total_expenses_usd": 0.0,
-      "delta_usd": -244.34449994165288
+      "delta_usd": -244.48121155638674
     },
     {
       "date": "2025-08-22",
-      "total_income_usd": 1501.95509297378,
+      "total_income_usd": 1500.4632005925614,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1501.95509297378
+      "delta_usd": 1500.4632005925614
     },
     {
       "date": "2025-08-23",
-      "total_income_usd": 1569.1124727481406,
-      "total_expenses_usd": 100.7235383358623,
-      "delta_usd": 1468.3889344122783
+      "total_income_usd": 1563.4791449946615,
+      "total_expenses_usd": 100.54753028891007,
+      "delta_usd": 1462.9316147057514
     },
     {
       "date": "2025-08-24",
@@ -37410,21 +39342,21 @@
     },
     {
       "date": "2025-08-25",
-      "total_income_usd": -138.2726094059949,
+      "total_income_usd": -139.33581547063955,
       "total_expenses_usd": 0.0,
-      "delta_usd": -138.2726094059949
+      "delta_usd": -139.33581547063955
     },
     {
       "date": "2025-08-28",
-      "total_income_usd": 650.3476651021695,
-      "total_expenses_usd": 732.9093243085539,
-      "delta_usd": -82.56165920638443
+      "total_income_usd": 652.5759299262186,
+      "total_expenses_usd": 731.6286113699904,
+      "delta_usd": -79.0526814437718
     },
     {
       "date": "2025-08-29",
-      "total_income_usd": -943.1319788572016,
-      "total_expenses_usd": 59.93698214494122,
-      "delta_usd": -1003.0689610021428
+      "total_income_usd": -942.4101703802064,
+      "total_expenses_usd": 59.83224603914274,
+      "delta_usd": -1002.2424164193492
     },
     {
       "date": "2025-08-30",
@@ -37435,128 +39367,128 @@
     {
       "date": "2025-08-31",
       "total_income_usd": 253.1599999999986,
-      "total_expenses_usd": 34.3680709534366,
-      "delta_usd": 218.79192904656202
+      "total_expenses_usd": 34.308014911462976,
+      "delta_usd": 218.85198508853563
     },
     {
       "date": "2025-09-01",
-      "total_income_usd": -287.48569728089325,
-      "total_expenses_usd": 1381.1296534017977,
-      "delta_usd": -1668.6153506826909
+      "total_income_usd": -287.4608387698013,
+      "total_expenses_usd": 1378.7162162162165,
+      "delta_usd": -1666.1770549860178
     },
     {
       "date": "2025-09-02",
-      "total_income_usd": 176.25452211459861,
+      "total_income_usd": 176.33970177073576,
       "total_expenses_usd": 0.0,
-      "delta_usd": 176.25452211459861
+      "delta_usd": 176.33970177073576
     },
     {
       "date": "2025-09-03",
-      "total_income_usd": -1074.248441148673,
-      "total_expenses_usd": 23.608355700781647,
-      "delta_usd": -1097.8567968494547
+      "total_income_usd": -1069.908382960173,
+      "total_expenses_usd": 23.56710158434272,
+      "delta_usd": -1093.4754845445157
     },
     {
       "date": "2025-09-04",
-      "total_income_usd": 929.1805026002419,
-      "total_expenses_usd": 12.055082273310953,
-      "delta_usd": 917.1254203269309
+      "total_income_usd": 926.1197934600395,
+      "total_expenses_usd": 12.034016775396266,
+      "delta_usd": 914.0857766846433
     },
     {
       "date": "2025-09-05",
-      "total_income_usd": 1232.8546927479274,
+      "total_income_usd": 1228.0103508768773,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1232.8546927479274
+      "delta_usd": 1228.0103508768773
     },
     {
       "date": "2025-09-06",
-      "total_income_usd": 39.98305300157122,
+      "total_income_usd": 37.61818647364535,
       "total_expenses_usd": 0.0,
-      "delta_usd": 39.98305300157122
+      "delta_usd": 37.61818647364535
     },
     {
       "date": "2025-09-07",
       "total_income_usd": 65.04000000000087,
-      "total_expenses_usd": 73.42747111681625,
-      "delta_usd": -8.387471116815377
+      "total_expenses_usd": 73.29916123019554,
+      "delta_usd": -8.259161230194664
     },
     {
       "date": "2025-09-08",
-      "total_income_usd": 389.8872108764168,
+      "total_income_usd": 389.98664492078467,
       "total_expenses_usd": 0.0,
-      "delta_usd": 389.8872108764168
+      "delta_usd": 389.98664492078467
     },
     {
       "date": "2025-09-09",
-      "total_income_usd": 344.84362960737616,
-      "total_expenses_usd": 33.57451277862086,
-      "delta_usd": 311.2691168287553
+      "total_income_usd": 343.5417421862778,
+      "total_expenses_usd": 33.515843429636774,
+      "delta_usd": 310.025898756641
     },
     {
       "date": "2025-09-10",
-      "total_income_usd": 1778.4713265298033,
-      "total_expenses_usd": 41.00828568094279,
-      "delta_usd": 1737.4630408488604
+      "total_income_usd": 1774.5426387399932,
+      "total_expenses_usd": 40.93662628145372,
+      "delta_usd": 1733.6060124585395
     },
     {
       "date": "2025-09-11",
-      "total_income_usd": 1395.923239005403,
+      "total_income_usd": 1391.7646924527326,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1395.923239005403
+      "delta_usd": 1391.7646924527326
     },
     {
       "date": "2025-09-12",
-      "total_income_usd": 2872.6243297756137,
-      "total_expenses_usd": 14.354066985645881,
-      "delta_usd": 2858.270262789968
+      "total_income_usd": 2865.837077018526,
+      "total_expenses_usd": 14.32898415657031,
+      "delta_usd": 2851.508092861956
     },
     {
       "date": "2025-09-13",
-      "total_income_usd": -167.76687767891897,
+      "total_income_usd": -166.3741383427222,
       "total_expenses_usd": 0.0,
-      "delta_usd": -167.76687767891897
+      "delta_usd": -166.3741383427222
     },
     {
       "date": "2025-09-14",
       "total_income_usd": 56.830000000000155,
-      "total_expenses_usd": 70.45162796125584,
-      "delta_usd": -13.621627961255683
+      "total_expenses_usd": 70.3285181733459,
+      "delta_usd": -13.498518173345744
     },
     {
       "date": "2025-09-15",
-      "total_income_usd": 34.75087524798835,
-      "total_expenses_usd": 29.606721904539494,
-      "delta_usd": 5.144153343448853
+      "total_income_usd": 33.645619757690156,
+      "total_expenses_usd": 29.554986020503137,
+      "delta_usd": 4.090633737187019
     },
     {
       "date": "2025-09-16",
-      "total_income_usd": 1015.1292145150663,
-      "total_expenses_usd": 7.842221962889518,
-      "delta_usd": 1007.2869925521768
+      "total_income_usd": 1014.204887651066,
+      "total_expenses_usd": 7.828518173345791,
+      "delta_usd": 1006.3763694777202
     },
     {
       "date": "2025-09-17",
-      "total_income_usd": -128.99411482719646,
-      "total_expenses_usd": 16.314622476368328,
-      "delta_usd": -145.30873730356478
+      "total_income_usd": -127.93766223173607,
+      "total_expenses_usd": 16.286113699906824,
+      "delta_usd": -144.2237759316429
     },
     {
       "date": "2025-09-18",
-      "total_income_usd": 628.9224273544166,
+      "total_income_usd": 628.5785274930098,
       "total_expenses_usd": 0.0,
-      "delta_usd": 628.9224273544166
+      "delta_usd": 628.5785274930098
     },
     {
       "date": "2025-09-19",
-      "total_income_usd": 334.47226857717635,
+      "total_income_usd": 331.43085940787273,
       "total_expenses_usd": 0.0,
-      "delta_usd": 334.47226857717635
+      "delta_usd": 331.43085940787273
     },
     {
       "date": "2025-09-20",
-      "total_income_usd": 730.5507587290329,
-      "total_expenses_usd": 88.15497724355231,
-      "delta_usd": 642.3957814854805
+      "total_income_usd": 728.4920449674675,
+      "total_expenses_usd": 88.00093196644916,
+      "delta_usd": 640.4911130010183
     },
     {
       "date": "2025-09-21",
@@ -37566,69 +39498,69 @@
     },
     {
       "date": "2025-09-22",
-      "total_income_usd": -388.9063624693669,
-      "total_expenses_usd": 133.0376940133038,
-      "delta_usd": -521.9440564826707
+      "total_income_usd": -389.78195712954397,
+      "total_expenses_usd": 132.80521901211557,
+      "delta_usd": -522.5871761416595
     },
     {
       "date": "2025-09-23",
-      "total_income_usd": 971.6044617193115,
+      "total_income_usd": 967.6587941011575,
       "total_expenses_usd": 0.0,
-      "delta_usd": 971.6044617193115
+      "delta_usd": 967.6587941011575
     },
     {
       "date": "2025-09-24",
-      "total_income_usd": -1880.5751060343996,
-      "total_expenses_usd": 7.363753063368024,
-      "delta_usd": -1887.9388590977676
+      "total_income_usd": -1877.4342602055694,
+      "total_expenses_usd": 7.350885368126816,
+      "delta_usd": -1884.7851455736964
     },
     {
       "date": "2025-09-27",
-      "total_income_usd": 49.87583986093853,
+      "total_income_usd": 46.10294951178264,
       "total_expenses_usd": 0.0,
-      "delta_usd": 49.87583986093853
+      "delta_usd": 46.10294951178264
     },
     {
       "date": "2025-09-28",
       "total_income_usd": -30.970000000000255,
-      "total_expenses_usd": 32.08075621426072,
-      "delta_usd": -63.05075621426097
+      "total_expenses_usd": 32.024697110904015,
+      "delta_usd": -62.99469711090427
     },
     {
       "date": "2025-09-29",
-      "total_income_usd": 956.4635978527253,
-      "total_expenses_usd": 431.26385809312666,
-      "delta_usd": 525.1997397595987
+      "total_income_usd": 955.2387604846231,
+      "total_expenses_usd": 430.5102516309415,
+      "delta_usd": 524.7285088536815
     },
     {
       "date": "2025-09-30",
-      "total_income_usd": 834.750327022376,
-      "total_expenses_usd": 7.562142607071761,
-      "delta_usd": 827.1881844153042
+      "total_income_usd": 831.7579907374429,
+      "total_expenses_usd": 7.5489282385831675,
+      "delta_usd": 824.2090624988598
     },
     {
       "date": "2025-10-01",
-      "total_income_usd": 1346.069695306563,
-      "total_expenses_usd": 1358.3265258489907,
-      "delta_usd": -12.256830542427679
+      "total_income_usd": 1342.9781145193083,
+      "total_expenses_usd": 1355.952935694315,
+      "delta_usd": -12.97482117500681
     },
     {
       "date": "2025-10-02",
-      "total_income_usd": 274.77710459061154,
-      "total_expenses_usd": 42.25697280896255,
-      "delta_usd": 232.52013178164898
+      "total_income_usd": 273.82532926769784,
+      "total_expenses_usd": 42.18313140726935,
+      "delta_usd": 231.6421978604285
     },
     {
       "date": "2025-10-03",
-      "total_income_usd": -303.81766848933455,
+      "total_income_usd": -304.5758861466984,
       "total_expenses_usd": 0.0,
-      "delta_usd": -303.81766848933455
+      "delta_usd": -304.5758861466984
     },
     {
       "date": "2025-10-04",
-      "total_income_usd": 504.6377240559652,
-      "total_expenses_usd": 56.27261057299567,
-      "delta_usd": 448.3651134829695
+      "total_income_usd": 501.2527446959881,
+      "total_expenses_usd": 56.17427772600185,
+      "delta_usd": 445.07846696998627
     },
     {
       "date": "2025-10-05",
@@ -37638,21 +39570,105 @@
     },
     {
       "date": "2025-10-06",
-      "total_income_usd": 850.4120574162683,
-      "total_expenses_usd": 53.04002800793559,
-      "delta_usd": 797.3720294083328
+      "total_income_usd": 848.8677912395157,
+      "total_expenses_usd": 52.94734389561976,
+      "delta_usd": 795.920447343896
     },
     {
       "date": "2025-10-07",
-      "total_income_usd": 502.8114715836117,
-      "total_expenses_usd": 17.283230248570433,
-      "delta_usd": 485.5282413350413
+      "total_income_usd": 500.43700278659924,
+      "total_expenses_usd": 17.25302889095993,
+      "delta_usd": 483.1839738956393
     },
     {
       "date": "2025-10-08",
-      "total_income_usd": -1538.8648125061313,
+      "total_income_usd": -1540.1305905021934,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1538.8648125061313
+      "delta_usd": -1540.1305905021934
+    },
+    {
+      "date": "2025-10-09",
+      "total_income_usd": 893.9739454552468,
+      "total_expenses_usd": 0.0,
+      "delta_usd": 893.9739454552468
+    },
+    {
+      "date": "2025-10-10",
+      "total_income_usd": -170.56532568857975,
+      "total_expenses_usd": 0.0,
+      "delta_usd": -170.56532568857975
+    },
+    {
+      "date": "2025-10-12",
+      "total_income_usd": -5071.5710327064935,
+      "total_expenses_usd": 216.54240447343855,
+      "delta_usd": -5288.113437179932
+    },
+    {
+      "date": "2025-10-13",
+      "total_income_usd": 255.42940354147268,
+      "total_expenses_usd": 0.0,
+      "delta_usd": 255.42940354147268
+    },
+    {
+      "date": "2025-10-14",
+      "total_income_usd": 416.1104287045705,
+      "total_expenses_usd": 11.649580615097857,
+      "delta_usd": 404.4608480894726
+    },
+    {
+      "date": "2025-10-15",
+      "total_income_usd": 1105.5075373907232,
+      "total_expenses_usd": 101.57269338303827,
+      "delta_usd": 1003.9348440076849
+    },
+    {
+      "date": "2025-10-16",
+      "total_income_usd": 854.1189288793728,
+      "total_expenses_usd": 452.2833178005595,
+      "delta_usd": 401.8356110788133
+    },
+    {
+      "date": "2025-10-17",
+      "total_income_usd": -1574.5481023974603,
+      "total_expenses_usd": 0.0,
+      "delta_usd": -1574.5481023974603
+    },
+    {
+      "date": "2025-10-18",
+      "total_income_usd": 886.449474795244,
+      "total_expenses_usd": 28.226933830382126,
+      "delta_usd": 858.2225409648619
+    },
+    {
+      "date": "2025-10-19",
+      "total_income_usd": -62.710000000000036,
+      "total_expenses_usd": 0.0,
+      "delta_usd": -62.710000000000036
+    },
+    {
+      "date": "2025-10-20",
+      "total_income_usd": -392.27707362534966,
+      "total_expenses_usd": 82.03634669151866,
+      "delta_usd": -474.3134203168683
+    },
+    {
+      "date": "2025-10-21",
+      "total_income_usd": 2995.0411249602134,
+      "total_expenses_usd": 0.0,
+      "delta_usd": 2995.0411249602
+    },
+    {
+      "date": "2025-10-22",
+      "total_income_usd": -1380.4310730064847,
+      "total_expenses_usd": 0.0,
+      "delta_usd": -1380.4310730065
+    },
+    {
+      "date": "2025-10-23",
+      "total_income_usd": -414.0330561214738,
+      "total_expenses_usd": 0.0,
+      "delta_usd": -414.0330561215
     }
   ]
 }
