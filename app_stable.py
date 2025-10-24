@@ -161,14 +161,28 @@ with tab1:
     # Portfolio Performance Chart
     st.subheader("📊 Portfolio Performance")
     try:
+        from utils import calculate_smart_date_format
+
         daily_totals = filtered_df.groupby('Date')['ValueUSD'].sum().reset_index()
-        fig = px.line(daily_totals, x='Date', y='ValueUSD', 
+        fig = px.line(daily_totals, x='Date', y='ValueUSD',
                       title=f'Portfolio Value - {time_option}')
+
+        # Calculate smart date formatting
+        num_days = (daily_totals['Date'].max() - daily_totals['Date'].min()).days
+        date_settings = calculate_smart_date_format(num_days)
+
         fig.update_layout(
             xaxis_title="Date",
             yaxis_title="Value (USD)",
             hovermode='x unified',
-            height=500
+            height=500,
+            margin=dict(l=20, r=20, t=40, b=100),
+            xaxis=dict(
+                tickangle=-45,
+                automargin=True,
+                tickfont=dict(size=10),
+                **date_settings
+            )
         )
         st.plotly_chart(fig, use_container_width=True)
     except Exception as e:

@@ -1,11 +1,12 @@
 {
-  "auto_sync_enabled": false,
-  "sync_mode": "manual",
-  "sync_on_data_change": false,
+  "auto_sync_enabled": true,
+  "sync_mode": "immediate",
+  "sync_on_data_change": true,
   "daemon_check_interval": 60,
   "files_to_sync": [
     "investment_data.db",
-    "db_snapshot.json"
+    "db_snapshot.json",
+    "exchange_rates_cache.json"
   ],
   "git_remote": "origin",
   "git_branch": "main",
