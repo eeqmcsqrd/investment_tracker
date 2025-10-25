@@ -32,16 +32,32 @@ from datetime import datetime
 from pathlib import Path
 import argparse
 
-# Configuration
-DB_FILE = 'investment_data.db'
-SNAPSHOT_FILE = 'db_snapshot.json'
-SYNC_MARKER_FILE = '.last_sync_hash'
-CHECK_INTERVAL = 60  # seconds between checks in daemon mode
+# Configuration is now loaded from sync_config.json
+CONFIG_FILE = 'sync_config.json'
 
 class AutoSync:
     def __init__(self, verbose=True):
         self.verbose = verbose
         self.repo_path = Path(__file__).parent
+        self.config = self.load_config()
+        self.db_file = self.config.get('files_to_sync', ['investment_data.db'])[0] # First file is the main db
+        self.snapshot_file = 'db_snapshot.json' # this is still hardcoded, but now files_to_sync is used for commit
+        self.sync_marker_file = '.last_sync_hash'
+
+
+    def load_config(self):
+        """Load configuration from JSON file"""
+        config_path = self.repo_path / CONFIG_FILE
+        if not config_path.exists():
+            self.log(f"⚠️ Configuration file not found: {CONFIG_FILE}. Using default settings.")
+            return {
+                "auto_sync_enabled": False,
+                "files_to_sync": ["investment_data.db", "db_snapshot.json"],
+                "daemon_check_interval": 60,
+                "commit_message_template": "Auto-sync: Update investment data - {timestamp}"
+            }
+        with open(config_path, 'r') as f:
+            return json.load(f)
 
     def log(self, message):
         """Print log message if verbose"""
@@ -51,7 +67,7 @@ class AutoSync:
 
     def get_db_hash(self):
         """Calculate hash of database file to detect changes"""
-        db_path = self.repo_path / DB_FILE
+        db_path = self.repo_path / self.db_file
         if not db_path.exists():
             return None
 
@@ -62,14 +78,14 @@ class AutoSync:
 
     def get_last_sync_hash(self):
         """Get the hash from last sync"""
-        marker_path = self.repo_path / SYNC_MARKER_FILE
+        marker_path = self.repo_path / self.sync_marker_file
         if marker_path.exists():
             return marker_path.read_text().strip()
         return None
 
     def save_sync_hash(self, hash_value):
         """Save the current hash after successful sync"""
-        marker_path = self.repo_path / SYNC_MARKER_FILE
+        marker_path = self.repo_path / self.sync_marker_file
         marker_path.write_text(hash_value)
 
     def has_changes(self):
@@ -81,11 +97,11 @@ class AutoSync:
     def export_db_to_json(self):
         """Export database to JSON snapshot for cloud deployment"""
         try:
-            db_path = self.repo_path / DB_FILE
-            snapshot_path = self.repo_path / SNAPSHOT_FILE
+            db_path = self.repo_path / self.db_file
+            snapshot_path = self.repo_path / self.snapshot_file
 
             if not db_path.exists():
-                self.log(f"❌ Database file not found: {DB_FILE}")
+                self.log(f"❌ Database file not found: {self.db_file}")
                 return False
 
             # Connect to database and export
@@ -134,7 +150,7 @@ class AutoSync:
             with open(snapshot_path, 'w') as f:
                 json.dump(snapshot, f, indent=2)
 
-            self.log(f"✅ Exported {len(investments)} entries to {SNAPSHOT_FILE}")
+            self.log(f"✅ Exported {len(investments)} entries to {self.snapshot_file}")
             return True
 
         except Exception as e:
@@ -157,7 +173,7 @@ class AutoSync:
                 return False
 
             # Add files
-            files_to_add = [DB_FILE, SNAPSHOT_FILE]
+            files_to_add = self.config.get('files_to_sync', [])
             for file in files_to_add:
                 file_path = self.repo_path / file
                 if file_path.exists():
@@ -168,13 +184,10 @@ class AutoSync:
                     )
 
             # Create commit message
-            commit_message = f"""Auto-sync: Update investment data
+            commit_message_template = self.config.get('commit_message_template', "Auto-sync: Update data - {timestamp}")
+            timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            commit_message = commit_message_template.format(timestamp=timestamp)
 
-Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-Files: {DB_FILE}, {SNAPSHOT_FILE}
-
-🤖 Auto-synced from local changes
-"""
 
             # Commit
             result = subprocess.run(
@@ -276,18 +289,24 @@ Files: {DB_FILE}, {SNAPSHOT_FILE}
 
     def daemon_mode(self):
         """Run in daemon mode, continuously monitoring for changes"""
+        if not self.config.get('auto_sync_enabled', False):
+            self.log("ℹ️ Auto-sync is disabled in the configuration. Daemon will not start.")
+            return
+
+        check_interval = self.config.get('daemon_check_interval', 60)
         self.log("🚀 Starting auto-sync daemon...")
-        self.log(f"📁 Monitoring: {DB_FILE}")
-        self.log(f"⏱️  Check interval: {CHECK_INTERVAL} seconds")
+        self.log(f"📁 Monitoring: {self.db_file}")
+        self.log(f"⏱️  Check interval: {check_interval} seconds")
         self.log("Press Ctrl+C to stop")
         self.log("")
 
         try:
             while True:
                 self.sync()
-                time.sleep(CHECK_INTERVAL)
+                time.sleep(check_interval)
         except KeyboardInterrupt:
-            self.log("\n👋 Auto-sync daemon stopped")
+            self.log("
+👋 Auto-sync daemon stopped")
 
 
 def sync_to_github(verbose=False):
@@ -296,7 +315,9 @@ def sync_to_github(verbose=False):
     Call this after data modifications to trigger sync
     """
     syncer = AutoSync(verbose=verbose)
-    return syncer.sync()
+    if syncer.config.get('auto_sync_enabled', False) and syncer.config.get('sync_on_data_change', False):
+        return syncer.sync()
+    return True
 
 
 def main():
