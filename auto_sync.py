@@ -305,8 +305,7 @@ class AutoSync:
                 self.sync()
                 time.sleep(check_interval)
         except KeyboardInterrupt:
-            self.log("
-👋 Auto-sync daemon stopped")
+            self.log("\n👋 Auto-sync daemon stopped")
 
 
 def sync_to_github(verbose=False):
