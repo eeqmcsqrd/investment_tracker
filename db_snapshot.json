@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-28T18:29:15.298606",
+  "last_updated": "2025-10-28T19:36:11.103472",
   "version": "1.0",
   "investments": [
     {
@@ -54,7 +54,7 @@
       "date": "2025-10-28",
       "investment": "Revolut - EUR",
       "currency": "EUR",
-      "value": 1373.44
+      "value": 1340.74
     },
     {
       "date": "2025-10-28",
@@ -40388,7 +40388,7 @@
       "date": "2025-10-28",
       "total_income_usd": 2183.7282218585815,
       "total_expenses_usd": 447.46710143239784,
-      "delta_usd": 1736.2611204261837
+      "delta_usd": 1736.2611204262
     }
   ]
 }
