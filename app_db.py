@@ -36,6 +36,7 @@ from dashboard_components import (
 
 from currency_service import get_conversion_rate, refresh_rates
 from config import INVESTMENT_ACCOUNTS, INVESTMENT_CATEGORIES
+from auto_sync import sync_to_github
 import time
 import base64
 import os
@@ -212,9 +213,9 @@ st.markdown("""
 
 st.markdown("""
 <script>
-// This JavaScript would enable scroll animations, but it's for illustration.
-// Streamlit's sandboxed environment limits custom JS execution.
-// For production, these effects would need to be implemented via Streamlit Components.
+# This JavaScript would enable scroll animations, but it's for illustration.
+# Streamlit's sandboxed environment limits custom JS execution.
+# For production, these effects would need to be implemented via Streamlit Components.
 </script>
 """, unsafe_allow_html=True)
 
@@ -651,6 +652,7 @@ with st.sidebar:
         if st.button(f"{get_icon('add_entry', '➕')} Add Entry", key="add_single", use_container_width=True):
             add_entry_with_animation(entry_date, investment_name, investment_value)
             st.session_state.show_success = True
+            sync_to_github(verbose=True)
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
         
@@ -718,6 +720,7 @@ with st.sidebar:
                 
                 animated_process(process_bulk_update, "Processing bulk update...")
                 st.session_state.show_success = True
+                sync_to_github(verbose=True)
                 st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 # app_db.py (Part 6: Sidebar - Update All)
@@ -799,6 +802,7 @@ with st.sidebar:
                     
                     animated_process(process_update_all, "Processing all investments...")
                     st.session_state.show_success = True
+                    sync_to_github(verbose=True)
                     st.rerun()
             st.markdown('</div>', unsafe_allow_html=True)
         
@@ -860,12 +864,12 @@ with tab1:
             st.warning(f"Error: {e}")
 
             # Add helpful debugging info
-            st.info(f"""
-            **Current Settings:**
-            - Date Range: {st.session_state.start_date} to {st.session_state.end_date}
-            - Total Data Points: {len(df)}
-            - Latest Date: {latest_date}
-            """)
+            st.info(
+                f"**Current Settings:**\n" 
+                f"- Date Range: {st.session_state.start_date} to {st.session_state.end_date}\n" 
+                f"- Total Data Points: {len(df)}\n" 
+                f"- Latest Date: {latest_date}"
+            )
 
             with st.expander("Show technical details"):
                 import traceback
@@ -1633,11 +1637,11 @@ with tab4:
         elif sort_column == "Investment":
             sorted_df = filtered_df.sort_values('Investment', ascending=(sort_order == "Ascending"))
         elif sort_column == "Currency":
-            sorted_df = filtered_df.sort_values('Currency', ascending=(sort_order == "Ascending"))
+            sorted_df = filtered_df.sort_values('Currency', ascending=(sort_order == "Ascending")),
         elif sort_column == "Value":
-            sorted_df = filtered_df.sort_values('Value', ascending=(sort_order == "Ascending"))
+            sorted_df = filtered_df.sort_values('Value', ascending=(sort_order == "Ascending")),
         elif sort_column == "Value (USD)":
-            sorted_df = filtered_df.sort_values('ValueUSD', ascending=(sort_order == "Ascending"))
+            sorted_df = filtered_df.sort_values('ValueUSD', ascending=(sort_order == "Ascending")),
         else:
             sorted_df = filtered_df
 
@@ -1813,11 +1817,11 @@ with tab5:
         with import_col2:
             st.write("Example file format:")
             st.code("""
-            Date,Investment,Currency,Value
-            2023-01-01,Binance,USD,10000.00
-            2023-01-01,Trade Republic,EUR,5000.00
-            ...
-            """)
+Date,Investment,Currency,Value
+2023-01-01,Binance,USD,10000.00
+2023-01-01,Trade Republic,EUR,5000.00
+...
+""", language='python')
 
 #app_db.py (Part 23: Settings Tab - Data Import)
 
@@ -1933,6 +1937,7 @@ with tab5:
                     if success:
                         st.success(f"{ICONS['success']} Data imported successfully!")
                         st.session_state.show_success = True
+                        sync_to_github(verbose=True)
                         st.rerun()
                     else:
                         st.error(f"{ICONS['error']} Error importing data.")
@@ -2202,7 +2207,7 @@ with tab5:
         - Category-based organization of investments
 
         **App Version:** 3.0 (DB Edition with Enhanced UI & Animations)
-        """)
+        """, unsafe_allow_html=True)
 
     with settings_tab3:
         # Auto-Sync Settings
@@ -2236,5 +2241,3 @@ except Exception as _e:
     # Non-fatal: sidebar might not be available during script import or tests
     print(f"[sidebar sustainability tools] not initialized: {_e}")
 # -----------------------------------------------------------------------------------
-
-    

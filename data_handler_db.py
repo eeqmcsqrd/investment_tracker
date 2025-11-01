@@ -352,7 +352,7 @@ def add_entry_db(date, investment, value):
                         # If this is Revolut - EUR, register expense vs previous day's value
                         if inv == REVOLUT_EUR_ACCOUNT:
                             try:
-                                register_revolut_expense_delta(date_str, previous_value=val, new_value=value, currency=curr)
+                                register_revolut_expense_delta(date=date_str, previous_value=val, new_value=value, currency=curr)
                             except Exception as _e:
                                 print(f'Warning register_revolut_expense_delta: {_e}')
                         cursor.execute('''
@@ -413,7 +413,7 @@ def add_entry_db(date, investment, value):
             # Register expense delta if Revolut decreased
             if investment == REVOLUT_EUR_ACCOUNT:
                 try:
-                    register_revolut_expense_delta(date_str, previous_value=prev_today_value, new_value=value, currency=currency)
+                    register_revolut_expense_delta(date=date_str, previous_value=prev_today_value, new_value=value, currency=currency)
                 except Exception as _e:
                     print(f'Warning register_revolut_expense_delta: {_e}')
 
@@ -482,7 +482,7 @@ def add_bulk_entries_db(date, investment_values):
                         # Revolut expense delta against previous day's value if relevant
                         if inv == REVOLUT_EUR_ACCOUNT:
                             try:
-                                register_revolut_expense_delta(date_str, previous_value=val, new_value=investment_values[inv], currency=curr)
+                                register_revolut_expense_delta(date=date_str, previous_value=val, new_value=investment_values[inv], currency=curr)
                             except Exception as _e:
                                 print(f'Warning register_revolut_expense_delta: {_e}')
                         cursor.execute('''
@@ -547,7 +547,7 @@ def add_bulk_entries_db(date, investment_values):
                 if inv == REVOLUT_EUR_ACCOUNT:
                     try:
                         curr = INVESTMENT_ACCOUNTS.get(inv, 'EUR')
-                        register_revolut_expense_delta(date_str, previous_value=prev_today_value, new_value=val, currency=curr)
+                        register_revolut_expense_delta(date=date_str, previous_value=prev_today_value, new_value=val, currency=curr)
                     except Exception as _e:
                         print(f'Warning register_revolut_expense_delta: {_e}')
 
