@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-04T09:09:42.309331",
+  "last_updated": "2025-11-04T09:13:06.579351",
   "version": "1.0",
   "investments": [
     {
@@ -126,7 +126,7 @@
       "date": "2025-11-04",
       "investment": "HAPO Checking - USD",
       "currency": "USD",
-      "value": 151.22
+      "value": 136.01
     },
     {
       "date": "2025-11-04",
@@ -41394,9 +41394,9 @@
     },
     {
       "date": "2025-11-04",
-      "total_income_usd": -818.0602067586956,
+      "total_income_usd": -833.2702067586956,
       "total_expenses_usd": 0.0,
-      "delta_usd": -818.0602067587
+      "delta_usd": -833.2702067587
     }
   ]
 }
