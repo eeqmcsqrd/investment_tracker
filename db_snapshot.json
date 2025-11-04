@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-04T09:02:38.567005",
+  "last_updated": "2025-11-04T09:08:24.435750",
   "version": "1.0",
   "investments": [
     {
@@ -132,7 +132,7 @@
       "date": "2025-11-04",
       "investment": "Binance",
       "currency": "USD",
-      "value": 66.72
+      "value": 63.9
     },
     {
       "date": "2025-11-04",
@@ -39474,21 +39474,21 @@
     },
     {
       "date": "2024-08-22",
-      "total_income_usd": 133.78943712670832,
+      "total_income_usd": 134.2583398026934,
       "total_expenses_usd": 0.0,
-      "delta_usd": 133.78943712670832
+      "delta_usd": 134.2583398026934
     },
     {
       "date": "2024-08-23",
-      "total_income_usd": 1739.1129142588063,
+      "total_income_usd": 1739.3660299999,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1739.1129142588063
+      "delta_usd": 1739.3660299999
     },
     {
       "date": "2024-08-24",
-      "total_income_usd": 2474.491484765635,
+      "total_income_usd": 2473.057161338756,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2474.491484765635
+      "delta_usd": 2473.057161338756
     },
     {
       "date": "2024-08-25",
@@ -39498,39 +39498,39 @@
     },
     {
       "date": "2024-08-26",
-      "total_income_usd": -951.5736562860471,
+      "total_income_usd": -950.8811749798442,
       "total_expenses_usd": 0.0,
-      "delta_usd": -951.5736562860471
+      "delta_usd": -950.8811749798442
     },
     {
       "date": "2024-08-27",
-      "total_income_usd": -1507.2989651872913,
+      "total_income_usd": -1506.4778038740963,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1507.2989651872913
+      "delta_usd": -1506.4778038740963
     },
     {
       "date": "2024-08-28",
-      "total_income_usd": -677.6803353188809,
+      "total_income_usd": -677.2494989500997,
       "total_expenses_usd": 0.0,
-      "delta_usd": -677.6803353188809
+      "delta_usd": -677.2494989500997
     },
     {
       "date": "2024-08-29",
-      "total_income_usd": -2938.3071515574884,
+      "total_income_usd": -2937.5093509627895,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2938.3071515574884
+      "delta_usd": -2937.5093509627895
     },
     {
       "date": "2024-08-30",
-      "total_income_usd": 497.9997391473031,
+      "total_income_usd": 497.11613793685507,
       "total_expenses_usd": 0.0,
-      "delta_usd": 497.9997391473031
+      "delta_usd": 497.11613793685507
     },
     {
       "date": "2024-08-31",
-      "total_income_usd": 813.0054383016115,
+      "total_income_usd": 811.753812406914,
       "total_expenses_usd": 0.0,
-      "delta_usd": 813.0054383016115
+      "delta_usd": 811.753812406914
     },
     {
       "date": "2024-09-01",
@@ -39540,39 +39540,39 @@
     },
     {
       "date": "2024-09-02",
-      "total_income_usd": -26.04806228374074,
+      "total_income_usd": -26.04674691856148,
       "total_expenses_usd": 0.0,
-      "delta_usd": -26.04806228374074
+      "delta_usd": -26.04674691856148
     },
     {
       "date": "2024-09-03",
-      "total_income_usd": -560.0445559400208,
+      "total_income_usd": -559.2866132933971,
       "total_expenses_usd": 0.0,
-      "delta_usd": -560.0445559400208
+      "delta_usd": -559.2866132933971
     },
     {
       "date": "2024-09-04",
-      "total_income_usd": -1273.1782412549637,
+      "total_income_usd": -1271.2554401968255,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1273.1782412549637
+      "delta_usd": -1271.2554401968255
     },
     {
       "date": "2024-09-05",
-      "total_income_usd": 185.9462411547139,
+      "total_income_usd": 185.6820329088049,
       "total_expenses_usd": 0.0,
-      "delta_usd": 185.9462411547139
+      "delta_usd": 185.6820329088049
     },
     {
       "date": "2024-09-06",
-      "total_income_usd": -200.806086945459,
+      "total_income_usd": -200.39684691059279,
       "total_expenses_usd": 0.0,
-      "delta_usd": -200.806086945459
+      "delta_usd": -200.39684691059279
     },
     {
       "date": "2024-09-07",
-      "total_income_usd": -5422.137056813546,
+      "total_income_usd": -5414.791914227651,
       "total_expenses_usd": 0.0,
-      "delta_usd": -5422.137056813546
+      "delta_usd": -5414.791914227651
     },
     {
       "date": "2024-09-08",
@@ -39582,39 +39582,39 @@
     },
     {
       "date": "2024-09-09",
-      "total_income_usd": 1114.3561245674773,
+      "total_income_usd": 1113.4664992512417,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1114.3561245674773
+      "delta_usd": 1113.4664992512417
     },
     {
       "date": "2024-09-10",
-      "total_income_usd": 2408.527003126367,
+      "total_income_usd": 2405.4277641223407,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2408.527003126367
+      "delta_usd": 2405.4277641223407
     },
     {
       "date": "2024-09-11",
-      "total_income_usd": 35.3725256898189,
+      "total_income_usd": 35.20086612581932,
       "total_expenses_usd": 0.0,
-      "delta_usd": 35.3725256898189
+      "delta_usd": 35.20086612581932
     },
     {
       "date": "2024-09-12",
-      "total_income_usd": 3967.3111266972214,
+      "total_income_usd": 3962.5190078798582,
       "total_expenses_usd": 0.0,
-      "delta_usd": 3967.3111266972214
+      "delta_usd": 3962.5190078798582
     },
     {
       "date": "2024-09-13",
-      "total_income_usd": 965.4790995459637,
+      "total_income_usd": 963.6740207723406,
       "total_expenses_usd": 0.0,
-      "delta_usd": 965.4790995459637
+      "delta_usd": 963.6740207723406
     },
     {
       "date": "2024-09-14",
-      "total_income_usd": 960.2252482112008,
+      "total_income_usd": 959.1272749063531,
       "total_expenses_usd": 0.0,
-      "delta_usd": 960.2252482112008
+      "delta_usd": 959.1272749063531
     },
     {
       "date": "2024-09-15",
@@ -39624,87 +39624,87 @@
     },
     {
       "date": "2024-09-16",
-      "total_income_usd": -350.38129181083946,
+      "total_income_usd": -350.28924547862897,
       "total_expenses_usd": 0.0,
-      "delta_usd": -350.38129181083946
+      "delta_usd": -350.28924547862897
     },
     {
       "date": "2024-09-17",
-      "total_income_usd": 456.7009209614271,
+      "total_income_usd": 455.7279509436775,
       "total_expenses_usd": 0.0,
-      "delta_usd": 456.7009209614271
+      "delta_usd": 455.7279509436775
     },
     {
       "date": "2024-09-18",
-      "total_income_usd": -52.525805358200444,
+      "total_income_usd": -51.86400401323789,
       "total_expenses_usd": 0.0,
-      "delta_usd": -52.525805358200444
+      "delta_usd": -51.86400401323789
     },
     {
       "date": "2024-09-19",
-      "total_income_usd": 3199.2199897993946,
+      "total_income_usd": 3197.8685088866114,
       "total_expenses_usd": 0.0,
-      "delta_usd": 3199.2199897993946
+      "delta_usd": 3197.8685088866114
     },
     {
       "date": "2024-09-20",
-      "total_income_usd": 2014.6918386979696,
+      "total_income_usd": 2012.3774991591633,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2014.6918386979696
+      "delta_usd": 2012.3774991591633
     },
     {
       "date": "2024-09-21",
-      "total_income_usd": 48.640268085232094,
+      "total_income_usd": 49.20322006969556,
       "total_expenses_usd": 0.0,
-      "delta_usd": 48.640268085232094
+      "delta_usd": 49.20322006969556
     },
     {
       "date": "2024-09-22",
-      "total_income_usd": -290.8062168396783,
+      "total_income_usd": -290.81149291556403,
       "total_expenses_usd": 0.0,
-      "delta_usd": -290.8062168396783
+      "delta_usd": -290.81149291556403
     },
     {
       "date": "2024-09-23",
-      "total_income_usd": 1738.8319031141818,
-      "total_expenses_usd": 4.163783160322837,
-      "delta_usd": 1734.668119953859
+      "total_income_usd": 1737.7104227623495,
+      "total_expenses_usd": 4.158507084437161,
+      "delta_usd": 1733.5519156779123
     },
     {
       "date": "2024-09-24",
-      "total_income_usd": 1513.4344768093456,
-      "total_expenses_usd": 41.2918108419838,
-      "delta_usd": 1472.1426659673618
+      "total_income_usd": 1512.8082296652665,
+      "total_expenses_usd": 41.23948853818679,
+      "delta_usd": 1471.5687411270796
     },
     {
       "date": "2024-09-25",
-      "total_income_usd": -78.88352692017881,
-      "total_expenses_usd": 6.101499423298952,
-      "delta_usd": -84.98502634347776
+      "total_income_usd": -79.9711042115193,
+      "total_expenses_usd": 6.093767999078667,
+      "delta_usd": -86.06487221059797
     },
     {
       "date": "2024-09-26",
-      "total_income_usd": -221.53995684678586,
-      "total_expenses_usd": 69.20415224913495,
-      "delta_usd": -290.7441090959208
+      "total_income_usd": -221.07899910175385,
+      "total_expenses_usd": 69.11646123718465,
+      "delta_usd": -290.1954603389385
     },
     {
       "date": "2024-09-27",
-      "total_income_usd": 2194.6279578428957,
-      "total_expenses_usd": 24.117647058823362,
-      "delta_usd": 2170.5103107840723
+      "total_income_usd": 2191.4574400285965,
+      "total_expenses_usd": 24.087086741158686,
+      "delta_usd": 2167.370353287438
     },
     {
       "date": "2024-09-28",
-      "total_income_usd": -1031.031875324867,
+      "total_income_usd": -1030.8714395222332,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1031.031875324867
+      "delta_usd": -1030.8714395222332
     },
     {
       "date": "2024-09-29",
       "total_income_usd": 1290.7899999999972,
-      "total_expenses_usd": 343.8985005767014,
-      "delta_usd": 946.8914994232958
+      "total_expenses_usd": 343.46273470798303,
+      "delta_usd": 947.3272652920142
     },
     {
       "date": "2024-09-30",
@@ -39714,159 +39714,159 @@
     },
     {
       "date": "2024-10-01",
-      "total_income_usd": -3022.5077219324494,
-      "total_expenses_usd": 842.0415224913495,
-      "delta_usd": -3864.549244423799
+      "total_income_usd": -3022.5562975763532,
+      "total_expenses_usd": 840.9745421034443,
+      "delta_usd": -3863.5308396797973
     },
     {
       "date": "2024-10-02",
-      "total_income_usd": -387.3737763525098,
+      "total_income_usd": -385.538435269483,
       "total_expenses_usd": 0.0,
-      "delta_usd": -387.3737763525098
+      "delta_usd": -385.538435269483
     },
     {
       "date": "2024-10-03",
-      "total_income_usd": -2801.658802641737,
-      "total_expenses_usd": 28.027681660899734,
-      "delta_usd": -2829.686484302637
+      "total_income_usd": -2800.9874680028006,
+      "total_expenses_usd": 27.992166801059863,
+      "delta_usd": -2828.9796348038603
     },
     {
       "date": "2024-10-04",
-      "total_income_usd": 2844.774999374037,
+      "total_income_usd": 2843.6585351768076,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2844.774999374037
+      "delta_usd": 2843.6585351768076
     },
     {
       "date": "2024-10-05",
-      "total_income_usd": 1097.7165738956699,
-      "total_expenses_usd": 50.32295271049596,
-      "delta_usd": 1047.393621185174
+      "total_income_usd": 1095.8606570798052,
+      "total_expenses_usd": 50.25918672963944,
+      "delta_usd": 1045.6014703501658
     },
     {
       "date": "2024-10-06",
       "total_income_usd": -125.34999999999854,
-      "total_expenses_usd": 19.5386389850057,
-      "delta_usd": -144.88863898500423
+      "total_expenses_usd": 19.5138808892984,
+      "delta_usd": -144.86388088929695
     },
     {
       "date": "2024-10-07",
-      "total_income_usd": 319.50647058823154,
-      "total_expenses_usd": 13.241061130334508,
-      "delta_usd": 306.265409457897
+      "total_income_usd": 320.4933452367202,
+      "total_expenses_usd": 13.224282916714685,
+      "delta_usd": 307.2690623200055
     },
     {
       "date": "2024-10-08",
-      "total_income_usd": -858.8631302421386,
+      "total_income_usd": -858.5814857774186,
       "total_expenses_usd": 0.0,
-      "delta_usd": -858.8631302421386
+      "delta_usd": -858.5814857774186
     },
     {
       "date": "2024-10-09",
-      "total_income_usd": -322.9161760619218,
-      "total_expenses_usd": 12.975778546712803,
-      "delta_usd": -335.8919546086346
+      "total_income_usd": -323.3003493162124,
+      "total_expenses_usd": 12.959336481972123,
+      "delta_usd": -336.25968579818453
     },
     {
       "date": "2024-10-10",
-      "total_income_usd": 160.33401827813373,
+      "total_income_usd": 159.1481038840045,
       "total_expenses_usd": 0.0,
-      "delta_usd": 160.33401827813373
+      "delta_usd": 159.1481038840045
     },
     {
       "date": "2024-10-11",
-      "total_income_usd": -504.21745384229746,
-      "total_expenses_usd": 130.7035755478662,
-      "delta_usd": -634.9210293901637
+      "total_income_usd": -501.00201293407116,
+      "total_expenses_usd": 130.53795645662942,
+      "delta_usd": -631.5399693907005
     },
     {
       "date": "2024-10-12",
-      "total_income_usd": 2651.435933062168,
-      "total_expenses_usd": 26.88581314878893,
-      "delta_usd": 2624.5501199133787
+      "total_income_usd": 2649.939550793775,
+      "total_expenses_usd": 26.85174519064624,
+      "delta_usd": 2623.087805603129
     },
     {
       "date": "2024-10-13",
       "total_income_usd": -134.94000000000233,
-      "total_expenses_usd": 3.8408304498269716,
-      "delta_usd": -138.7808304498293
+      "total_expenses_usd": 3.83596359866373,
+      "delta_usd": -138.77596359866607
     },
     {
       "date": "2024-10-14",
-      "total_income_usd": 782.5204152249124,
-      "total_expenses_usd": 15.98615916955019,
-      "delta_usd": 766.5342560553622
+      "total_income_usd": 781.8273931574693,
+      "total_expenses_usd": 15.965902545789671,
+      "delta_usd": 765.8614906116796
     },
     {
       "date": "2024-10-15",
-      "total_income_usd": -3683.748708189154,
-      "total_expenses_usd": 145.45559400230684,
-      "delta_usd": -3829.204302191461
+      "total_income_usd": -3682.5229339937755,
+      "total_expenses_usd": 145.27128211035597,
+      "delta_usd": -3827.7942161041315
     },
     {
       "date": "2024-10-16",
-      "total_income_usd": 267.1259218515996,
-      "total_expenses_usd": 2.3644752018454573,
-      "delta_usd": 264.7614466497542
+      "total_income_usd": 267.51630286763316,
+      "total_expenses_usd": 2.3614790922704887,
+      "delta_usd": 265.1548237753627
     },
     {
       "date": "2024-10-17",
-      "total_income_usd": 257.02478271659123,
+      "total_income_usd": 255.84804552199836,
       "total_expenses_usd": 0.0,
-      "delta_usd": 257.02478271659123
+      "delta_usd": 255.84804552199836
     },
     {
       "date": "2024-10-18",
-      "total_income_usd": 1118.4651417776424,
-      "total_expenses_usd": 4.417531718569763,
-      "delta_usd": 1114.0476100590727
+      "total_income_usd": 1117.699143328599,
+      "total_expenses_usd": 4.411934108973602,
+      "delta_usd": 1113.2872092196253
     },
     {
       "date": "2024-10-19",
-      "total_income_usd": -54.64427538244432,
+      "total_income_usd": -55.808239827801394,
       "total_expenses_usd": 0.0,
-      "delta_usd": -54.64427538244432
+      "delta_usd": -55.808239827801394
     },
     {
       "date": "2024-10-20",
       "total_income_usd": -381.9300000000003,
-      "total_expenses_usd": 1.118800461360981,
-      "delta_usd": -383.0488004613613
+      "total_expenses_usd": 1.117382790001118,
+      "delta_usd": -383.0473827900014
     },
     {
       "date": "2024-10-21",
-      "total_income_usd": 980.2883852364484,
-      "total_expenses_usd": 40.507497116493695,
-      "delta_usd": 939.7808881199547
+      "total_income_usd": 979.0666155972822,
+      "total_expenses_usd": 40.45616864416546,
+      "delta_usd": 938.6104469531167
     },
     {
       "date": "2024-10-22",
-      "total_income_usd": -1125.5263215422588,
+      "total_income_usd": -1124.7280533676176,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1125.5263215422588
+      "delta_usd": -1124.7280533676176
     },
     {
       "date": "2024-10-23",
-      "total_income_usd": -659.0478754428946,
-      "total_expenses_usd": 23.25259515570934,
-      "delta_usd": -682.3004705986039
+      "total_income_usd": -658.292053323427,
+      "total_expenses_usd": 23.22313097569404,
+      "delta_usd": -681.5151842991211
     },
     {
       "date": "2024-10-24",
-      "total_income_usd": -3507.8321675373872,
+      "total_income_usd": -3508.872255354462,
       "total_expenses_usd": 0.0,
-      "delta_usd": -3507.8321675373872
+      "delta_usd": -3508.872255354462
     },
     {
       "date": "2024-10-25",
-      "total_income_usd": 1517.9128753182022,
-      "total_expenses_usd": 22.376009227219882,
-      "delta_usd": 1495.5368660909824
+      "total_income_usd": 1517.7406171009675,
+      "total_expenses_usd": 22.34765580002262,
+      "delta_usd": 1495.3929613009448
     },
     {
       "date": "2024-10-26",
-      "total_income_usd": -885.8120863424663,
-      "total_expenses_usd": 65.10957324106145,
-      "delta_usd": -950.9216595835277
+      "total_income_usd": -886.0334640453327,
+      "total_expenses_usd": 65.02707061398488,
+      "delta_usd": -951.0605346593176
     },
     {
       "date": "2024-10-27",
@@ -39876,99 +39876,99 @@
     },
     {
       "date": "2024-10-29",
-      "total_income_usd": 1597.7923189317369,
-      "total_expenses_usd": 1258.719723183391,
-      "delta_usd": 339.072595748346
+      "total_income_usd": 1596.721392269204,
+      "total_expenses_usd": 1257.124755212533,
+      "delta_usd": 339.59663705667094
     },
     {
       "date": "2024-10-30",
-      "total_income_usd": -475.68649603174595,
-      "total_expenses_usd": 9.573241061130283,
-      "delta_usd": -485.2597370928762
+      "total_income_usd": -475.22485557098514,
+      "total_expenses_usd": 9.561110471143826,
+      "delta_usd": -484.78596604212896
     },
     {
       "date": "2024-10-31",
-      "total_income_usd": -1992.9457655335814,
-      "total_expenses_usd": 65.54786620530584,
-      "delta_usd": -2058.4936317388874
+      "total_income_usd": -1990.9687605198217,
+      "total_expenses_usd": 65.46480820182025,
+      "delta_usd": -2056.433568721642
     },
     {
       "date": "2024-11-01",
-      "total_income_usd": -1664.672250737518,
-      "total_expenses_usd": 833.9907727797001,
-      "delta_usd": -2498.663023517218
+      "total_income_usd": -1662.6302080023218,
+      "total_expenses_usd": 832.9339937795183,
+      "delta_usd": -2495.56420178184
     },
     {
       "date": "2024-11-02",
-      "total_income_usd": 321.43121001333793,
+      "total_income_usd": 319.96006934074455,
       "total_expenses_usd": 0.0,
-      "delta_usd": 321.43121001333793
+      "delta_usd": 319.96006934074455
     },
     {
       "date": "2024-11-06",
-      "total_income_usd": 5293.31556700069,
-      "total_expenses_usd": 90.73817762399074,
-      "delta_usd": 5202.577389376699
+      "total_income_usd": 5290.909637629388,
+      "total_expenses_usd": 90.62320009215523,
+      "delta_usd": 5200.286437537233
     },
     {
       "date": "2024-11-07",
-      "total_income_usd": 3792.552175399665,
+      "total_income_usd": 3788.462013813588,
       "total_expenses_usd": 0.0,
-      "delta_usd": 3792.552175399665
+      "delta_usd": 3788.462013813588
     },
     {
       "date": "2024-11-08",
-      "total_income_usd": 1052.1281648059353,
+      "total_income_usd": 1050.1305335274633,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1052.1281648059353
+      "delta_usd": 1050.1305335274633
     },
     {
       "date": "2024-11-09",
-      "total_income_usd": 1046.333346178554,
+      "total_income_usd": 1046.6734833060495,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1046.333346178554
+      "delta_usd": 1046.6734833060495
     },
     {
       "date": "2024-11-10",
       "total_income_usd": 1638.0700000000033,
-      "total_expenses_usd": 33.540945790080784,
-      "delta_usd": 1604.5290542099226
+      "total_expenses_usd": 33.49844487962221,
+      "delta_usd": 1604.5715551203812
     },
     {
       "date": "2024-11-11",
-      "total_income_usd": 3825.7993079584758,
-      "total_expenses_usd": 143.5524798154555,
-      "delta_usd": 3682.24682814302
+      "total_income_usd": 3823.7442690934204,
+      "total_expenses_usd": 143.37057942633328,
+      "delta_usd": 3680.373689667087
     },
     {
       "date": "2024-11-12",
-      "total_income_usd": -325.78414327823725,
+      "total_income_usd": -325.9768009823828,
       "total_expenses_usd": 0.0,
-      "delta_usd": -325.78414327823725
+      "delta_usd": -325.9768009823828
     },
     {
       "date": "2024-11-13",
-      "total_income_usd": 884.4345742892758,
-      "total_expenses_usd": 3.771626297577834,
-      "delta_usd": 880.6629479916979
+      "total_income_usd": 885.0434230246058,
+      "total_expenses_usd": 3.766847137426543,
+      "delta_usd": 881.2765758871792
     },
     {
       "date": "2024-11-14",
-      "total_income_usd": -133.06424582511988,
+      "total_income_usd": -132.7530453552401,
       "total_expenses_usd": 0.0,
-      "delta_usd": -133.06424582511988
+      "delta_usd": -132.7530453552401
     },
     {
       "date": "2024-11-15",
-      "total_income_usd": -1401.5085986418467,
-      "total_expenses_usd": 18.73125720876587,
-      "delta_usd": -1420.2398558506125
+      "total_income_usd": -1400.7296530342512,
+      "total_expenses_usd": 18.707522174864657,
+      "delta_usd": -1419.4371752091158
     },
     {
       "date": "2024-11-16",
-      "total_income_usd": 602.7458007924945,
+      "total_income_usd": 604.0185278480803,
       "total_expenses_usd": 0.0,
-      "delta_usd": 602.7458007924945
+      "delta_usd": 604.0185278480803
     },
     {
       "date": "2024-11-17",
@@ -39978,87 +39978,87 @@
     },
     {
       "date": "2024-11-18",
-      "total_income_usd": 1196.9151441753163,
+      "total_income_usd": 1195.9589321506728,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1196.9151441753163
+      "delta_usd": 1195.9589321506728
     },
     {
       "date": "2024-11-19",
-      "total_income_usd": 1614.008195247267,
-      "total_expenses_usd": 280.27681660899657,
-      "delta_usd": 1333.7313786382704
+      "total_income_usd": 1611.844725392781,
+      "total_expenses_usd": 279.92166801059784,
+      "delta_usd": 1331.923057382183
     },
     {
       "date": "2024-11-20",
-      "total_income_usd": -321.245611625576,
-      "total_expenses_usd": 11.534025374855826,
-      "delta_usd": -332.7796370004318
+      "total_income_usd": -321.8765327882354,
+      "total_expenses_usd": 11.519410206197442,
+      "delta_usd": -333.39594299443286
     },
     {
       "date": "2024-11-21",
-      "total_income_usd": -182.03522920018258,
-      "total_expenses_usd": 47.67012687427917,
-      "delta_usd": -229.70535607446175
+      "total_income_usd": -180.63035110371197,
+      "total_expenses_usd": 47.60972238221407,
+      "delta_usd": -228.24007348592605
     },
     {
       "date": "2024-11-22",
-      "total_income_usd": -499.23959949583264,
+      "total_income_usd": -502.5646622820616,
       "total_expenses_usd": 0.0,
-      "delta_usd": -499.23959949583264
+      "delta_usd": -502.5646622820616
     },
     {
       "date": "2024-11-23",
-      "total_income_usd": 272.60402554770724,
+      "total_income_usd": 271.9107275574872,
       "total_expenses_usd": 0.0,
-      "delta_usd": 272.60402554770724
+      "delta_usd": 271.9107275574872
     },
     {
       "date": "2024-11-24",
       "total_income_usd": 506.6800000000003,
-      "total_expenses_usd": 32.74509803921554,
-      "delta_usd": 473.93490196078477
+      "total_expenses_usd": 32.70360557539439,
+      "delta_usd": 473.9763944246059
     },
     {
       "date": "2024-11-25",
-      "total_income_usd": 160.87225541441148,
-      "total_expenses_usd": 58.62745098039234,
-      "delta_usd": 102.24480443401914
+      "total_income_usd": 159.7548745301582,
+      "total_expenses_usd": 58.55316207810178,
+      "delta_usd": 101.20171245205641
     },
     {
       "date": "2024-11-26",
-      "total_income_usd": -5500.641747445581,
-      "total_expenses_usd": 987.0818915801615,
-      "delta_usd": -6487.723639025742
+      "total_income_usd": -5497.922707256321,
+      "total_expenses_usd": 985.8311254463771,
+      "delta_usd": -6483.753832702698
     },
     {
       "date": "2024-11-27",
-      "total_income_usd": 2954.771963895599,
-      "total_expenses_usd": 63.898500576701245,
-      "delta_usd": 2890.873463318898
+      "total_income_usd": 2954.078042045745,
+      "total_expenses_usd": 63.81753254233381,
+      "delta_usd": 2890.260509503411
     },
     {
       "date": "2024-11-28",
-      "total_income_usd": 826.0491491983388,
-      "total_expenses_usd": 393.13725490196083,
-      "delta_usd": 432.91189429637797
+      "total_income_usd": 826.1300031072188,
+      "total_expenses_usd": 392.63909687823985,
+      "delta_usd": 433.490906228979
     },
     {
       "date": "2024-11-29",
-      "total_income_usd": 1102.2909701322794,
-      "total_expenses_usd": 109.1349480968858,
-      "delta_usd": 993.1560220353937
+      "total_income_usd": 1101.5430996213613,
+      "total_expenses_usd": 108.99665937104017,
+      "delta_usd": 992.5464402503211
     },
     {
       "date": "2024-11-30",
       "total_income_usd": 428.1800000000003,
-      "total_expenses_usd": 40.49596309111879,
-      "delta_usd": 387.6840369088815
+      "total_expenses_usd": 40.444649233959204,
+      "delta_usd": 387.7353507660411
     },
     {
       "date": "2024-12-01",
-      "total_income_usd": 351.6339453947541,
+      "total_income_usd": 349.9923233328506,
       "total_expenses_usd": 0.0,
-      "delta_usd": 351.6339453947541
+      "delta_usd": 349.9923233328506
     },
     {
       "date": "2024-12-02",
@@ -40074,27 +40074,27 @@
     },
     {
       "date": "2024-12-04",
-      "total_income_usd": 2411.81786041731,
-      "total_expenses_usd": 219.2502883506344,
-      "delta_usd": 2192.5675720666754
+      "total_income_usd": 2410.171144636407,
+      "total_expenses_usd": 218.9724686096072,
+      "delta_usd": 2191.1986760267996
     },
     {
       "date": "2024-12-05",
-      "total_income_usd": 2468.431962093034,
+      "total_income_usd": 2467.0922750599802,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2468.431962093034
+      "delta_usd": 2467.0922750599802
     },
     {
       "date": "2024-12-06",
-      "total_income_usd": 863.1710431168985,
+      "total_income_usd": 863.1191749128654,
       "total_expenses_usd": 0.0,
-      "delta_usd": 863.1710431168985
+      "delta_usd": 863.1191749128654
     },
     {
       "date": "2024-12-07",
-      "total_income_usd": 107.62081771078965,
-      "total_expenses_usd": 42.19146482122265,
-      "delta_usd": 65.429352889567
+      "total_income_usd": 105.89953417258278,
+      "total_expenses_usd": 42.13800253427029,
+      "delta_usd": 63.76153163831248
     },
     {
       "date": "2024-12-08",
@@ -40116,171 +40116,171 @@
     },
     {
       "date": "2024-12-11",
-      "total_income_usd": 940.5270294020095,
-      "total_expenses_usd": 156.11303344867358,
-      "delta_usd": 784.4139959533359
+      "total_income_usd": 940.9055619652854,
+      "total_expenses_usd": 155.91521714088236,
+      "delta_usd": 784.9903448244031
     },
     {
       "date": "2024-12-12",
-      "total_income_usd": 2343.0552858825877,
+      "total_income_usd": 2341.3904322805706,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2343.0552858825877
+      "delta_usd": 2341.3904322805706
     },
     {
       "date": "2024-12-13",
-      "total_income_usd": -2036.2784719898082,
-      "total_expenses_usd": 2.122260668973443,
-      "delta_usd": -2038.4007326587816
+      "total_income_usd": -2035.1132553394082,
+      "total_expenses_usd": 2.1195714779403008,
+      "delta_usd": -2037.2328268173485
     },
     {
       "date": "2024-12-14",
-      "total_income_usd": 173.87370438523408,
+      "total_income_usd": 173.70183880892637,
       "total_expenses_usd": 0.0,
-      "delta_usd": 173.87370438523408
+      "delta_usd": 173.70183880892637
     },
     {
       "date": "2024-12-15",
       "total_income_usd": -177.60000000000582,
-      "total_expenses_usd": 112.12226066897348,
-      "delta_usd": -289.7222606689793
+      "total_expenses_usd": 111.98018661444534,
+      "delta_usd": -289.5801866144512
     },
     {
       "date": "2024-12-16",
-      "total_income_usd": 958.0976009227248,
+      "total_income_usd": 957.8540099066955,
       "total_expenses_usd": 0.0,
-      "delta_usd": 958.0976009227248
+      "delta_usd": 957.8540099066955
     },
     {
       "date": "2024-12-17",
-      "total_income_usd": 481.47591686118517,
-      "total_expenses_usd": 57.93540945790082,
-      "delta_usd": 423.5405074032843
+      "total_income_usd": 479.8879726052078,
+      "total_expenses_usd": 57.86199746572976,
+      "delta_usd": 422.025975139478
     },
     {
       "date": "2024-12-19",
-      "total_income_usd": -12194.429015089056,
+      "total_income_usd": -12190.674726223428,
       "total_expenses_usd": 0.0,
-      "delta_usd": -12194.429015089056
+      "delta_usd": -12190.674726223428
     },
     {
       "date": "2025-01-05",
-      "total_income_usd": 1791.468692978441,
-      "total_expenses_usd": 1553.5755478662054,
-      "delta_usd": 237.89314511223552
+      "total_income_usd": 1790.5970911684312,
+      "total_expenses_usd": 1551.6069577237645,
+      "delta_usd": 238.99013344466675
     },
     {
       "date": "2025-01-06",
-      "total_income_usd": -60.72224913494628,
-      "total_expenses_usd": 29.61937716262983,
-      "delta_usd": -90.34162629757611
+      "total_income_usd": -61.00842875244609,
+      "total_expenses_usd": 29.581845409515104,
+      "delta_usd": -90.59027416196119
     },
     {
       "date": "2025-01-07",
-      "total_income_usd": 140.49815788700073,
+      "total_income_usd": 141.16232895764614,
       "total_expenses_usd": 0.0,
-      "delta_usd": 140.49815788700073
+      "delta_usd": 141.16232895764614
     },
     {
       "date": "2025-01-17",
-      "total_income_usd": -2299.0409138153127,
+      "total_income_usd": -2298.634281921478,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2299.0409138153127
+      "delta_usd": -2298.634281921478
     },
     {
       "date": "2025-01-18",
-      "total_income_usd": 2948.842297081021,
-      "total_expenses_usd": 29.088811995386422,
-      "delta_usd": 2919.7534850856346
+      "total_income_usd": 2946.6583430064293,
+      "total_expenses_usd": 29.05195254002998,
+      "delta_usd": 2917.6063904663993
     },
     {
       "date": "2025-01-20",
-      "total_income_usd": 2595.5168858131506,
-      "total_expenses_usd": 25.144175317185777,
-      "delta_usd": 2570.372710495965
+      "total_income_usd": 2595.3672411012576,
+      "total_expenses_usd": 25.112314249510504,
+      "delta_usd": 2570.2549268517473
     },
     {
       "date": "2025-01-21",
-      "total_income_usd": -547.9935458892917,
-      "total_expenses_usd": 10.542099192618208,
-      "delta_usd": -558.5356450819099
+      "total_income_usd": -546.6992160742394,
+      "total_expenses_usd": 10.528740928464446,
+      "delta_usd": -557.2279570027039
     },
     {
       "date": "2025-01-22",
-      "total_income_usd": 1391.4787948536157,
-      "total_expenses_usd": 11.534025374855826,
-      "delta_usd": 1379.9447694787598
+      "total_income_usd": 1389.074592009215,
+      "total_expenses_usd": 11.519410206197442,
+      "delta_usd": 1377.5551818030176
     },
     {
       "date": "2025-01-23",
-      "total_income_usd": -670.8243636148927,
-      "total_expenses_usd": 48.8350634371396,
-      "delta_usd": -719.6594270520324
+      "total_income_usd": -671.6713431026169,
+      "total_expenses_usd": 48.77318281304001,
+      "delta_usd": -720.4445259156569
     },
     {
       "date": "2025-01-24",
-      "total_income_usd": -297.26430909066073,
-      "total_expenses_usd": 42.41061130334485,
-      "delta_usd": -339.6749203940056
+      "total_income_usd": -297.28967142628704,
+      "total_expenses_usd": 42.35687132818798,
+      "delta_usd": -339.64654275447504
     },
     {
       "date": "2025-01-25",
-      "total_income_usd": -368.0692892314242,
+      "total_income_usd": -367.85890581618474,
       "total_expenses_usd": 0.0,
-      "delta_usd": -368.0692892314242
+      "delta_usd": -367.85890581618474
     },
     {
       "date": "2025-01-26",
-      "total_income_usd": 508.30574394463474,
+      "total_income_usd": 499.9818500172778,
       "total_expenses_usd": 0.0,
-      "delta_usd": 508.30574394463474
+      "delta_usd": 499.9818500172778
     },
     {
       "date": "2025-01-30",
-      "total_income_usd": -1959.5756934946887,
-      "total_expenses_usd": 1316.9550173010384,
-      "delta_usd": -3276.530710795727
+      "total_income_usd": -1956.9890322680933,
+      "total_expenses_usd": 1315.2862573436241,
+      "delta_usd": -3272.275289611717
     },
     {
       "date": "2025-03-07",
-      "total_income_usd": -25716.034410963428,
-      "total_expenses_usd": 4768.0738177624,
-      "delta_usd": -30484.10822872583
+      "total_income_usd": -25701.165211985077,
+      "total_expenses_usd": 4762.032023960373,
+      "delta_usd": -30463.197235945452
     },
     {
       "date": "2025-03-08",
-      "total_income_usd": -39.06054454762301,
+      "total_income_usd": -44.958576692371054,
       "total_expenses_usd": 0.0,
-      "delta_usd": -39.06054454762301
+      "delta_usd": -44.958576692371054
     },
     {
       "date": "2025-03-11",
-      "total_income_usd": -5837.089751767824,
-      "total_expenses_usd": 55.65167243367936,
-      "delta_usd": -5892.741424201504
+      "total_income_usd": -5830.916153728307,
+      "total_expenses_usd": 55.581154244902656,
+      "delta_usd": -5886.49730797321
     },
     {
       "date": "2025-03-12",
-      "total_income_usd": 178.89947969223385,
-      "total_expenses_usd": 1.6032295271042882,
-      "delta_usd": 177.29625016512958
+      "total_income_usd": 178.71757207653184,
+      "total_expenses_usd": 1.601198018660774,
+      "delta_usd": 177.11637405787107
     },
     {
       "date": "2025-03-13",
-      "total_income_usd": 584.2922777786396,
+      "total_income_usd": 583.4933701474973,
       "total_expenses_usd": 0.0,
-      "delta_usd": 584.2922777786396
+      "delta_usd": 583.4933701474973
     },
     {
       "date": "2025-03-14",
-      "total_income_usd": 2747.4832751051554,
-      "total_expenses_usd": 6.712802768165755,
-      "delta_usd": 2740.7704723369898
+      "total_income_usd": 2748.3641755276412,
+      "total_expenses_usd": 6.704296740006576,
+      "delta_usd": 2741.6598787876346
     },
     {
       "date": "2025-03-15",
-      "total_income_usd": 2425.755358595587,
-      "total_expenses_usd": 47.68166089965415,
-      "delta_usd": 2378.073697695933
+      "total_income_usd": 2422.6376422011795,
+      "total_expenses_usd": 47.62124179242039,
+      "delta_usd": 2375.016400408759
     },
     {
       "date": "2025-03-16",
@@ -40290,39 +40290,39 @@
     },
     {
       "date": "2025-03-17",
-      "total_income_usd": -32.739700115339815,
+      "total_income_usd": -31.975896786084036,
       "total_expenses_usd": 0.0,
-      "delta_usd": -32.739700115339815
+      "delta_usd": -31.975896786084036
     },
     {
       "date": "2025-03-18",
-      "total_income_usd": -538.3697558199221,
-      "total_expenses_usd": 68.50057670126913,
-      "delta_usd": -606.8703325211912
+      "total_income_usd": -538.7677244169074,
+      "total_expenses_usd": 68.41377721460698,
+      "delta_usd": -607.1815016315144
     },
     {
       "date": "2025-03-19",
-      "total_income_usd": 420.36271083425896,
+      "total_income_usd": 420.68497614395073,
       "total_expenses_usd": 0.0,
-      "delta_usd": 420.36271083425896
+      "delta_usd": 420.68497614395073
     },
     {
       "date": "2025-03-20",
-      "total_income_usd": 1367.100846250769,
-      "total_expenses_usd": 182.0645905420991,
-      "delta_usd": 1185.03625570867
+      "total_income_usd": 1364.631627264502,
+      "total_expenses_usd": 181.83389010482654,
+      "delta_usd": 1182.7977371596753
     },
     {
       "date": "2025-03-21",
-      "total_income_usd": -297.88248314404655,
+      "total_income_usd": -297.7206600658093,
       "total_expenses_usd": 0.0,
-      "delta_usd": -297.88248314404655
+      "delta_usd": -297.7206600658093
     },
     {
       "date": "2025-03-22",
-      "total_income_usd": 154.39159637479491,
+      "total_income_usd": 154.6638684416602,
       "total_expenses_usd": 0.0,
-      "delta_usd": 154.39159637479491
+      "delta_usd": 154.6638684416602
     },
     {
       "date": "2025-03-23",
@@ -40332,51 +40332,51 @@
     },
     {
       "date": "2025-03-24",
-      "total_income_usd": 1684.7824336793544,
+      "total_income_usd": 1683.0570107130518,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1684.7824336793544
+      "delta_usd": 1683.0570107130518
     },
     {
       "date": "2025-03-25",
-      "total_income_usd": 2330.845218631644,
-      "total_expenses_usd": 85.32871972318341,
-      "delta_usd": 2245.5164989084606
+      "total_income_usd": 2328.3163612976364,
+      "total_expenses_usd": 85.2205967054487,
+      "delta_usd": 2243.0957645921876
     },
     {
       "date": "2025-03-26",
-      "total_income_usd": -492.4530814811909,
+      "total_income_usd": -492.170777777183,
       "total_expenses_usd": 0.0,
-      "delta_usd": -492.4530814811909
+      "delta_usd": -492.170777777183
     },
     {
       "date": "2025-03-27",
-      "total_income_usd": -2019.4374888542766,
+      "total_income_usd": -2016.8040593595515,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2019.4374888542766
+      "delta_usd": -2016.8040593595515
     },
     {
       "date": "2025-03-28",
-      "total_income_usd": -803.9186674212647,
+      "total_income_usd": -804.0834051207485,
       "total_expenses_usd": 0.0,
-      "delta_usd": -803.9186674212647
+      "delta_usd": -804.0834051207485
     },
     {
       "date": "2025-03-29",
-      "total_income_usd": -3776.1646279616316,
+      "total_income_usd": -3771.67818408336,
       "total_expenses_usd": 0.0,
-      "delta_usd": -3776.1646279616316
+      "delta_usd": -3771.67818408336
     },
     {
       "date": "2025-04-25",
-      "total_income_usd": -2194.5171900438245,
-      "total_expenses_usd": 2900.980392156863,
-      "delta_usd": -5095.497582200687
+      "total_income_usd": -2186.3391608283073,
+      "total_expenses_usd": 2897.30445801175,
+      "delta_usd": -5083.643618840057
     },
     {
       "date": "2025-04-26",
-      "total_income_usd": 2783.2591603446817,
-      "total_expenses_usd": 291.1880046136102,
-      "delta_usd": 2492.0711557310715
+      "total_income_usd": 2778.7134140937987,
+      "total_expenses_usd": 290.8190300656607,
+      "delta_usd": 2487.894384028138
     },
     {
       "date": "2025-04-27",
@@ -40386,39 +40386,39 @@
     },
     {
       "date": "2025-04-28",
-      "total_income_usd": 348.08604779743285,
+      "total_income_usd": 347.7619330778296,
       "total_expenses_usd": 0.0,
-      "delta_usd": 348.08604779743285
+      "delta_usd": 347.7619330778296
     },
     {
       "date": "2025-04-29",
-      "total_income_usd": -384.8867646848862,
+      "total_income_usd": -386.3621839682294,
       "total_expenses_usd": 0.0,
-      "delta_usd": -384.8867646848862
+      "delta_usd": -386.3621839682294
     },
     {
       "date": "2025-04-30",
-      "total_income_usd": -38.33337946943706,
+      "total_income_usd": -38.111360442347575,
       "total_expenses_usd": 0.0,
-      "delta_usd": -38.33337946943706
+      "delta_usd": -38.111360442347575
     },
     {
       "date": "2025-05-01",
-      "total_income_usd": 913.4858447161166,
-      "total_expenses_usd": 1341.4071510957324,
-      "delta_usd": -427.92130637961577
+      "total_income_usd": 912.41889715691,
+      "total_expenses_usd": 1339.7074069807625,
+      "delta_usd": -427.28850982385245
     },
     {
       "date": "2025-05-02",
-      "total_income_usd": 1622.4053689962116,
-      "total_expenses_usd": 0.8650519031141869,
-      "delta_usd": 1621.5403170930974
+      "total_income_usd": 1620.9927291292634,
+      "total_expenses_usd": 0.8639557654648082,
+      "delta_usd": 1620.1287733637985
     },
     {
       "date": "2025-05-03",
-      "total_income_usd": 890.151841070952,
-      "total_expenses_usd": 152.7104959630911,
-      "delta_usd": 737.4413451078608
+      "total_income_usd": 888.0716412961717,
+      "total_expenses_usd": 152.51699113005412,
+      "delta_usd": 735.5546501661177
     },
     {
       "date": "2025-05-04",
@@ -40428,39 +40428,39 @@
     },
     {
       "date": "2025-05-05",
-      "total_income_usd": -445.5828258362173,
-      "total_expenses_usd": 89.52710495963092,
-      "delta_usd": -535.1099307958482
+      "total_income_usd": -445.1106243520336,
+      "total_expenses_usd": 89.41366202050455,
+      "delta_usd": -534.5242863725382
     },
     {
       "date": "2025-05-06",
-      "total_income_usd": -444.1137002862034,
+      "total_income_usd": -443.6331523478093,
       "total_expenses_usd": 0.0,
-      "delta_usd": -444.1137002862034
+      "delta_usd": -443.6331523478093
     },
     {
       "date": "2025-05-07",
-      "total_income_usd": -960.2303922531713,
-      "total_expenses_usd": 40.634371395617094,
-      "delta_usd": -1000.8647636487884
+      "total_income_usd": -958.9728001003033,
+      "total_expenses_usd": 40.58288215643361,
+      "delta_usd": -999.5556822567369
     },
     {
       "date": "2025-05-08",
-      "total_income_usd": 2829.153852362005,
-      "total_expenses_usd": 9.181084198385278,
-      "delta_usd": 2819.97276816362
+      "total_income_usd": 2826.9045746284946,
+      "total_expenses_usd": 9.169450524133206,
+      "delta_usd": 2817.7351241043616
     },
     {
       "date": "2025-05-09",
-      "total_income_usd": 1740.0725687146187,
-      "total_expenses_usd": 3.194925028835043,
-      "delta_usd": 1736.8776436857836
+      "total_income_usd": 1737.8127123220156,
+      "total_expenses_usd": 3.1908766271166704,
+      "delta_usd": 1734.621835694899
     },
     {
       "date": "2025-05-10",
-      "total_income_usd": 752.4774266752232,
-      "total_expenses_usd": 25.940023068050696,
-      "delta_usd": 726.5374036071726
+      "total_income_usd": 752.0015248807506,
+      "total_expenses_usd": 25.90715355373799,
+      "delta_usd": 726.0943713270126
     },
     {
       "date": "2025-05-11",
@@ -40470,81 +40470,81 @@
     },
     {
       "date": "2025-05-12",
-      "total_income_usd": 1098.306020761248,
-      "total_expenses_usd": 158.35063437139564,
-      "delta_usd": 939.9553863898523
+      "total_income_usd": 1096.4555650270727,
+      "total_expenses_usd": 158.1499827208847,
+      "delta_usd": 938.305582306188
     },
     {
       "date": "2025-05-13",
-      "total_income_usd": 4598.404804246279,
+      "total_income_usd": 4592.835118765349,
       "total_expenses_usd": 0.0,
-      "delta_usd": 4598.404804246279
+      "delta_usd": 4592.835118765349
     },
     {
       "date": "2025-05-14",
-      "total_income_usd": -2121.427568849187,
+      "total_income_usd": -2122.901914612077,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2121.427568849187
+      "delta_usd": -2122.901914612077
     },
     {
       "date": "2025-05-15",
-      "total_income_usd": -458.00073608613536,
-      "total_expenses_usd": 31.107266435986194,
-      "delta_usd": -489.1080025221216
+      "total_income_usd": -458.2726465988818,
+      "total_expenses_usd": 31.067849326114533,
+      "delta_usd": -489.34049592499633
     },
     {
       "date": "2025-05-16",
-      "total_income_usd": 698.9386975539423,
+      "total_income_usd": 697.3469792939263,
       "total_expenses_usd": 0.0,
-      "delta_usd": 698.9386975539423
+      "delta_usd": 697.3469792939263
     },
     {
       "date": "2025-05-17",
-      "total_income_usd": -528.7911164990903,
+      "total_income_usd": -530.0545280559484,
       "total_expenses_usd": 0.0,
-      "delta_usd": -528.7911164990903
+      "delta_usd": -530.0545280559484
     },
     {
       "date": "2025-05-18",
       "total_income_usd": -17.119999999999663,
-      "total_expenses_usd": 52.62975778546713,
-      "delta_usd": -69.74975778546678
+      "total_expenses_usd": 52.56306877087892,
+      "delta_usd": -69.68306877087858
     },
     {
       "date": "2025-05-19",
-      "total_income_usd": -101.88366782006733,
+      "total_income_usd": -101.73862688630152,
       "total_expenses_usd": 0.0,
-      "delta_usd": -101.88366782006733
+      "delta_usd": -101.73862688630152
     },
     {
       "date": "2025-05-20",
-      "total_income_usd": 557.8781891580163,
+      "total_income_usd": 557.9685255154938,
       "total_expenses_usd": 0.0,
-      "delta_usd": 557.8781891580163
+      "delta_usd": 557.9685255154938
     },
     {
       "date": "2025-05-21",
-      "total_income_usd": -707.041878458379,
+      "total_income_usd": -705.8627362232858,
       "total_expenses_usd": 0.0,
-      "delta_usd": -707.041878458379
+      "delta_usd": -705.8627362232858
     },
     {
       "date": "2025-05-22",
-      "total_income_usd": -692.1862299145434,
+      "total_income_usd": -689.8884416827827,
       "total_expenses_usd": 0.0,
-      "delta_usd": -692.1862299145434
+      "delta_usd": -689.8884416827827
     },
     {
       "date": "2025-05-23",
-      "total_income_usd": 383.3056437904827,
-      "total_expenses_usd": 22.698961937716206,
-      "delta_usd": 360.6066818527665
+      "total_income_usd": 383.16803408099076,
+      "total_expenses_usd": 22.67019928579651,
+      "delta_usd": 360.49783479519425
     },
     {
       "date": "2025-05-24",
-      "total_income_usd": -1765.9595040369102,
+      "total_income_usd": -1765.4814272549256,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1765.9595040369102
+      "delta_usd": -1765.4814272549256
     },
     {
       "date": "2025-05-25",
@@ -40554,147 +40554,147 @@
     },
     {
       "date": "2025-05-26",
-      "total_income_usd": 977.8509342560569,
-      "total_expenses_usd": 178.2698961937717,
-      "delta_usd": 799.5810380622852
+      "total_income_usd": 977.5017486464708,
+      "total_expenses_usd": 178.04400414698773,
+      "delta_usd": 799.457744499483
     },
     {
       "date": "2025-05-27",
-      "total_income_usd": 862.8440636818591,
+      "total_income_usd": 858.8640372700506,
       "total_expenses_usd": 0.0,
-      "delta_usd": 862.8440636818591
+      "delta_usd": 858.8640372700506
     },
     {
       "date": "2025-05-28",
-      "total_income_usd": 1995.8870924527068,
-      "total_expenses_usd": 31.130334486735883,
-      "delta_usd": 1964.756757965971
+      "total_income_usd": 1993.2689152095872,
+      "total_expenses_usd": 31.090888146526908,
+      "delta_usd": 1962.1780270630604
     },
     {
       "date": "2025-05-29",
-      "total_income_usd": -447.8637867136289,
+      "total_income_usd": -447.3196568577945,
       "total_expenses_usd": 0.0,
-      "delta_usd": -447.8637867136289
+      "delta_usd": -447.3196568577945
     },
     {
       "date": "2025-05-30",
-      "total_income_usd": -1154.2250664225012,
-      "total_expenses_usd": 512.2029988465974,
-      "delta_usd": -1666.4280652690986
+      "total_income_usd": -1153.4058950031852,
+      "total_expenses_usd": 511.5539684368159,
+      "delta_usd": -1664.959863440001
     },
     {
       "date": "2025-06-01",
-      "total_income_usd": -618.2065397923909,
-      "total_expenses_usd": 1372.8489042675894,
-      "delta_usd": -1991.0554440599803
+      "total_income_usd": -618.0304123948886,
+      "total_expenses_usd": 1371.1093192028568,
+      "delta_usd": -1989.1397315977454
     },
     {
       "date": "2025-06-03",
-      "total_income_usd": -929.1854996707227,
-      "total_expenses_usd": 41.37254901960782,
-      "delta_usd": -970.5580486903306
+      "total_income_usd": -927.3729809866932,
+      "total_expenses_usd": 41.320124409630196,
+      "delta_usd": -968.6931053963234
     },
     {
       "date": "2025-06-04",
-      "total_income_usd": 1241.2404360854293,
+      "total_income_usd": 1239.4445234505663,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1241.2404360854293
+      "delta_usd": 1239.4445234505663
     },
     {
       "date": "2025-06-05",
-      "total_income_usd": 2192.6813548763594,
-      "total_expenses_usd": 33.25259515570936,
-      "delta_usd": 2159.42875972065
+      "total_income_usd": 2193.40536543474,
+      "total_expenses_usd": 33.21045962446724,
+      "delta_usd": 2160.1949058102728
     },
     {
       "date": "2025-06-07",
-      "total_income_usd": 273.83375746248055,
+      "total_income_usd": 273.5012272359885,
       "total_expenses_usd": 0.0,
-      "delta_usd": 273.83375746248055
+      "delta_usd": 273.5012272359885
     },
     {
       "date": "2025-06-09",
-      "total_income_usd": 363.3434140715135,
-      "total_expenses_usd": 58.48904267589386,
-      "delta_usd": 304.85437139561964
+      "total_income_usd": 363.3952102292387,
+      "total_expenses_usd": 58.414929155627206,
+      "delta_usd": 304.98028107361154
     },
     {
       "date": "2025-06-10",
-      "total_income_usd": 1732.0650375738633,
-      "total_expenses_usd": 55.01730103806231,
-      "delta_usd": 1677.047736535801
+      "total_income_usd": 1730.422729657635,
+      "total_expenses_usd": 54.947586683561816,
+      "delta_usd": 1675.4751429740732
     },
     {
       "date": "2025-06-11",
-      "total_income_usd": -105.16991930380266,
+      "total_income_usd": -105.34806811397073,
       "total_expenses_usd": 0.0,
-      "delta_usd": -105.16991930380266
+      "delta_usd": -105.34806811397073
     },
     {
       "date": "2025-06-12",
-      "total_income_usd": -519.8417030750275,
-      "total_expenses_usd": 43.64475201845443,
-      "delta_usd": -563.4864550934819
+      "total_income_usd": -519.709376080061,
+      "total_expenses_usd": 43.58944822025111,
+      "delta_usd": -563.2988243003122
     },
     {
       "date": "2025-06-13",
-      "total_income_usd": -578.9227699217521,
+      "total_income_usd": -579.0630793656704,
       "total_expenses_usd": 0.0,
-      "delta_usd": -578.9227699217521
+      "delta_usd": -579.0630793656704
     },
     {
       "date": "2025-06-15",
-      "total_income_usd": 1448.295231308945,
+      "total_income_usd": 1451.1854414210238,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1448.295231308945
+      "delta_usd": 1451.1854414210238
     },
     {
       "date": "2025-06-16",
-      "total_income_usd": 828.2613840830467,
+      "total_income_usd": 827.8097753715026,
       "total_expenses_usd": 0.0,
-      "delta_usd": 828.2613840830467
+      "delta_usd": 827.8097753715026
     },
     {
       "date": "2025-06-17",
-      "total_income_usd": 53.387650765213266,
+      "total_income_usd": 52.20709736554801,
       "total_expenses_usd": 0.0,
-      "delta_usd": 53.387650765213266
+      "delta_usd": 52.20709736554801
     },
     {
       "date": "2025-06-20",
-      "total_income_usd": -991.973613493349,
+      "total_income_usd": -991.89503991073,
       "total_expenses_usd": 0.0,
-      "delta_usd": -991.973613493349
+      "delta_usd": -991.89503991073
     },
     {
       "date": "2025-06-24",
-      "total_income_usd": -2321.8784960529692,
+      "total_income_usd": -2325.3912137721295,
       "total_expenses_usd": 0.0,
-      "delta_usd": -2321.8784960529692
+      "delta_usd": -2325.3912137721295
     },
     {
       "date": "2025-06-25",
-      "total_income_usd": 1760.8845926459232,
+      "total_income_usd": 1758.5178071594253,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1760.8845926459232
+      "delta_usd": 1758.5178071594253
     },
     {
       "date": "2025-06-26",
-      "total_income_usd": -984.1325271590384,
+      "total_income_usd": -982.6579699339388,
       "total_expenses_usd": 0.0,
-      "delta_usd": -984.1325271590384
+      "delta_usd": -982.6579699339388
     },
     {
       "date": "2025-06-27",
-      "total_income_usd": 794.9597095825758,
+      "total_income_usd": 793.8938642251484,
       "total_expenses_usd": 0.0,
-      "delta_usd": 794.9597095825758
+      "delta_usd": 793.8938642251484
     },
     {
       "date": "2025-06-28",
-      "total_income_usd": 591.7933033214485,
+      "total_income_usd": 589.2917028984966,
       "total_expenses_usd": 0.0,
-      "delta_usd": 591.7933033214485
+      "delta_usd": 589.2917028984966
     },
     {
       "date": "2025-06-29",
@@ -40704,69 +40704,69 @@
     },
     {
       "date": "2025-06-30",
-      "total_income_usd": 182.59926182237604,
+      "total_income_usd": 182.76409169450528,
       "total_expenses_usd": 0.0,
-      "delta_usd": 182.59926182237604
+      "delta_usd": 182.76409169450528
     },
     {
       "date": "2025-07-01",
-      "total_income_usd": -1470.7395847750863,
+      "total_income_usd": -1469.2151203778365,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1470.7395847750863
+      "delta_usd": -1469.2151203778365
     },
     {
       "date": "2025-07-02",
-      "total_income_usd": 521.6614794171572,
-      "total_expenses_usd": 1582.3068050749714,
-      "delta_usd": -1060.6453256578143
+      "total_income_usd": 520.6816374024386,
+      "total_expenses_usd": 1580.3018085474025,
+      "delta_usd": -1059.620171144964
     },
     {
       "date": "2025-07-03",
-      "total_income_usd": 776.9409806316851,
+      "total_income_usd": 776.7836499517425,
       "total_expenses_usd": 0.0,
-      "delta_usd": 776.9409806316851
+      "delta_usd": 776.7836499517425
     },
     {
       "date": "2025-07-05",
-      "total_income_usd": -583.0721548132475,
+      "total_income_usd": -583.1186634107225,
       "total_expenses_usd": 0.0,
-      "delta_usd": -583.0721548132475
+      "delta_usd": -583.1186634107225
     },
     {
       "date": "2025-07-07",
-      "total_income_usd": -145.17983852364773,
+      "total_income_usd": -144.42155972814487,
       "total_expenses_usd": 0.0,
-      "delta_usd": -145.17983852364773
+      "delta_usd": -144.42155972814487
     },
     {
       "date": "2025-07-08",
-      "total_income_usd": -384.94719664166917,
+      "total_income_usd": -385.0547310717076,
       "total_expenses_usd": 0.0,
-      "delta_usd": -384.94719664166917
+      "delta_usd": -385.0547310717076
     },
     {
       "date": "2025-07-09",
-      "total_income_usd": 441.1571487918906,
+      "total_income_usd": 440.8981972588004,
       "total_expenses_usd": 0.0,
-      "delta_usd": 441.1571487918906
+      "delta_usd": 440.8981972588004
     },
     {
       "date": "2025-07-10",
-      "total_income_usd": 2529.581876139727,
+      "total_income_usd": 2527.658495504914,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2529.581876139727
+      "delta_usd": 2527.658495504914
     },
     {
       "date": "2025-07-11",
-      "total_income_usd": 617.8339667491206,
+      "total_income_usd": 617.4963013498748,
       "total_expenses_usd": 0.0,
-      "delta_usd": 617.8339667491206
+      "delta_usd": 617.4963013498748
     },
     {
       "date": "2025-07-12",
-      "total_income_usd": -898.9111447748626,
+      "total_income_usd": -897.9063720300288,
       "total_expenses_usd": 0.0,
-      "delta_usd": -898.9111447748626
+      "delta_usd": -897.9063720300288
     },
     {
       "date": "2025-07-13",
@@ -40776,39 +40776,39 @@
     },
     {
       "date": "2025-07-14",
-      "total_income_usd": 698.2508881199533,
+      "total_income_usd": 697.9547701877659,
       "total_expenses_usd": 0.0,
-      "delta_usd": 698.2508881199533
+      "delta_usd": 697.9547701877659
     },
     {
       "date": "2025-07-15",
-      "total_income_usd": 507.9073429294602,
+      "total_income_usd": 506.9719256168996,
       "total_expenses_usd": 0.0,
-      "delta_usd": 507.9073429294602
+      "delta_usd": 506.9719256168996
     },
     {
       "date": "2025-07-16",
-      "total_income_usd": 993.2009165562347,
+      "total_income_usd": 993.2878017312836,
       "total_expenses_usd": 0.0,
-      "delta_usd": 993.2009165562347
+      "delta_usd": 993.2878017312836
     },
     {
       "date": "2025-07-17",
-      "total_income_usd": 128.21774385475598,
+      "total_income_usd": 128.15239034650423,
       "total_expenses_usd": 0.0,
-      "delta_usd": 128.21774385475598
+      "delta_usd": 128.15239034650423
     },
     {
       "date": "2025-07-18",
-      "total_income_usd": 1875.4786818172072,
+      "total_income_usd": 1872.9101054572625,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1875.4786818172072
+      "delta_usd": 1872.9101054572625
     },
     {
       "date": "2025-07-19",
-      "total_income_usd": -83.98045258025202,
+      "total_income_usd": -83.5465251174791,
       "total_expenses_usd": 0.0,
-      "delta_usd": -83.98045258025202
+      "delta_usd": -83.5465251174791
     },
     {
       "date": "2025-07-20",
@@ -40818,99 +40818,99 @@
     },
     {
       "date": "2025-07-21",
-      "total_income_usd": 967.3663667820072,
+      "total_income_usd": 967.4937818223709,
       "total_expenses_usd": 0.0,
-      "delta_usd": 967.3663667820072
+      "delta_usd": 967.4937818223709
     },
     {
       "date": "2025-07-22",
-      "total_income_usd": 289.2654062404349,
+      "total_income_usd": 289.5050445477854,
       "total_expenses_usd": 0.0,
-      "delta_usd": 289.2654062404349
+      "delta_usd": 289.5050445477854
     },
     {
       "date": "2025-07-23",
-      "total_income_usd": -1482.3220212076985,
+      "total_income_usd": -1481.9844953973964,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1482.3220212076985
+      "delta_usd": -1481.9844953973964
     },
     {
       "date": "2025-07-26",
-      "total_income_usd": 828.9561001713092,
+      "total_income_usd": 825.291658197889,
       "total_expenses_usd": 0.0,
-      "delta_usd": 828.9561001713092
+      "delta_usd": 825.291658197889
     },
     {
       "date": "2025-07-27",
       "total_income_usd": 49.55999999999972,
-      "total_expenses_usd": 0.8650519031141869,
-      "delta_usd": 48.69494809688553
+      "total_expenses_usd": 0.8639557654648082,
+      "delta_usd": 48.69604423453491
     },
     {
       "date": "2025-07-28",
-      "total_income_usd": 896.7212802768188,
-      "total_expenses_usd": 388.45444059976927,
-      "delta_usd": 508.2668396770495
+      "total_income_usd": 895.2328130399744,
+      "total_expenses_usd": 387.96221633452365,
+      "delta_usd": 507.27059670545077
     },
     {
       "date": "2025-07-29",
-      "total_income_usd": -175.62628040892392,
+      "total_income_usd": -174.8842982055403,
       "total_expenses_usd": 0.0,
-      "delta_usd": -175.62628040892392
+      "delta_usd": -174.8842982055403
     },
     {
       "date": "2025-07-30",
-      "total_income_usd": -856.3429899695108,
+      "total_income_usd": -856.4768479292675,
       "total_expenses_usd": 0.0,
-      "delta_usd": -856.3429899695108
+      "delta_usd": -856.4768479292675
     },
     {
       "date": "2025-07-31",
-      "total_income_usd": -1031.9862949357291,
-      "total_expenses_usd": 94.95963091118793,
-      "delta_usd": -1126.9459258469171
+      "total_income_usd": -1031.305702938127,
+      "total_expenses_usd": 94.83930422762346,
+      "delta_usd": -1126.1450071657505
     },
     {
       "date": "2025-08-01",
-      "total_income_usd": -1480.8586620530568,
-      "total_expenses_usd": 1333.6678200692043,
-      "delta_usd": -2814.526482122261
+      "total_income_usd": -1479.7873263448917,
+      "total_expenses_usd": 1331.977882732404,
+      "delta_usd": -2811.7652090772954
     },
     {
       "date": "2025-08-02",
-      "total_income_usd": -3551.2701942190643,
+      "total_income_usd": -3551.727347085821,
       "total_expenses_usd": 0.0,
-      "delta_usd": -3551.2701942190643
+      "delta_usd": -3551.727347085821
     },
     {
       "date": "2025-08-05",
-      "total_income_usd": 1908.796655132648,
-      "total_expenses_usd": 119.2964244521336,
-      "delta_usd": 1789.5002306805145
+      "total_income_usd": 1907.8606266559218,
+      "total_expenses_usd": 119.14525976269996,
+      "delta_usd": 1788.715366893222
     },
     {
       "date": "2025-08-06",
-      "total_income_usd": 929.803036367367,
-      "total_expenses_usd": 25.340253748558016,
-      "delta_usd": 904.462782618809
+      "total_income_usd": 926.8872036249983,
+      "total_expenses_usd": 25.30814422301555,
+      "delta_usd": 901.5790594019827
     },
     {
       "date": "2025-08-07",
-      "total_income_usd": 1607.8239311766083,
-      "total_expenses_usd": 32.618223760092505,
-      "delta_usd": 1575.205707416516
+      "total_income_usd": 1606.219106698397,
+      "total_expenses_usd": 32.5768920631266,
+      "delta_usd": 1573.6422146352702
     },
     {
       "date": "2025-08-08",
-      "total_income_usd": 832.6402634701246,
-      "total_expenses_usd": 23.068050749711652,
-      "delta_usd": 809.572212720413
+      "total_income_usd": 831.8246621360712,
+      "total_expenses_usd": 23.038820412394884,
+      "delta_usd": 808.7858417236763
     },
     {
       "date": "2025-08-09",
-      "total_income_usd": 958.6935121440752,
+      "total_income_usd": 958.3361807113902,
       "total_expenses_usd": 0.0,
-      "delta_usd": 958.6935121440752
+      "delta_usd": 958.3361807113902
     },
     {
       "date": "2025-08-10",
@@ -40920,39 +40920,39 @@
     },
     {
       "date": "2025-08-11",
-      "total_income_usd": 233.13740484428894,
+      "total_income_usd": 232.9387847022215,
       "total_expenses_usd": 0.0,
-      "delta_usd": 233.13740484428894
+      "delta_usd": 232.9387847022215
     },
     {
       "date": "2025-08-12",
-      "total_income_usd": -333.82070247918716,
-      "total_expenses_usd": 37.55478662053051,
-      "delta_usd": -371.3754890997177
+      "total_income_usd": -333.76366717590736,
+      "total_expenses_usd": 37.50719963137881,
+      "delta_usd": -371.27086680728615
     },
     {
       "date": "2025-08-13",
-      "total_income_usd": 2560.8474291321704,
-      "total_expenses_usd": 9.434832756631875,
-      "delta_usd": 2551.4125963755387
+      "total_income_usd": 2558.6400283461003,
+      "total_expenses_usd": 9.42287754866932,
+      "delta_usd": 2549.217150797431
     },
     {
       "date": "2025-08-14",
-      "total_income_usd": 590.1325541878164,
-      "total_expenses_usd": 0.5190311418688268,
-      "delta_usd": 589.6135230459475
+      "total_income_usd": 589.0844575384892,
+      "total_expenses_usd": 0.5183734592791992,
+      "delta_usd": 588.56608407921
     },
     {
       "date": "2025-08-15",
-      "total_income_usd": -253.38454405537112,
+      "total_income_usd": -253.5001768995112,
       "total_expenses_usd": 0.0,
-      "delta_usd": -253.38454405537112
+      "delta_usd": -253.5001768995112
     },
     {
       "date": "2025-08-16",
-      "total_income_usd": -796.8817061073083,
+      "total_income_usd": -796.433213597021,
       "total_expenses_usd": 0.0,
-      "delta_usd": -796.8817061073083
+      "delta_usd": -796.433213597021
     },
     {
       "date": "2025-08-17",
@@ -40962,33 +40962,33 @@
     },
     {
       "date": "2025-08-19",
-      "total_income_usd": -467.391931802322,
-      "total_expenses_usd": 65.39792387543233,
-      "delta_usd": -532.7898556777543
+      "total_income_usd": -467.9674018942404,
+      "total_expenses_usd": 65.31505586913929,
+      "delta_usd": -533.2824577633797
     },
     {
       "date": "2025-08-20",
-      "total_income_usd": -1359.816088476407,
-      "total_expenses_usd": 48.31603229527091,
-      "delta_usd": -1408.1321207716778
+      "total_income_usd": -1358.3710875614706,
+      "total_expenses_usd": 48.25480935376094,
+      "delta_usd": -1406.6258969152316
     },
     {
       "date": "2025-08-21",
-      "total_income_usd": -245.25589388696932,
+      "total_income_usd": -245.35387397765513,
       "total_expenses_usd": 0.0,
-      "delta_usd": -245.25589388696932
+      "delta_usd": -245.35387397765513
     },
     {
       "date": "2025-08-22",
-      "total_income_usd": 1494.1383216375507,
+      "total_income_usd": 1493.1935170791282,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1494.1383216375507
+      "delta_usd": 1493.1935170791282
     },
     {
       "date": "2025-08-23",
-      "total_income_usd": 1564.8343423963515,
-      "total_expenses_usd": 99.55017301038109,
-      "delta_usd": 1465.2841693859705
+      "total_income_usd": 1562.7417356019132,
+      "total_expenses_usd": 99.42402948969058,
+      "delta_usd": 1463.3177061122226
     },
     {
       "date": "2025-08-24",
@@ -40998,21 +40998,21 @@
     },
     {
       "date": "2025-08-25",
-      "total_income_usd": -145.36051903113844,
+      "total_income_usd": -146.12251007948055,
       "total_expenses_usd": 0.0,
-      "delta_usd": -145.36051903113844
+      "delta_usd": -146.12251007948055
     },
     {
       "date": "2025-08-28",
-      "total_income_usd": 650.3352370673126,
-      "total_expenses_usd": 724.3713956170701,
-      "delta_usd": -74.03615854975749
+      "total_income_usd": 651.0633458219223,
+      "total_expenses_usd": 723.4535191798177,
+      "delta_usd": -72.39017335789538
     },
     {
       "date": "2025-08-29",
-      "total_income_usd": -934.5091909613402,
-      "total_expenses_usd": 59.23875432525966,
-      "delta_usd": -993.7479452865998
+      "total_income_usd": -933.769165228359,
+      "total_expenses_usd": 59.16369081903021,
+      "delta_usd": -992.9328560473892
     },
     {
       "date": "2025-08-30",
@@ -41023,128 +41023,128 @@
     {
       "date": "2025-08-31",
       "total_income_usd": 253.1599999999986,
-      "total_expenses_usd": 33.967704728950196,
-      "delta_usd": 219.1922952710484
+      "total_expenses_usd": 33.92466305725126,
+      "delta_usd": 219.23533694274735
     },
     {
       "date": "2025-09-01",
-      "total_income_usd": -287.31997693194626,
-      "total_expenses_usd": 1365.0403690888124,
-      "delta_usd": -1652.3603460207587
+      "total_income_usd": -287.30216104135167,
+      "total_expenses_usd": 1363.3106784932613,
+      "delta_usd": -1650.612839534613
     },
     {
       "date": "2025-09-02",
-      "total_income_usd": 176.82237600922673,
+      "total_income_usd": 176.88342356871277,
       "total_expenses_usd": 0.0,
-      "delta_usd": 176.82237600922673
+      "delta_usd": 176.88342356871277
     },
     {
       "date": "2025-09-03",
-      "total_income_usd": -1066.7125944371337,
-      "total_expenses_usd": 23.333333333333094,
-      "delta_usd": -1090.0459277704667
+      "total_income_usd": -1064.8526114041103,
+      "total_expenses_usd": 23.303766847137187,
+      "delta_usd": -1088.1563782512476
     },
     {
       "date": "2025-09-04",
-      "total_income_usd": 924.0188829552067,
-      "total_expenses_usd": 11.914648212226245,
-      "delta_usd": 912.1042347429805
+      "total_income_usd": 922.7161118840768,
+      "total_expenses_usd": 11.899550743002136,
+      "delta_usd": 910.8165611410747
     },
     {
       "date": "2025-09-05",
-      "total_income_usd": 1229.0416705347754,
+      "total_income_usd": 1227.2343120737467,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1229.0416705347754
+      "delta_usd": 1227.2343120737467
     },
     {
       "date": "2025-09-06",
-      "total_income_usd": 36.258154792999136,
+      "total_income_usd": 35.2669490767112,
       "total_expenses_usd": 0.0,
-      "delta_usd": 36.258154792999136
+      "delta_usd": 35.2669490767112
     },
     {
       "date": "2025-09-07",
       "total_income_usd": 65.04000000000087,
-      "total_expenses_usd": 72.57208765859268,
-      "delta_usd": -7.532087658591806
+      "total_expenses_usd": 72.48012901739413,
+      "delta_usd": -7.440129017393261
     },
     {
       "date": "2025-09-08",
-      "total_income_usd": 390.5500922722048,
+      "total_income_usd": 390.6213558345831,
       "total_expenses_usd": 0.0,
-      "delta_usd": 390.5500922722048
+      "delta_usd": 390.6213558345831
     },
     {
       "date": "2025-09-09",
-      "total_income_usd": 344.4300153688281,
-      "total_expenses_usd": 33.18339100346045,
-      "delta_usd": 311.24662436536767
+      "total_income_usd": 343.9800133292097,
+      "total_expenses_usd": 33.14134316323028,
+      "delta_usd": 310.83867016597947
     },
     {
       "date": "2025-09-10",
-      "total_income_usd": 1769.4913249930837,
-      "total_expenses_usd": 40.530565167243225,
-      "delta_usd": 1728.9607598258406
+      "total_income_usd": 1767.6814964783257,
+      "total_expenses_usd": 40.47920746457767,
+      "delta_usd": 1727.202289013748
     },
     {
       "date": "2025-09-11",
-      "total_income_usd": 1385.0351206430419,
+      "total_income_usd": 1383.038594506404,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1385.0351206430419
+      "delta_usd": 1383.038594506404
     },
     {
       "date": "2025-09-12",
-      "total_income_usd": 2854.248671280753,
-      "total_expenses_usd": 14.186851211072613,
-      "delta_usd": 2840.0618200696804
+      "total_income_usd": 2850.9547451622457,
+      "total_expenses_usd": 14.168874553622802,
+      "delta_usd": 2836.7858706086226
     },
     {
       "date": "2025-09-13",
-      "total_income_usd": -166.2644444913498,
+      "total_income_usd": -165.72109339178465,
       "total_expenses_usd": 0.0,
-      "delta_usd": -166.2644444913498
+      "delta_usd": -165.72109339178465
     },
     {
       "date": "2025-09-14",
       "total_income_usd": 56.830000000000155,
-      "total_expenses_usd": 69.63091118800476,
-      "delta_usd": -12.800911188004605
+      "total_expenses_usd": 69.5426794148141,
+      "delta_usd": -12.712679414813948
     },
     {
       "date": "2025-09-15",
-      "total_income_usd": 27.38264129181232,
-      "total_expenses_usd": 29.261822376009103,
-      "delta_usd": -1.8791810841967838
+      "total_income_usd": 26.590513765696528,
+      "total_expenses_usd": 29.224743693122786,
+      "delta_usd": -2.634229927426258
     },
     {
       "date": "2025-09-16",
-      "total_income_usd": 1012.0264626223284,
-      "total_expenses_usd": 7.750865051903146,
-      "delta_usd": 1004.2755975704252
+      "total_income_usd": 1011.542797214174,
+      "total_expenses_usd": 7.741043658564712,
+      "delta_usd": 1003.8017535556093
     },
     {
       "date": "2025-09-17",
-      "total_income_usd": -129.0358811726402,
-      "total_expenses_usd": 16.124567474048465,
-      "delta_usd": -145.16044864668865
+      "total_income_usd": -128.69277082287192,
+      "total_expenses_usd": 16.104135468264044,
+      "delta_usd": -144.79690629113597
     },
     {
       "date": "2025-09-18",
-      "total_income_usd": 626.6298039215682,
+      "total_income_usd": 626.3833337173132,
       "total_expenses_usd": 0.0,
-      "delta_usd": 626.6298039215682
+      "delta_usd": 626.3833337173132
     },
     {
       "date": "2025-09-19",
-      "total_income_usd": 334.55620572543836,
+      "total_income_usd": 333.5663076591074,
       "total_expenses_usd": 0.0,
-      "delta_usd": 334.55620572543836
+      "delta_usd": 333.5663076591074
     },
     {
       "date": "2025-09-20",
-      "total_income_usd": 724.876933986413,
-      "total_expenses_usd": 87.12802768166087,
-      "delta_usd": 637.748906304752
+      "total_income_usd": 723.8719677219221,
+      "total_expenses_usd": 87.01762469761543,
+      "delta_usd": 636.8543430243067
     },
     {
       "date": "2025-09-21",
@@ -41154,69 +41154,69 @@
     },
     {
       "date": "2025-09-22",
-      "total_income_usd": -394.74355247981606,
-      "total_expenses_usd": 131.48788927335642,
-      "delta_usd": -526.2314417531725
+      "total_income_usd": -395.37108397650104,
+      "total_expenses_usd": 131.32127635065083,
+      "delta_usd": -526.6923603271518
     },
     {
       "date": "2025-09-23",
-      "total_income_usd": 966.7871058436383,
+      "total_income_usd": 965.2149963334658,
       "total_expenses_usd": 0.0,
-      "delta_usd": 966.7871058436383
+      "delta_usd": 965.2149963334658
     },
     {
       "date": "2025-09-24",
-      "total_income_usd": -1871.0684314713258,
-      "total_expenses_usd": 7.2779700115340935,
-      "delta_usd": -1878.3464014828598
+      "total_income_usd": -1869.4855155642194,
+      "total_expenses_usd": 7.268747840110654,
+      "delta_usd": -1876.75426340433
     },
     {
       "date": "2025-09-27",
-      "total_income_usd": 25.219957551706784,
+      "total_income_usd": 22.544135351720456,
       "total_expenses_usd": 0.0,
-      "delta_usd": 25.219957551706784
+      "delta_usd": 22.544135351720456
     },
     {
       "date": "2025-09-28",
       "total_income_usd": -30.970000000000255,
-      "total_expenses_usd": 31.707035755478675,
-      "delta_usd": -62.677035755478926
+      "total_expenses_usd": 31.66685865683678,
+      "delta_usd": -62.636858656837035
     },
     {
       "date": "2025-09-29",
-      "total_income_usd": 948.2981660899659,
-      "total_expenses_usd": 426.23990772779723,
-      "delta_usd": 522.0582583621687
+      "total_income_usd": 947.4203352148375,
+      "total_expenses_usd": 425.6998041700267,
+      "delta_usd": 521.7205310448107
     },
     {
       "date": "2025-09-30",
-      "total_income_usd": 832.4778505673311,
-      "total_expenses_usd": 7.474048442906334,
-      "delta_usd": 825.0038021244247
+      "total_income_usd": 831.3662903110992,
+      "total_expenses_usd": 7.464577813615701,
+      "delta_usd": 823.9017124974835
     },
     {
       "date": "2025-10-01",
-      "total_income_usd": 1339.3247808596793,
-      "total_expenses_usd": 1342.5028835063438,
-      "delta_usd": -3.178102646664456
+      "total_income_usd": 1337.919381354438,
+      "total_expenses_usd": 1340.8017509503513,
+      "delta_usd": -2.88236959591336
     },
     {
       "date": "2025-10-02",
-      "total_income_usd": 283.1023646850913,
-      "total_expenses_usd": 41.76470588235295,
-      "delta_usd": 241.33765880273833
+      "total_income_usd": 283.27759586653406,
+      "total_expenses_usd": 41.71178435664095,
+      "delta_usd": 241.5658115098931
     },
     {
       "date": "2025-10-03",
-      "total_income_usd": -296.2593523117522,
+      "total_income_usd": -296.0656327055494,
       "total_expenses_usd": 0.0,
-      "delta_usd": -296.2593523117522
+      "delta_usd": -296.0656327055494
     },
     {
       "date": "2025-10-04",
-      "total_income_usd": 498.69210513372815,
-      "total_expenses_usd": 55.61707035755477,
-      "delta_usd": 443.07503477617337
+      "total_income_usd": 497.2374512920027,
+      "total_expenses_usd": 55.54659601428405,
+      "delta_usd": 441.69085527771864
     },
     {
       "date": "2025-10-05",
@@ -41226,75 +41226,75 @@
     },
     {
       "date": "2025-10-06",
-      "total_income_usd": 840.1171395617074,
-      "total_expenses_usd": 52.42214532871973,
-      "delta_usd": 787.6949942329877
+      "total_income_usd": 839.0103766847141,
+      "total_expenses_usd": 52.355719387167376,
+      "delta_usd": 786.6546572975467
     },
     {
       "date": "2025-10-07",
-      "total_income_usd": 498.95086964476764,
-      "total_expenses_usd": 17.08189158016148,
-      "delta_usd": 481.86897806460615
+      "total_income_usd": 497.94859237473065,
+      "total_expenses_usd": 17.060246515378413,
+      "delta_usd": 480.8883458593522
     },
     {
       "date": "2025-10-08",
-      "total_income_usd": -1568.7540786743673,
+      "total_income_usd": -1570.9148825875247,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1568.7540786743673
+      "delta_usd": -1570.9148825875247
     },
     {
       "date": "2025-10-09",
-      "total_income_usd": 894.3509796044746,
+      "total_income_usd": 892.9635851213467,
       "total_expenses_usd": 0.0,
-      "delta_usd": 894.3509796044746
+      "delta_usd": 892.9635851213467
     },
     {
       "date": "2025-10-10",
-      "total_income_usd": -171.90775086505718,
+      "total_income_usd": -171.46650761964776,
       "total_expenses_usd": 0.0,
-      "delta_usd": -171.90775086505718
+      "delta_usd": -171.46650761964776
     },
     {
       "date": "2025-10-12",
-      "total_income_usd": -5069.107218662766,
-      "total_expenses_usd": 214.39446366781968,
-      "delta_usd": -5283.501682330586
+      "total_income_usd": -5062.2652754520595,
+      "total_expenses_usd": 214.12279691279767,
+      "delta_usd": -5276.388072364857
     },
     {
       "date": "2025-10-13",
-      "total_income_usd": 255.65080738177642,
+      "total_income_usd": 255.67881004492585,
       "total_expenses_usd": 0.0,
-      "delta_usd": 255.65080738177642
+      "delta_usd": 255.67881004492585
     },
     {
       "date": "2025-10-14",
-      "total_income_usd": 418.1986274509842,
-      "total_expenses_usd": 11.534025374855826,
-      "delta_usd": 406.66460207612835
+      "total_income_usd": 418.46273816380983,
+      "total_expenses_usd": 11.519410206197442,
+      "delta_usd": 406.9433279576124
     },
     {
       "date": "2025-10-15",
-      "total_income_usd": 1111.0688630577195,
-      "total_expenses_usd": 100.56516724336801,
-      "delta_usd": 1010.5036958143514
+      "total_income_usd": 1107.2417994411987,
+      "total_expenses_usd": 100.43773758783556,
+      "delta_usd": 1006.8040618533632
     },
     {
       "date": "2025-10-16",
-      "total_income_usd": 853.4217099692651,
-      "total_expenses_usd": 447.79700115340285,
-      "delta_usd": 405.6247088158622
+      "total_income_usd": 851.2703543488507,
+      "total_expenses_usd": 447.22958184540977,
+      "delta_usd": 404.0407725034409
     },
     {
       "date": "2025-10-17",
-      "total_income_usd": -1569.8414901634962,
+      "total_income_usd": -1568.4903114943936,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1569.8414901634962
+      "delta_usd": -1568.4903114943936
     },
     {
       "date": "2025-10-18",
-      "total_income_usd": 879.1000546353831,
-      "total_expenses_usd": 27.946943483275685,
-      "delta_usd": 851.1531111521074
+      "total_income_usd": 878.8923082917665,
+      "total_expenses_usd": 27.911530929616426,
+      "delta_usd": 850.9807773621501
     },
     {
       "date": "2025-10-19",
@@ -41304,81 +41304,81 @@
     },
     {
       "date": "2025-10-20",
-      "total_income_usd": -394.1847750865054,
-      "total_expenses_usd": 81.22260668973428,
-      "delta_usd": -475.4073817762397
+      "total_income_usd": -394.42605690588664,
+      "total_expenses_usd": 81.11968667204195,
+      "delta_usd": -475.5457435779286
     },
     {
       "date": "2025-10-21",
-      "total_income_usd": 2996.650433134644,
+      "total_income_usd": 2993.9594629858902,
       "total_expenses_usd": 0.0,
-      "delta_usd": 2996.650433134644
+      "delta_usd": 2993.9594629858902
     },
     {
       "date": "2025-10-22",
-      "total_income_usd": -1380.698969002349,
+      "total_income_usd": -1378.8291407005577,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1380.698969002349
+      "delta_usd": -1378.8291407005577
     },
     {
       "date": "2025-10-23",
-      "total_income_usd": -414.93201536290326,
-      "total_expenses_usd": 27.162629757785677,
-      "delta_usd": -442.09464512068894
+      "total_income_usd": -414.11751758965863,
+      "total_expenses_usd": 27.128211035595186,
+      "delta_usd": -441.24572862525383
     },
     {
       "date": "2025-10-24",
-      "total_income_usd": 1332.3560917334194,
+      "total_income_usd": 1330.7269037034278,
       "total_expenses_usd": 0.0,
-      "delta_usd": 1332.3560917334194
+      "delta_usd": 1330.7269037034278
     },
     {
       "date": "2025-10-25",
-      "total_income_usd": 783.5661300739741,
-      "total_expenses_usd": 6.562860438293027,
-      "delta_usd": 777.0032696356811
+      "total_income_usd": 782.4539859158597,
+      "total_expenses_usd": 6.554544407326407,
+      "delta_usd": 775.8994415085333
     },
     {
       "date": "2025-10-26",
       "total_income_usd": 156.33000000000084,
-      "total_expenses_usd": 234.26758938869656,
-      "delta_usd": -77.93758938869573
+      "total_expenses_usd": 233.97074069807613,
+      "delta_usd": -77.64074069807529
     },
     {
       "date": "2025-10-27",
-      "total_income_usd": 1064.8308996539765,
-      "total_expenses_usd": 115.34025374855825,
-      "delta_usd": 949.4906459054183
+      "total_income_usd": 1063.5236458933275,
+      "total_expenses_usd": 115.19410206197442,
+      "delta_usd": 948.3295438313531
     },
     {
       "date": "2025-10-28",
-      "total_income_usd": 2179.0393159910636,
-      "total_expenses_usd": 480.89965397923885,
-      "delta_usd": 1698.1396620118248
+      "total_income_usd": 2176.221320071521,
+      "total_expenses_usd": 480.2902891371962,
+      "delta_usd": 1695.9310309343248
     },
     {
       "date": "2025-10-29",
-      "total_income_usd": 764.9063060919276,
+      "total_income_usd": 764.42266271243,
       "total_expenses_usd": 0.0,
-      "delta_usd": 764.9063060919276
+      "delta_usd": 764.42266271243
     },
     {
       "date": "2025-10-30",
-      "total_income_usd": -1314.682447122138,
-      "total_expenses_usd": 45.15570934256066,
-      "delta_usd": -1359.8381564646986
+      "total_income_usd": -1312.8441084745327,
+      "total_expenses_usd": 45.09849095726309,
+      "delta_usd": -1357.9425994317958
     },
     {
       "date": "2025-10-31",
-      "total_income_usd": -218.40165678334427,
+      "total_income_usd": -218.76788185771272,
       "total_expenses_usd": 0.0,
-      "delta_usd": -218.40165678334427
+      "delta_usd": -218.76788185771272
     },
     {
       "date": "2025-11-01",
-      "total_income_usd": 389.11469499281634,
-      "total_expenses_usd": 1352.9527104959632,
-      "delta_usd": -963.8380155031468
+      "total_income_usd": 388.30897077453136,
+      "total_expenses_usd": 1351.2383365971662,
+      "delta_usd": -962.9293658226347
     },
     {
       "date": "2025-11-02",
@@ -41388,15 +41388,15 @@
     },
     {
       "date": "2025-11-03",
-      "total_income_usd": 304.3314994233009,
-      "total_expenses_usd": 68.3852364475202,
-      "delta_usd": 235.9462629757807
+      "total_income_usd": 303.2213604423474,
+      "total_expenses_usd": 68.29858311254465,
+      "delta_usd": 234.92277732980278
     },
     {
       "date": "2025-11-04",
-      "total_income_usd": -812.7302067586954,
+      "total_income_usd": -815.5502067586954,
       "total_expenses_usd": 0.0,
-      "delta_usd": -812.7302067587
+      "delta_usd": -815.5502067587
     }
   ]
 }
