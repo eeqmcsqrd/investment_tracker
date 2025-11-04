@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-04T08:56:32.775152",
+  "last_updated": "2025-11-04T08:57:16.526728",
   "version": "1.0",
   "investments": [
     {
@@ -96,7 +96,7 @@
       "date": "2025-11-04",
       "investment": "RBC",
       "currency": "CAD",
-      "value": 144909.67
+      "value": 145431.39
     },
     {
       "date": "2025-11-04",
@@ -41394,9 +41394,9 @@
     },
     {
       "date": "2025-11-04",
-      "total_income_usd": -421.0920400875475,
+      "total_income_usd": -49.68177455042132,
       "total_expenses_usd": 0.0,
-      "delta_usd": -421.0920400875
+      "delta_usd": -49.6817745504
     }
   ]
 }
