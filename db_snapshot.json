@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-06T08:14:47.650536",
+  "last_updated": "2025-11-06T08:15:40.379037",
   "version": "1.0",
   "investments": [
     {
@@ -138,7 +138,7 @@
       "date": "2025-11-06",
       "investment": "401k",
       "currency": "USD",
-      "value": 52051.27
+      "value": 51995.36
     },
     {
       "date": "2025-11-05",
@@ -41682,9 +41682,9 @@
     },
     {
       "date": "2025-11-06",
-      "total_income_usd": 601.462133579384,
+      "total_income_usd": 545.5521335793878,
       "total_expenses_usd": 0.0,
-      "delta_usd": 601.4621335794
+      "delta_usd": 545.5521335794
     }
   ]
 }
