@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-06T13:16:30.084672",
+  "last_updated": "2025-11-06T13:17:20.959929",
   "version": "1.0",
   "investments": [
     {
@@ -114,7 +114,7 @@
       "date": "2025-11-06",
       "investment": "Ledger Wallet",
       "currency": "USD",
-      "value": 6135.63
+      "value": 6132.49
     },
     {
       "date": "2025-11-06",
@@ -41682,9 +41682,9 @@
     },
     {
       "date": "2025-11-06",
-      "total_income_usd": 277.9164740646555,
+      "total_income_usd": 274.7764740646552,
       "total_expenses_usd": 0.0,
-      "delta_usd": 277.9164740647
+      "delta_usd": 274.7764740647
     }
   ]
 }
