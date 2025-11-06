@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-06T08:17:24.843842",
+  "last_updated": "2025-11-06T08:18:03.684925",
   "version": "1.0",
   "investments": [
     {
@@ -132,7 +132,7 @@
       "date": "2025-11-06",
       "investment": "Binance",
       "currency": "USD",
-      "value": 64.56
+      "value": 63.52
     },
     {
       "date": "2025-11-06",
@@ -41682,9 +41682,9 @@
     },
     {
       "date": "2025-11-06",
-      "total_income_usd": 190.70858726819648,
+      "total_income_usd": 189.66858726819652,
       "total_expenses_usd": 0.0,
-      "delta_usd": 190.7085872682
+      "delta_usd": 189.6685872682
     }
   ]
 }
