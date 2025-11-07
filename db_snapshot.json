@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-07T07:29:22.723740",
+  "last_updated": "2025-11-07T07:30:05.825797",
   "version": "1.0",
   "investments": [
     {
@@ -36,7 +36,7 @@
       "date": "2025-11-07",
       "investment": "Trade Republic",
       "currency": "EUR",
-      "value": 25046.5
+      "value": 24522.16
     },
     {
       "date": "2025-11-07",
@@ -41826,9 +41826,9 @@
     },
     {
       "date": "2025-11-07",
-      "total_income_usd": -34.51000000000022,
+      "total_income_usd": -636.8534807581854,
       "total_expenses_usd": 0.0,
-      "delta_usd": -34.51
+      "delta_usd": -636.8534807582
     }
   ]
 }
