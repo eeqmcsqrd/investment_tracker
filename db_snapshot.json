@@ -1,7 +1,145 @@
 {
-  "last_updated": "2025-11-07T08:43:38.683214",
+  "last_updated": "2025-11-08T08:49:48.848604",
   "version": "1.0",
   "investments": [
+    {
+      "date": "2025-11-08",
+      "investment": "Talisman Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "WISE - USD",
+      "currency": "USD",
+      "value": 48.92
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "WISE - EUR",
+      "currency": "EUR",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "WISE - CLP",
+      "currency": "CLP",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "WISE - CAD",
+      "currency": "CAD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Trade Republic",
+      "currency": "EUR",
+      "value": 24522.16
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Sui Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Revolut - USD",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Revolut - EUR",
+      "currency": "EUR",
+      "value": 59.29
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Revolut - CLP",
+      "currency": "CLP",
+      "value": 2038.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Revolut - CAD",
+      "currency": "CAD",
+      "value": 10.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "RBC Bank US - USD",
+      "currency": "USD",
+      "value": 30.32
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "RBC Bank Canada - USD",
+      "currency": "USD",
+      "value": 40.4
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "RBC Bank Canada - EUR",
+      "currency": "EUR",
+      "value": 10.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "RBC Bank Canada - CAD",
+      "currency": "CAD",
+      "value": 14.57
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "RBC",
+      "currency": "CAD",
+      "value": 143291.73
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Phantom Wallet",
+      "currency": "USD",
+      "value": 0.0
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "N26 - EUR",
+      "currency": "EUR",
+      "value": 106.26
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Ledger Wallet",
+      "currency": "USD",
+      "value": 6097.98
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "HAPO Savings - USD",
+      "currency": "USD",
+      "value": 12.17
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "HAPO Checking - USD",
+      "currency": "USD",
+      "value": 136.01
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "Binance",
+      "currency": "USD",
+      "value": 63.52
+    },
+    {
+      "date": "2025-11-08",
+      "investment": "401k",
+      "currency": "USD",
+      "value": 51200.71
+    },
     {
       "date": "2025-11-07",
       "investment": "Talisman Wallet",
@@ -41829,6 +41967,12 @@
       "total_income_usd": -1987.7543666547108,
       "total_expenses_usd": 0.0,
       "delta_usd": -1987.7543666547
+    },
+    {
+      "date": "2025-11-08",
+      "total_income_usd": -377.4191254887995,
+      "total_expenses_usd": 0.0,
+      "delta_usd": -377.4191254888
     }
   ]
 }
