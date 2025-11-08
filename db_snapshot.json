@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-08T08:52:25.451500",
+  "last_updated": "2025-11-08T08:53:04.539072",
   "version": "1.0",
   "investments": [
     {
@@ -108,7 +108,7 @@
       "date": "2025-11-08",
       "investment": "N26 - EUR",
       "currency": "EUR",
-      "value": 106.26
+      "value": 81.78
     },
     {
       "date": "2025-11-08",
@@ -41970,9 +41970,9 @@
     },
     {
       "date": "2025-11-08",
-      "total_income_usd": -1802.6933623065586,
+      "total_income_usd": -1831.0004853407863,
       "total_expenses_usd": 0.0,
-      "delta_usd": -1802.6933623066
+      "delta_usd": -1831.0004853408
     }
   ]
 }
